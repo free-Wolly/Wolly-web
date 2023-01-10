@@ -1,21 +1,22 @@
-import React, { useState, ReactElement } from "react";
+import React, { useState, ReactElement, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Header.module.css";
 import "./Header.module.css";
+import { menuItems } from "./constants";
 
 export const Header = () => {
   const [menuExpanded, isMenuExpanded] = useState(false);
 
-  const menuItems: string[] = [
-    "მთავარი",
-    "ჩვენს შესახებ",
-    "ინტეგრაცია",
-    "სერვისები",
-    "ფასები",
-    "FAQ",
-    "კონტაქტი",
-  ];
+  const renderMenuItems = useMemo(() => {
+    return menuItems.map((item: string, id: number): ReactElement => {
+      return (
+        <li key={id} className={styles.headerItem}>
+          <Link href="/">{item}</Link>
+        </li>
+      );
+    });
+  }, [menuItems]);
 
   return (
     <div className={styles.headerMain}>
@@ -31,18 +32,10 @@ export const Header = () => {
               alt=""
               width={24}
               height={24}
-              onClick={() => {
-                isMenuExpanded(!menuExpanded);
-              }}
+              onClick={() => isMenuExpanded(!menuExpanded)}
             />
             <ul className={menuExpanded ? styles.expanded : styles.collapsed}>
-              {menuItems.map((item: string, id: number): ReactElement => {
-                return (
-                  <li key={id} className={styles.headerItem}>
-                    <Link href="/">{item}</Link>
-                  </li>
-                );
-              })}
+              {renderMenuItems}
             </ul>
           </nav>
         </div>

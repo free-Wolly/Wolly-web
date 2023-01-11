@@ -6,8 +6,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-    sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -34,35 +34,4 @@ ul {
 ul {
   padding: 0;
   list-style: none;
-}
-
-.Container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin: 0px auto;
-}
-
-@media (min-width: 576px) {
-  .Container {
-    max-width: 100%;
-  }
-}
-
-@media (min-width: 768px) {
-  .Container {
-    max-width: 720px;
-  }
-}
-
-@media (min-width: 992px) {
-  .Container {
-    max-width: 960px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .Container {
-    max-width: 1170px;
-  }
 }

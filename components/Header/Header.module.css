@@ -36,6 +36,7 @@
   position: relative;
   color: #ffffff;
   padding: 48px 0px 48px 40px;
+  white-space: nowrap;
 }
 
 .headerMobileMenuIcon {
@@ -44,7 +45,7 @@
   font-size: 24px;
 }
 
-@media only screen and (max-width: 912px) {
+@media only screen and (max-width: 1024px) {
   .headerMain {
     height: auto;
     min-height: 50px;

@@ -1,0 +1,24 @@
+.introMain {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.introVideo {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+.introArrow {
+  position: absolute;
+  bottom: 50px;
+  left: calc(50vw - 15px);
+  visibility: visible;
+  cursor: pointer;
+}

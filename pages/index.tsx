@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Header } from "../components/Header/Header";
 import { Intro } from "../components/Landing/Intro/Intro";
+import { SecondSection } from "../components/Landing/SecondSection/SecondSection";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       </Head>
       <Header />
       <Intro />
+      <SecondSection />
     </>
   );
 }

@@ -16,14 +16,20 @@ export const Header = () => {
         </li>
       );
     });
-  }, [menuItems]);
+  }, []);
 
   return (
     <div className={styles.headerMain}>
-      <div className="Container">
+      <div className="container mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4">
         <div className={styles.headerContent}>
           <Link className={styles.headerContent_Logo} href="/">
-            <Image src="/images/wolly.png" alt="" width={100} height={100} />
+            <Image
+              priority
+              src="/images/wolly.png"
+              alt=""
+              width={100}
+              height={100}
+            />
           </Link>
           <nav className={styles.headerContent_Nav}>
             <Image

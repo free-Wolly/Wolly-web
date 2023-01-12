@@ -18,7 +18,9 @@
 .introArrow {
   position: absolute;
   bottom: 50px;
-  left: calc(50vw - 15px);
+  left: 0;
+  right: 0;
+  margin: auto;
   visibility: visible;
   cursor: pointer;
 }

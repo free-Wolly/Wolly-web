@@ -22,7 +22,7 @@ export const Intro = () => {
             autoPlay
             muted
             loop
-            src="/videos/clean.mp4"
+            src="/assets/videos/clean.mp4"
           />
         </div>
         <motion.img

@@ -27,7 +27,7 @@ export const Intro = () => {
         </div>
         <motion.img
           className={introStyles.introArrow}
-          src="/images/down-arrow.svg"
+          src="/assets/images/down-arrow.svg"
           alt=""
           width={30}
           height={30}
@@ -42,22 +42,21 @@ export const Intro = () => {
         >
           <div className="flex items-center justify-center text-center">
             <div className="flex items-center flex-col">
-              <AnimatedText text="Framer Motion">
-                <div className={rollingTextStyle.roller}>
-                  <span id={rollingTextStyle.rolltext}>
-                    HTML
-                    <br />
-                    CSS
-                    <br />
-                    Curiosity
-                    <br />
-                    <span id={rollingTextStyle.spare_time}>
-                      too much spare time?
-                    </span>
-                    <br />
+              <AnimatedText text="Framer Motion" />
+              <div className={rollingTextStyle.roller}>
+                <span id={rollingTextStyle.rolltext}>
+                  HTML
+                  <br />
+                  CSS
+                  <br />
+                  Curiosity
+                  <br />
+                  <span id={rollingTextStyle.spare_time}>
+                    too much spare time?
                   </span>
-                </div>
-              </AnimatedText>
+                  <br />
+                </span>
+              </div>
             </div>
           </div>
         </motion.div>

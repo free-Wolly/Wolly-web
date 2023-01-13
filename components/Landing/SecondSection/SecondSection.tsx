@@ -1,4 +1,4 @@
-import React, { ReactElement, useLayoutEffect, useMemo, useRef } from "react";
+import React, { ReactElement, useMemo, useRef } from "react";
 import { boxItems, boxObj } from "./constants";
 import { useInView } from "framer";
 import { Block } from "./Block";

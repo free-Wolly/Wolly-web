@@ -5,7 +5,7 @@ import { boxObj } from "./constants";
 
 export const Block = (props: { item: boxObj; index: number }) => {
   const blockRef = useRef(null);
-  const blockInView = useInView(blockRef, { once: true });
+  const blockInView = useInView(blockRef, { once: true, margin: "20px" });
 
   return (
     <motion.div
@@ -22,7 +22,7 @@ export const Block = (props: { item: boxObj; index: number }) => {
     >
       <div className="w-16 flex justify-center bg-[#F4F6FF]">
         <Image
-          src={`/images/boxImages/${props.item.imgSource}`}
+          src={`/assets/images/boxImages/${props.item.imgSource}`}
           alt=""
           width={32}
           height={32}

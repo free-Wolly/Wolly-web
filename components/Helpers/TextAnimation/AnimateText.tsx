@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { introTextItem } from "./constants";
 
-export const AnimatedText = (props: { text: any; children: any }) => {
+export const AnimatedText = (props: { text: any }) => {
   const splitWords = props.text.split(" ");
 
   const words: string[][] = [];
@@ -18,32 +18,27 @@ export const AnimatedText = (props: { text: any; children: any }) => {
   return (
     <>
       <div className="flex flex-row">
-        {words.map((word, index) => {
-          return (
-            <span key={index}>
-              {words[index].flat().map((element, index) => {
-                return (
-                  <span
-                    style={{
-                      overflow: "hidden",
-                      display: "inline-block",
-                    }}
-                    key={index}
-                  >
-                    <motion.span
-                      style={{ display: "inline-block" }}
-                      variants={introTextItem}
-                    >
-                      {element}
-                    </motion.span>
-                  </span>
-                );
-              })}
-            </span>
-          );
-        })}
+        <span>
+          {words.flat().map((element, index) => {
+            return (
+              <span
+                style={{
+                  overflow: "hidden",
+                  display: "inline-block",
+                }}
+                key={index}
+              >
+                <motion.span
+                  style={{ display: "inline-block" }}
+                  variants={introTextItem}
+                >
+                  {element}
+                </motion.span>
+              </span>
+            );
+          })}
+        </span>
       </div>
-      {props.children}
     </>
   );
 };

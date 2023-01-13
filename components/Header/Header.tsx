@@ -25,7 +25,7 @@ export const Header = () => {
           <Link className={styles.headerContent_Logo} href="/">
             <Image
               priority
-              src="/images/wolly.png"
+              src="/assets/images/wolly.png"
               alt=""
               width={100}
               height={100}
@@ -34,7 +34,7 @@ export const Header = () => {
           <nav className={styles.headerContent_Nav}>
             <Image
               className={styles.headerMobileMenuIcon}
-              src="/images/menu-icon.svg"
+              src="/assets/images/menu-icon.svg"
               alt=""
               width={24}
               height={24}

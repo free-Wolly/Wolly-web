@@ -9,7 +9,7 @@ export default function Home() {
       <Head>
         <title>Wolly</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/images/wolly.png" />
+        <link rel="icon" href="/assets/images/wolly.png" />
       </Head>
       <Header />
       <Intro />

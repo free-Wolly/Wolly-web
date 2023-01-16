@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Header } from "../components/Header/Header";
 import { Intro } from "../components/Landing/Intro/Intro";
 import { SecondSection } from "../components/Landing/SecondSection/SecondSection";
+import { Slider } from "../components/Landing/Slider/Slider";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Header />
       <Intro />
       <SecondSection />
+      <Slider />
     </>
   );
 }

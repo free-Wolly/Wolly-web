@@ -3,6 +3,7 @@ import { Header } from "../components/Header/Header";
 import { Intro } from "../components/Landing/Intro/Intro";
 import { SecondSection } from "../components/Landing/SecondSection/SecondSection";
 import { Slider } from "../components/Landing/Slider/Slider";
+import { Blog } from "../components/Landing/Blog/Blog";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Intro />
       <SecondSection />
       <Slider />
+      <Blog />
     </>
   );
 }

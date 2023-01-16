@@ -5,7 +5,7 @@ export const SidePost = ({ blogItem }: any) => {
   return (
     <div className="w-3/6 flex flex-col gap-4">
       <Image
-        className="w-full rounded-3xl"
+        className="w-full rounded-3xl h-44"
         src={`/assets/images/sliderImages/${blogItem.img}`}
         alt=""
         width={1000}

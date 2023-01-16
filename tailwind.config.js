@@ -9,6 +9,12 @@ module.exports = {
       boxShadow: {
         light: "rgb(0 0 0 / 25%) 0px 10px 30px -20px",
       },
+      minWidth: {
+        25: "25rem",
+      },
+      minHeight: {
+        30: "30rem",
+      },
     },
   },
   plugins: [],

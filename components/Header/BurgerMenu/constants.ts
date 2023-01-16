@@ -20,6 +20,7 @@ export const sidebarVariants = {
 
 export const menuItemVariants = {
   open: {
+    display: "block",
     y: 0,
     opacity: 1,
     transition: {
@@ -27,6 +28,7 @@ export const menuItemVariants = {
     },
   },
   closed: {
+    display: "none",
     y: 50,
     opacity: 0,
     transition: {

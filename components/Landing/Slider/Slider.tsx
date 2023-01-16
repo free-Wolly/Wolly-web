@@ -18,6 +18,8 @@ export const Slider = () => {
       return (
         <motion.div className="p-10 sm:min-w-25 min-h-30 min-w-full" key={id}>
           <Image
+            loading="lazy"
+            placeholder="blur"
             className="w-full h-full rounded-3xl pointer-events-none"
             src={image}
             alt=""

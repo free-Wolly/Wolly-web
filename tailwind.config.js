@@ -15,6 +15,9 @@ module.exports = {
       minHeight: {
         30: "30rem",
       },
+      height: {
+        112: "28rem",
+      },
       backgroundSize: {
         fill: "100% 100%",
       },

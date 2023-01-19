@@ -1,0 +1,79 @@
+.carousel {
+  display: grid;
+  place-content: center;
+  border-radius: 2rem;
+}
+.carouselContent {
+  position: relative;
+  /* width: 10rem; */
+  height: 40rem;
+  margin-top: 150px;
+}
+
+.carouselItem {
+  position: absolute;
+  width: 30rem;
+  height: 45rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 1.2rem;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.gradient {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
+
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 130px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: aqua;
+  /* padding: 1rem; */
+  align-items: center;
+}
+
+.shadow {
+  /* width: 100%; */
+  /* background-color: ; */
+}
+
+.carouselBtns {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  z-index: 6;
+}
+
+.prevBtn {
+  position: absolute;
+  left: -40px;
+  top: 48%;
+}
+
+.nextBtn {
+  position: absolute;
+  right: -40px;
+  top: 48%;
+}
+
+.introArrow {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  visibility: visible;
+  cursor: pointer;
+}

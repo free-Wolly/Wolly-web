@@ -5,6 +5,7 @@ import { SecondSection } from "../components/Landing/SecondSection/SecondSection
 import { Slider } from "../components/Landing/Slider/Slider";
 import { Blog } from "../components/Landing/Blog/Blog";
 import { Team } from "../components/Landing/Team/Team";
+import { Footer } from "../components/Footer/Footer";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Slider />
       <Blog />
       <Team />
+      <Footer />
     </>
   );
 }

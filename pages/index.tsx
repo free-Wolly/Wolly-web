@@ -6,6 +6,7 @@ import { Slider } from "../components/Landing/Slider/Slider";
 import { Blog } from "../components/Landing/Blog/Blog";
 import { Team } from "../components/Landing/Team/Team";
 import { Footer } from "../components/Footer/Footer";
+import { Faq } from "../components/Landing/Faq/Faq";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <Slider />
       <Blog />
       <Team />
+      <Faq />
       <Footer />
     </>
   );

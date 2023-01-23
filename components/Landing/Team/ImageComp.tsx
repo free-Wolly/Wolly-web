@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer";
+import { motion } from "framer-motion";
 
 export const ImageComp = ({
   imageInView,

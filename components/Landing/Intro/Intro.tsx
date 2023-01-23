@@ -1,6 +1,6 @@
 import React from "react";
 import introStyles from "./Intro.module.css";
-import { motion } from "framer";
+import { motion } from "framer-motion";
 import { AnimatedText } from "../../Helpers/TextAnimation/AnimateText";
 import rollingTextStyle from "./IntroRollText.module.css";
 

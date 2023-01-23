@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { motion } from "framer";
+import { motion } from "framer-motion";
 import { useDimensions } from "./UseDimensions";
 
 import { MenuToggle } from "./MenuToggle";

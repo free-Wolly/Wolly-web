@@ -1,30 +1,34 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useMemo } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
+
 import images from "./images";
-import { ParallaxText } from "./Paralax";
+import { Parallax } from "./Paralax";
 
 export const Slider = () => {
+  const baseVelocity = -50;
+
   const renderImages = useMemo(() => {
     return images.map((image, id: number) => {
       return (
-        <motion.div className="p-10 sm:min-w-25 min-h-30 min-w-full" key={id}>
-          <Image
-            loading="lazy"
-            placeholder="blur"
-            className="w-full h-full rounded-3xl pointer-events-none"
-            src={image}
-            alt=""
-          ></Image>
-        </motion.div>
+        <Parallax
+          key={id}
+          image={image}
+          baseVelocity={baseVelocity}
+          id={id}
+          qty={images.length}
+        />
       );
     });
-  }, []);
+  }, [baseVelocity]);
 
   return (
-    <div className="mx-auto border-t-2">
+    <div className="mx-auto w-full max-w-[2000px] border-t-2">
       <div className="text-center text-3xl font-bold py-16">Slider Section</div>
-      <ParallaxText baseVelocity={-2}>{renderImages}</ParallaxText>
+      <motion.div className="whitespace-nowrap flex flex-nowrap ">
+        <motion.div className="overflow-auto whitespace-nowrap flex flex-nowrap">
+          {renderImages}
+        </motion.div>
+      </motion.div>
     </div>
   );
 };

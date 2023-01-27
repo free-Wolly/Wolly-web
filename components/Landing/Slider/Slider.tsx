@@ -22,10 +22,18 @@ export const Slider = () => {
   }, [baseVelocity]);
 
   return (
-    <div className="mx-auto w-full max-w-[2000px] border-t-2">
+    <div className="mx-auto w-full border-t-2">
       <div className="text-center text-3xl font-bold py-16">Slider Section</div>
       <motion.div className="whitespace-nowrap flex flex-nowrap ">
-        <motion.div className="overflow-auto whitespace-nowrap flex flex-nowrap">
+        <motion.div
+          ref={(ref) =>
+            ref?.scrollTo(ref?.scrollWidth / 2 - ref.clientWidth / 2, 0)
+          }
+          className="overflow-auto whitespace-nowrap flex flex-nowrap hideScroll"
+        >
+          {renderImages}
+          {renderImages}
+          {renderImages}
           {renderImages}
         </motion.div>
       </motion.div>

@@ -10,7 +10,11 @@ module.exports = {
         light: "rgb(0 0 0 / 25%) 0px 10px 30px -20px",
       },
       minWidth: {
+        10: "10rem",
+        15: "15rem",
+        20: "20rem",
         25: "25rem",
+        30: "30rem",
       },
       minHeight: {
         30: "30rem",

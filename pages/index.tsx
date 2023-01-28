@@ -8,6 +8,7 @@ import { Team } from "../components/Landing/Team/Team";
 import { Footer } from "../components/Footer/Footer";
 import { Faq } from "../components/Landing/Faq/Faq";
 import { SocialMedia } from "../components/Landing/SocialMedia/SocialMedia";
+import { BeforeAfter } from "../components/Landing/BeforeAfter/BeforeAfter";
 import { GetApp } from "../components/Landing/GetApp/GetApp";
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
       <Team />
       <GetApp />
       <SocialMedia />
+      <BeforeAfter />
       <Faq />
       <Footer />
     </>

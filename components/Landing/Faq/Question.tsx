@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer";
+import { motion } from "framer-motion";
 import { imgVariant, openVariant } from "./constants";
 
 export const Question = ({ question }: any) => {

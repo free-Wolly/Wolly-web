@@ -35,3 +35,7 @@ ul {
   padding: 0;
   list-style: none;
 }
+
+.hideScroll::-webkit-scrollbar {
+  display: none;
+}

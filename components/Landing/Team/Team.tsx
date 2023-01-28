@@ -1,5 +1,5 @@
 import React, { useMemo, useRef } from "react";
-import { useInView } from "framer";
+import { useInView } from "framer-motion";
 import { ImageComp } from "./ImageComp";
 import { imageProps } from "./constants";
 

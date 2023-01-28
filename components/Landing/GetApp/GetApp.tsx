@@ -10,13 +10,7 @@ export const GetApp = () => {
     return storesInfo.map((store, id) => {
       return (
         <Link key={id} href={store.link} target="_blank">
-          <Image
-            className="h-12 max-w-[160px]"
-            src={store.img}
-            alt=""
-            width={1000}
-            height={1000}
-          />
+          <store.img />
         </Link>
       );
     });

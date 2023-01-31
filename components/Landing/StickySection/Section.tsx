@@ -21,8 +21,8 @@ export const Section = ({ title, text, sectionImages }: Props) => {
   }, [sectionImages]);
 
   return (
-    <div className="w-full relative flex gap-[100px] py-16">
-      <div className="hidden lg:w-2/6 lg:flex flex-col sticky top-[100px] h-min">
+    <div className="w-full relative flex flex-col lg:flex-row gap-[100px] py-16">
+      <div className="lg:w-2/6 flex flex-col relative top-0 lg:sticky lg:top-[100px] h-min">
         <div className="text-3xl font-bold mb-8">{title}</div>
         <div>{text}</div>
       </div>

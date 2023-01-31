@@ -10,6 +10,7 @@ import { Faq } from "../components/Landing/Faq/Faq";
 import { SocialMedia } from "../components/Landing/SocialMedia/SocialMedia";
 import { BeforeAfter } from "../components/Landing/BeforeAfter/BeforeAfter";
 import { GetApp } from "../components/Landing/GetApp/GetApp";
+import { StickySections } from "../components/Landing/StickySection/StickySections";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <SecondSection />
       <Slider />
       <Blog />
+      <StickySections />
       <Team />
       <GetApp />
       <SocialMedia />

@@ -1,9 +1,9 @@
 import React, { useMemo, useRef } from "react";
 import { useInView } from "framer-motion";
-import { ImageComp } from "./ImageComp";
-import { imageProps } from "./constants";
+import ImageComp from "./ImageComp";
+import imageProps from "./constants";
 
-export const Team = () => {
+const Team = () => {
   const imagesRef = useRef(null);
   const imagesInView = useInView(imagesRef, { once: true });
 
@@ -49,3 +49,5 @@ export const Team = () => {
     </div>
   );
 };
+
+export default Team;

@@ -1,16 +1,16 @@
 import Head from "next/head";
-import { Header } from "../components/Header/Header";
-import { Intro } from "../components/Landing/Intro/Intro";
-import { SecondSection } from "../components/Landing/SecondSection/SecondSection";
-import { Slider } from "../components/Landing/Slider/Slider";
-import { Blog } from "../components/Landing/Blog/Blog";
-import { Team } from "../components/Landing/Team/Team";
-import { Footer } from "../components/Footer/Footer";
-import { Faq } from "../components/Landing/Faq/Faq";
-import { SocialMedia } from "../components/Landing/SocialMedia/SocialMedia";
-import { BeforeAfter } from "../components/Landing/BeforeAfter/BeforeAfter";
-import { GetApp } from "../components/Landing/GetApp/GetApp";
-import { StickySections } from "../components/Landing/StickySection/StickySections";
+import Header from "../components/Header";
+import Intro from "../components/Landing/Intro";
+import SecondSection from "../components/Landing/SecondSection";
+import Slider from "../components/Landing/Slider";
+import Blog from "../components/Landing/Blog";
+import Team from "../components/Landing/Team";
+import Footer from "../components/Footer";
+import Faq from "../components/Landing/Faq";
+import SocialMedia from "../components/Landing/SocialMedia";
+import BeforeAfter from "../components/Landing/BeforeAfter";
+import GetApp from "../components/Landing/GetApp";
+import StickySections from "../components/Landing/StickySection";
 
 export default function Home() {
   return (

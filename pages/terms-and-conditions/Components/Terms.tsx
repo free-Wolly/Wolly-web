@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
-import { terms } from "./constants";
+import terms from "./constants";
 
-export const Terms = () => {
+const Terms = () => {
   const renderText = useMemo(() => {
     return terms.map((term, id: number) => {
       return (
@@ -39,3 +39,5 @@ export const Terms = () => {
     </div>
   );
 };
+
+export default Terms;

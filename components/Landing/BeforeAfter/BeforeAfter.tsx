@@ -4,7 +4,7 @@ import BeforeAfterSlider from "react-before-after-slider-component";
 import "react-before-after-slider-component/dist/build.css";
 import { images, variants } from "./constants";
 
-export const BeforeAfter = () => {
+const BeforeAfter = () => {
   const [direction, setDirection] = useState(0);
   const [index, setIndex] = useState(0);
 
@@ -90,3 +90,5 @@ export const BeforeAfter = () => {
     </div>
   );
 };
+
+export default BeforeAfter;

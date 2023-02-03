@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 import wollyAppImg from "../../../public/assets/images/wolly-app.png";
-import { storesInfo } from "./constants";
+import storesInfo from "./constants";
 
-export const GetApp = () => {
+const GetApp = () => {
   const renderStores = useMemo(() => {
     return storesInfo.map((store, id) => {
       return (
@@ -40,3 +40,5 @@ export const GetApp = () => {
     </div>
   );
 };
+
+export default GetApp;

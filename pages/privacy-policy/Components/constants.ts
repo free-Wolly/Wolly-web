@@ -1,4 +1,4 @@
-export const policies = [
+const policies = [
   {
     title: "1. Definitions",
     text: `
@@ -108,3 +108,5 @@ export const policies = [
   `,
   },
 ];
+
+export default policies;

@@ -3,7 +3,7 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { boxObj } from "./constants";
 
-export const Block = (props: { item: boxObj; index: number }) => {
+const Block = (props: { item: boxObj; index: number }) => {
   const blockRef = useRef(null);
   const blockInView = useInView(blockRef, { once: true, margin: "20px" });
 
@@ -35,3 +35,5 @@ export const Block = (props: { item: boxObj; index: number }) => {
     </motion.div>
   );
 };
+
+export default Block;

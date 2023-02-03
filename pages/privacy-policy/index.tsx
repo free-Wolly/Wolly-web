@@ -1,8 +1,8 @@
 import React from "react";
 import Head from "next/head";
-import Header from "../../components/PrivacyPolicy/Header";
-import { PrivacyPolicy } from "../../components/PrivacyPolicy/PrivacyPolicy";
-import { Footer } from "../../components/Footer/Footer";
+import Header from "./Components/Header";
+import PrivacyPolicy from "./Components/PrivacyPolicy";
+import Footer from "../../components/Footer";
 
 export default function Policy() {
   return (

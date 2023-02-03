@@ -1,4 +1,4 @@
-export function AppStoreLogo(): JSX.Element {
+export default function AppStoreLogo(): JSX.Element {
   return (
     <svg width="120px" height="40px" viewBox="0 0 120 40" version="1.1">
       <title>1D277E1F-8038-43D8-90A3-877447CF09D0</title>

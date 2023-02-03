@@ -1,4 +1,4 @@
-export const menuItems: string[] = [
+const menuItems: string[] = [
   "მთავარი",
   "ჩვენს შესახებ",
   "ინტეგრაცია",
@@ -7,3 +7,5 @@ export const menuItems: string[] = [
   "FAQ",
   "კონტაქტი",
 ];
+
+export default menuItems;

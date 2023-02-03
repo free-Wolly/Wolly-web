@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { menuItemVariants } from "./constants";
 
-export const MenuItem = (props: { text: string; i: number }) => {
+const MenuItem = (props: { text: string; i: number }) => {
   return (
     <motion.li
       className="z-10"
@@ -17,3 +17,5 @@ export const MenuItem = (props: { text: string; i: number }) => {
     </motion.li>
   );
 };
+
+export default MenuItem;

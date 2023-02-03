@@ -4,10 +4,10 @@ import Link from "next/link";
 
 import wollyLogo from "../../public/assets/images/wolly.png";
 import worldMap from "../../public/assets/images/world.png";
-import { menuItems } from "../Header/constants";
-import { socialNetworksItems } from "./socialNetworks";
+import menuItems from "../Header/constants";
+import socialNetworksItems from "./socialNetworks";
 
-export const Footer = () => {
+const Footer = () => {
   const renderMenuItems = useMemo(() => {
     return menuItems.map((item: string, id: number) => {
       return (
@@ -101,3 +101,5 @@ export const Footer = () => {
     </>
   );
 };
+
+export default Footer;

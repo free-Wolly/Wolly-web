@@ -11,7 +11,7 @@ import {
 import { wrap } from "@motionone/utils";
 import Image from "next/image";
 
-export const Parallax = ({ image, baseVelocity, id, qty }: any) => {
+const Parallax = ({ image, baseVelocity, id, qty }: any) => {
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
@@ -58,3 +58,5 @@ export const Parallax = ({ image, baseVelocity, id, qty }: any) => {
     </motion.div>
   );
 };
+
+export default Parallax;

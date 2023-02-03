@@ -2,11 +2,11 @@ import React, { useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import { BurgerMenu } from "./BurgerMenu/BurgerMenu";
+import BurgerMenu from "./BurgerMenu";
 import styles from "./Header.module.css";
-import { menuItems } from "./constants";
+import menuItems from "./constants";
 
-export const Header = () => {
+const Header = () => {
   const renderMenuItems = useMemo(() => {
     return menuItems.map((item: string, id: number) => {
       return (
@@ -44,3 +44,5 @@ export const Header = () => {
     </div>
   );
 };
+
+export default Header;

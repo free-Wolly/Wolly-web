@@ -1,9 +1,9 @@
 import React, { useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { socialNetworks } from "./socNetworks";
+import socialNetworks from "./socNetworks";
 
-export const SocialMedia = () => {
+const SocialMedia = () => {
   const renderImages = useMemo(() => {
     return socialNetworks.map((socialNetwork, id) => {
       return (
@@ -30,3 +30,5 @@ export const SocialMedia = () => {
     </div>
   );
 };
+
+export default SocialMedia;

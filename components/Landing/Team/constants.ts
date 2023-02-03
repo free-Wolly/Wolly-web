@@ -20,7 +20,7 @@ export const imageProps = [
   {
     image: images[2],
     className: "z-20 left-1/2 top-8 h-64 w-3/6",
-    transformX: "100px",
+    transformX: "0px",
     transformY: "-100px",
     delay: "2",
     imageHeight: "h-64",

@@ -1,6 +1,6 @@
 import React, { ReactElement, useMemo, useRef } from "react";
 import { boxItems, boxObj } from "./constants";
-import { useInView } from "framer";
+import { useInView } from "framer-motion";
 import { Block } from "./Block";
 
 export const SecondSection = () => {

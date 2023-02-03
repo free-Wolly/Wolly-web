@@ -1,8 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import style from './carousel.module.css'
-import Progressbar from '../../ProgressBar/ProgressBar'
-import styles from '../../ProgressBar/styles.module.css'
 import Image from 'next/image'
 import images from '../Slider/images'
 import Lottie from 'react-lottie'
@@ -208,11 +206,11 @@ const Carousel = () => {
               exit={'mostLeftHidden'}
               className={style.carouselItem}
             >
-              <div className={styles.hiddenCardUser}>
+              <div className={style.hiddenCardUser}>
                 <div className={`relative bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-1 rounded-full transparent`}>
-                  <Image className={styles.hiddenAvatar} src={images[1]} loading="lazy" width={100} height={100} alt="avatar" />
+                  <Image className={style.hiddenAvatar} src={images[1]} loading="lazy" width={100} height={100} alt="avatar" />
                 </div>
-                <div className={styles.hiddenUsername}>hello</div>
+                <div className={style.hiddenUsername}>hello</div>
               </div>
             </motion.div>
             <motion.div
@@ -223,11 +221,11 @@ const Carousel = () => {
               exit={'leftHidden'}
               className={style.carouselItem}
             >
-              <div className={styles.hiddenCardUser}>
+              <div className={style.hiddenCardUser}>
                 <div className={`relative bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-1 rounded-full transparent`}>
-                  <Image className={styles.hiddenAvatar} src={images[2]} loading="lazy" width={100} height={100} alt="avatar" />
+                  <Image className={style.hiddenAvatar} src={images[2]} loading="lazy" width={100} height={100} alt="avatar" />
                 </div>
-                <div className={styles.hiddenUsername}>world</div>
+                <div className={style.hiddenUsername}>world</div>
               </div>
             </motion.div>
             <motion.div
@@ -237,10 +235,10 @@ const Carousel = () => {
               animate="center"
               className={style.carouselItem}
             >
-              <div className={styles.progressbarContainer}>
-                <div className={styles.progressbar}>
+              <div className={style.progressbarContainer}>
+                <div className={style.progressbar}>
                   <motion.div
-                    className={styles.bar}
+                    className={style.bar}
                     animate={{
                       width: `100%`,
                     }}
@@ -252,9 +250,9 @@ const Carousel = () => {
                   />
                 </div>
               </div>
-              <div className={styles.user}>
-                <Image className={styles.avatar} src={images[0]} loading="lazy" width={100} height={100} alt="avatar" />
-                <div className={styles.username}>schalagashvili</div>
+              <div className={style.user}>
+                <Image className={style.avatar} src={images[0]} loading="lazy" width={100} height={100} alt="avatar" />
+                <div className={style.username}>schalagashvili</div>
               </div>
               <motion.button
                 initial={{ opacity: 0, scale: 0 }}
@@ -317,11 +315,11 @@ const Carousel = () => {
               exit={'rightHidden'}
               className={style.carouselItem}
             >
-              <div className={styles.hiddenCardUser}>
+              <div className={style.hiddenCardUser}>
                 <div className={`relative bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-1 rounded-full transparent`}>
-                  <Image className={styles.hiddenAvatar} src={images[0]} loading="lazy" width={100} height={100} alt="avatar" />
+                  <Image className={style.hiddenAvatar} src={images[0]} loading="lazy" width={100} height={100} alt="avatar" />
                 </div>
-                <div className={styles.hiddenUsername}>schalagashvili</div>
+                <div className={style.hiddenUsername}>schalagashvili</div>
               </div>
             </motion.div>
             <motion.div
@@ -332,11 +330,11 @@ const Carousel = () => {
               exit={'mostRightHidden'}
               className={style.carouselItem}
             >
-              <div className={styles.hiddenCardUser}>
+              <div className={style.hiddenCardUser}>
                 <div className={`relative bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-1 rounded-full transparent`}>
-                  <Image className={styles.hiddenAvatar} src={images[3]} loading="lazy" width={100} height={100} alt="avatar" />
+                  <Image className={style.hiddenAvatar} src={images[3]} loading="lazy" width={100} height={100} alt="avatar" />
                 </div>
-                <div className={styles.hiddenUsername}>sandro</div>
+                <div className={style.hiddenUsername}>sandro</div>
               </div>
             </motion.div>
           </AnimatePresence>

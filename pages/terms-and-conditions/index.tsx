@@ -16,5 +16,5 @@ export default function TermsAndConditions() {
       <Terms />
       <Footer />
     </>
-  );
+  )
 }

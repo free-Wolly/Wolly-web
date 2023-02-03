@@ -38,5 +38,5 @@ export const Slider = () => {
         </motion.div>
       </motion.div>
     </div>
-  );
-};
+  )
+}

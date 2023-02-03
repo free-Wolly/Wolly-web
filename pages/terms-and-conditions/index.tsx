@@ -1,8 +1,8 @@
-import Head from "next/head";
-import React from "react";
-import { Footer } from "../../components/Footer/Footer";
-import Header from "../../components/TermsAndConditions/Header";
-import { Terms } from "../../components/TermsAndConditions/Terms";
+import Head from 'next/head'
+import React from 'react'
+import Footer from '../../components/Footer'
+import Header from '../../components/TermsAndConditions/Header'
+import { Terms } from '../../components/TermsAndConditions/Terms'
 
 export default function TermsAndConditions() {
   return (
@@ -16,5 +16,5 @@ export default function TermsAndConditions() {
       <Terms />
       <Footer />
     </>
-  );
+  )
 }

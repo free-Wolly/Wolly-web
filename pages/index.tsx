@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Carousel from '../components/Landing/InstagramStories/Carousel'
 import { Header } from "../components/Header/Header";
 import { Intro } from "../components/Landing/Intro/Intro";
 import { SecondSection } from "../components/Landing/SecondSection/SecondSection";
@@ -28,10 +29,11 @@ export default function Home() {
       <StickySections />
       <Team />
       <GetApp />
+      <Carousel />
       <SocialMedia />
       <BeforeAfter />
       <Faq />
       <Footer />
     </>
-  );
+  )
 }

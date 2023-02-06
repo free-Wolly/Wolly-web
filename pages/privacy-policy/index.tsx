@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Header from "./Components/Header";
 import PrivacyPolicy from "./Components/PrivacyPolicy";
-import Footer from "../../components/Footer";
+import PageFooter from "../../components/PageFooter";
 
 export default function Policy() {
   return (
@@ -14,7 +14,7 @@ export default function Policy() {
       </Head>
       <Header />
       <PrivacyPolicy />
-      <Footer />
+      <PageFooter />
     </>
   );
 }

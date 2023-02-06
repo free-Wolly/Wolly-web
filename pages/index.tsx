@@ -1,11 +1,11 @@
 import Head from "next/head";
-import Header from "../components/Header";
+import PageHeader from "../components/PageHeader";
 import Intro from "../components/Landing/Intro";
 import SecondSection from "../components/Landing/SecondSection";
 import Slider from "../components/Landing/Slider";
 import Blog from "../components/Landing/Blog";
 import Team from "../components/Landing/Team";
-import Footer from "../components/Footer";
+import PageFooter from "../components/PageFooter";
 import Faq from "../components/Landing/Faq";
 import SocialMedia from "../components/Landing/SocialMedia";
 import BeforeAfter from "../components/Landing/BeforeAfter";
@@ -20,7 +20,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/assets/images/wolly.png" />
       </Head>
-      <Header />
+      <PageHeader />
       <Intro />
       <SecondSection />
       <Slider />
@@ -31,7 +31,7 @@ export default function Home() {
       <SocialMedia />
       <BeforeAfter />
       <Faq />
-      <Footer />
+      <PageFooter />
     </>
   );
 }

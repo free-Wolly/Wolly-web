@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React from "react";
-import Footer from "../../components/Footer";
+import PageFooter from "../../components/PageFooter";
 import Header from "./Components/Header";
 import Terms from "./Components/Terms";
 
@@ -14,7 +14,7 @@ export default function TermsAndConditions() {
       </Head>
       <Header />
       <Terms />
-      <Footer />
+      <PageFooter />
     </>
   );
 }

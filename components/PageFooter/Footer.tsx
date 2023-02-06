@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import wollyLogo from "../../public/assets/images/wolly.png";
 import worldMap from "../../public/assets/images/world.png";
-import menuItems from "../Header/constants";
+import menuItems from "../PageHeader/constants";
 import socialNetworksItems from "./socialNetworks";
 
 const Footer = () => {

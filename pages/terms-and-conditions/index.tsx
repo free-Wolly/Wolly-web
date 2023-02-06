@@ -8,7 +8,7 @@ export default function TermsAndConditions() {
   return (
     <>
       <Head>
-        <title>Terms & Conditionss</title>
+        <title>Terms & Conditions</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/assets/images/wolly.png" />
       </Head>

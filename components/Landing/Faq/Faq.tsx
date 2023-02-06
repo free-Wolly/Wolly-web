@@ -1,8 +1,8 @@
 import React, { useMemo } from "react";
-import { Question } from "./Question";
+import Question from "./Question";
 import { questions } from "./constants";
 
-export const Faq = () => {
+const Faq = () => {
   const renderQuestions = useMemo(() => {
     return questions.map((question, id) => {
       return <Question key={id} question={question} />;
@@ -18,3 +18,5 @@ export const Faq = () => {
     </div>
   );
 };
+
+export default Faq;

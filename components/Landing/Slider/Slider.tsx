@@ -2,9 +2,9 @@ import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 
 import images from "./images";
-import { Parallax } from "./Paralax";
+import Parallax from "./Paralax";
 
-export const Slider = () => {
+const Slider = () => {
   const baseVelocity = -50;
 
   const renderImages = useMemo(() => {
@@ -38,5 +38,7 @@ export const Slider = () => {
         </motion.div>
       </motion.div>
     </div>
-  )
-}
+  );
+};
+
+export default Slider;

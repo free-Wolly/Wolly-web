@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { imgVariant, openVariant } from "./constants";
 
-export const Question = ({ question }: any) => {
+const Question = ({ question }: any) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -36,3 +36,5 @@ export const Question = ({ question }: any) => {
     </motion.div>
   );
 };
+
+export default Question;

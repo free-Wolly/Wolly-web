@@ -1,20 +1,20 @@
-import Head from 'next/head'
-import React from 'react'
-import { Footer } from '../../components/Footer/Footer'
-import Header from '../../components/TermsAndConditions/Header'
-import { Terms } from '../../components/TermsAndConditions/Terms'
+import Head from "next/head";
+import React from "react";
+import PageFooter from "../../components/PageFooter";
+import Header from "./Components/Header";
+import Terms from "./Components/Terms";
 
 export default function TermsAndConditions() {
   return (
     <>
       <Head>
-        <title>Terms & Conditionss</title>
+        <title>Terms & Conditions</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/assets/images/wolly.png" />
       </Head>
       <Header />
       <Terms />
-      <Footer />
+      <PageFooter />
     </>
-  )
+  );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-export const ImageComp = ({
+const ImageComp = ({
   imageInView,
   image,
   className,
@@ -34,3 +34,5 @@ export const ImageComp = ({
     </motion.div>
   );
 };
+
+export default ImageComp;

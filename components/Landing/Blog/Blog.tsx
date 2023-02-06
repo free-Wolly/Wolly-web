@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import { blogItems } from "./constanats";
-import { SidePost } from "./SidePost";
-import images from "../Slider/images";
+import blogItems from "./constanats";
+import SidePost from "./SidePost";
+import images from "./images";
 
-export const Blog = () => {
+const Blog = () => {
   return (
     <div className="container mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4 border-t-2">
       <div className="text-center text-3xl font-bold py-16">Blog</div>
@@ -30,3 +30,5 @@ export const Blog = () => {
     </div>
   );
 };
+
+export default Blog;

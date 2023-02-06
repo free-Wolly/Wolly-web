@@ -1,4 +1,4 @@
-export const blogItems = [
+const blogItems = [
   {
     title:
       "10 Casting Decisions That Hurt The Star Wars Prequels \n (And 10 That Saved it)",
@@ -19,3 +19,5 @@ export const blogItems = [
     img: "3.jpg",
   },
 ];
+
+export default blogItems;

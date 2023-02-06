@@ -1,12 +1,12 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { useDimensions } from "./UseDimensions";
+import useDimensions from "./UseDimensions";
 
-import { MenuToggle } from "./MenuToggle";
-import { Navigation } from "./Navigation";
+import MenuToggle from "./MenuToggle";
+import Navigation from "./Navigation";
 import { sidebarVariants } from "./constants";
 
-export const BurgerMenu = () => {
+const BurgerMenu = () => {
   const [menuExpanded, isMenuExpanded] = useState(false);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
@@ -28,3 +28,5 @@ export const BurgerMenu = () => {
     </motion.nav>
   );
 };
+
+export default BurgerMenu;

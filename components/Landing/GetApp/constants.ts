@@ -1,7 +1,6 @@
-import { AppStoreLogo } from "./images/AppStoreLogo";
-import { PlayStoreLogo } from "./images/PlayStoreLogo";
+import { AppStoreLogo, PlayStoreLogo } from "./images";
 
-export const storesInfo = [
+const storesInfo = [
   {
     img: PlayStoreLogo,
     link: "https://play.google.com/store/apps/details?id=com.wolly&pli=1",
@@ -11,3 +10,5 @@ export const storesInfo = [
     link: "https://apps.apple.com/ge/app/wolly/id1546265724",
   },
 ];
+
+export default storesInfo;

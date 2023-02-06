@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
-import { policies } from "./constants";
+import policies from "./constants";
 
-export const PrivacyPolicy = () => {
+const PrivacyPolicy = () => {
   const renderText = useMemo(() => {
     return policies.map((policy, id: number) => {
       return (
@@ -39,3 +39,5 @@ export const PrivacyPolicy = () => {
     </div>
   );
 };
+
+export default PrivacyPolicy;

@@ -1,4 +1,4 @@
-export function PlayStoreLogo(): JSX.Element {
+export default function PlayStoreLogo(): JSX.Element {
   return (
     <svg width="135px" height="40px" viewBox="0 0 135 40" version="1.1">
       <title>3AE0C49D-BC2A-4993-9D54-DF06E9A1EA0D</title>

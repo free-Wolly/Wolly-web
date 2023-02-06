@@ -1,6 +1,6 @@
-import images from "../Slider/images";
+import images from "./images";
 
-export const imageProps = [
+const imageProps = [
   {
     image: images[0],
     className: "z-0 inset-0 h-96 w-4/6",
@@ -26,3 +26,5 @@ export const imageProps = [
     imageHeight: "h-64",
   },
 ];
+
+export default imageProps;

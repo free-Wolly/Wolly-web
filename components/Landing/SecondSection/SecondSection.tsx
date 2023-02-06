@@ -1,9 +1,9 @@
 import React, { ReactElement, useMemo, useRef } from "react";
 import { boxItems, boxObj } from "./constants";
 import { useInView } from "framer-motion";
-import { Block } from "./Block";
+import Block from "./Block";
 
-export const SecondSection = () => {
+const SecondSection = () => {
   const titleRef = useRef(null);
   const titleInView: boolean = useInView(titleRef, { once: true });
 
@@ -34,3 +34,5 @@ export const SecondSection = () => {
     </div>
   );
 };
+
+export default SecondSection;

@@ -2,7 +2,7 @@ import facebook from "../../../public/assets/images/socialNetwork/color/facebook
 import instagram from "../../../public/assets/images/socialNetwork/color/instagram.svg";
 import youtube from "../../../public/assets/images/socialNetwork/color/youtube.svg";
 
-export const socialNetworks = [
+const socialNetworks = [
   {
     img: facebook,
     link: "https://www.facebook.com/",
@@ -16,3 +16,5 @@ export const socialNetworks = [
     link: "https://www.youtube.com/",
   },
 ];
+
+export default socialNetworks;

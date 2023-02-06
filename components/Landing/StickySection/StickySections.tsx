@@ -1,8 +1,8 @@
 import React, { useMemo } from "react";
 import Image from "next/image";
-import { images } from "./constants";
+import images from "./constants";
 
-export const StickySections = () => {
+const StickySections = () => {
   const renderImages = useMemo(() => {
     return images.map((image, id: number) => {
       return (
@@ -37,3 +37,5 @@ export const StickySections = () => {
     </div>
   );
 };
+
+export default StickySections;

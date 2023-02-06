@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import images from "../Slider/images";
+import images from "./images";
 
-export const SidePost = ({ blogItem, id }: any) => {
+const SidePost = ({ blogItem, id }: any) => {
   return (
     <div className="w-3/6 flex flex-col gap-4">
       <Image
@@ -20,3 +20,5 @@ export const SidePost = ({ blogItem, id }: any) => {
     </div>
   );
 };
+
+export default SidePost;

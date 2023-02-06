@@ -1,4 +1,4 @@
-export const terms = [
+const terms = [
   {
     title: "1. Definitions",
     text: `
@@ -108,3 +108,5 @@ Framer reserves the right, but is not obligated, to reject and/or remove any Use
 `,
   },
 ];
+
+export default terms;

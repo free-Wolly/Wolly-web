@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { AnimatedText } from "../../Helpers/TextAnimation/AnimateText";
 import rollingTextStyle from "./IntroRollText.module.css";
 
-export const Intro = () => {
+const Intro = () => {
   const container = {
     visible: {
       transition: {
@@ -64,3 +64,5 @@ export const Intro = () => {
     </div>
   );
 };
+
+export default Intro;

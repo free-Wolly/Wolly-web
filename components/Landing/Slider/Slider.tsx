@@ -22,7 +22,7 @@ const Slider = () => {
   }, [baseVelocity]);
 
   return (
-    <div className="mx-auto w-full border-t-2">
+    <div id="services" className="mx-auto w-full border-t-2">
       <div className="text-center text-3xl font-bold py-16">Slider Section</div>
       <motion.div className="whitespace-nowrap flex flex-nowrap ">
         <motion.div

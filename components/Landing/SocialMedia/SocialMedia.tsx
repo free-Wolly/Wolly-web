@@ -21,7 +21,7 @@ const SocialMedia = () => {
   }, []);
 
   return (
-    <div className="mx-auto">
+    <div id="integration" className="mx-auto">
       <div className="bg-[url('/assets/images/gradient.jpg')] bg-center bg-cover py-16">
         <div className="flex justify-center items-center gap-16">
           {renderImages}

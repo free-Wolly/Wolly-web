@@ -5,13 +5,18 @@ import Image from "next/image";
 import BurgerMenu from "./BurgerMenu";
 import styles from "./Header.module.css";
 import menuItems from "./constants";
+import handleClickScroll from "../helperFuncs";
 
 const Header = () => {
   const renderMenuItems = useMemo(() => {
-    return menuItems.map((item: string, id: number) => {
+    return menuItems.map(({ text, id }, index: number) => {
       return (
-        <div key={id}>
-          <Link href={"/"}>{item}</Link>
+        <div
+          className="cursor-pointer"
+          key={index}
+          onClick={() => handleClickScroll(id)}
+        >
+          {text}
         </div>
       );
     });

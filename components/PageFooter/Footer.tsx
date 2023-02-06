@@ -6,13 +6,18 @@ import wollyLogo from "../../public/assets/images/wolly.png";
 import worldMap from "../../public/assets/images/world.png";
 import menuItems from "../PageHeader/constants";
 import socialNetworksItems from "./socialNetworks";
+import handleClickScroll from "../helperFuncs";
 
 const Footer = () => {
   const renderMenuItems = useMemo(() => {
-    return menuItems.map((item: string, id: number) => {
+    return menuItems.map(({ text, id }, index: number) => {
       return (
-        <div key={id}>
-          <Link href={"/"}>{item}</Link>
+        <div
+          className="cursor-pointer"
+          key={index}
+          onClick={() => handleClickScroll(id)}
+        >
+          {text}
         </div>
       );
     });

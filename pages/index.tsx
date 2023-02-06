@@ -12,7 +12,6 @@ import BeforeAfter from "../components/Landing/BeforeAfter";
 import GetApp from "../components/Landing/GetApp";
 import StickySections from "../components/Landing/StickySection";
 
-
 export default function Home() {
   return (
     <>
@@ -29,11 +28,10 @@ export default function Home() {
       <StickySections />
       <Team />
       <GetApp />
-      <Carousel />
       <SocialMedia />
       <BeforeAfter />
       <Faq />
       <Footer />
     </>
-  )
+  );
 }

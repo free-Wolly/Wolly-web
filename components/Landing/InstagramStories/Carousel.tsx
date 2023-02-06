@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import style from "./carousel.module.css";
 import Image from "next/image";
 import images from "../Slider/images";

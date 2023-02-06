@@ -11,6 +11,7 @@ import SocialMedia from "../components/Landing/SocialMedia";
 import BeforeAfter from "../components/Landing/BeforeAfter";
 import GetApp from "../components/Landing/GetApp";
 import StickySections from "../components/Landing/StickySection";
+import Carousel from "../components/Landing/InstagramStories/Carousel";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
       <StickySections />
       <Team />
       <GetApp />
+      <Carousel />
       <SocialMedia />
       <BeforeAfter />
       <Faq />

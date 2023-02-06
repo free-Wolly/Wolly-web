@@ -1,0 +1,182 @@
+.carousel {
+  display: grid;
+  place-content: center;
+  border-radius: 2rem;
+}
+.carouselContent {
+  position: relative;
+  height: 40rem;
+  margin-top: 150px;
+}
+
+.carouselItem {
+  position: absolute;
+  width: 30rem;
+  height: 45rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 1.2rem;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.gradient {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 130px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: aqua;
+  align-items: center;
+}
+
+.prevBtn {
+  position: absolute;
+  left: -40px;
+  top: 48%;
+}
+
+.nextBtn {
+  position: absolute;
+  right: -40px;
+  top: 48%;
+}
+
+.introArrow {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  visibility: visible;
+  cursor: pointer;
+}
+
+/* Progressbar styles */
+
+.progressbar {
+  /* Size */
+  width: 450px;
+  height: 2px;
+
+  /* Content alignment */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  /* Style */
+  border-radius: 60px;
+  background-color: lightgray;
+  box-shadow: 0px 0px 20px gray;
+
+  z-index: 6;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.bar {
+  /* Size */
+  width: 0%;
+
+  /* Style */
+  background: white;
+}
+
+.progressbarContainer {
+  /* Content alignment */
+  top: 20px;
+  display: flex;
+  left: 25px;
+
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+}
+
+.progressbarTextContainer {
+  /* Size */
+  width: 30px;
+  margin-left: 30px;
+
+  /* Content alignment */
+  display: flex;
+  flex-direction: row;
+
+  /* Styling */
+  color: white;
+  font-family: montserrat;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.username {
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+  z-index: 10;
+  margin-left: 5px;
+}
+
+.hiddenUsername {
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.user {
+  position: absolute;
+  top: 35px;
+  left: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.hiddenCardUser {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  top: 45%;
+}
+
+.avatar {
+  width: 40px;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  height: 40px;
+  border-radius: 40px;
+}
+
+.hiddenAvatar {
+  width: 100px;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.4);
+
+  height: 100px;
+  border-radius: 100px;
+}
+
+.gradientBox {
+  padding: 4px;
+  border-radius: 99990px;
+  border-left: 3px solid #c13041;
+  border-right: 3px solid #bd9600;
+  background-image: linear-gradient(90deg, #c13041, #bd9600),
+    linear-gradient(90deg, #c13041, #bd9600);
+  background-repeat: no-repeat;
+}

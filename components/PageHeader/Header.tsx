@@ -5,7 +5,7 @@ import Image from "next/image";
 import BurgerMenu from "./BurgerMenu";
 import styles from "./Header.module.css";
 import menuItems from "./constants";
-import handleClickScroll from "../helperFuncs";
+import handleClickScroll from "../../utils/scrollToSection";
 
 const Header = () => {
   const renderMenuItems = useMemo(() => {

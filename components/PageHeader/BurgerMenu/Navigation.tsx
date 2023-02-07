@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import MenuItem from "./MenuItem";
 import menuItems from "../constants";
 import { navigationVariants } from "./constants";
-import handleClickScroll from "../../helperFuncs";
+import handleClickScroll from "../../../utils/scrollToSection";
 
 const Navigation = () => {
   return (

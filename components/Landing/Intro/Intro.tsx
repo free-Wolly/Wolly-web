@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { AnimatedText } from "../../Helpers/TextAnimation/AnimateText";
 import rollingTextStyle from "./IntroRollText.module.css";
-import handleClickScroll from "../../helperFuncs";
+import handleClickScroll from "../../../utils/scrollToSection";
 
 const Intro = () => {
   const container = {

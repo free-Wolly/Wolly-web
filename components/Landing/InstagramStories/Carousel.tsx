@@ -1,8 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import style from "./carousel.module.css";
 import Image from "next/image";
-import images from "../Slider/images";
 import Lottie from "lottie-react";
 import Instagram from "../../../public/assets/animations/instagram.json";
 import { Data } from "./constants";
@@ -42,9 +41,7 @@ const Carousel = () => {
   }, [CenterId, LeftId, RightId]);
 
   useEffect(() => {
-    setInterval(() => {
-      // nextBtn();
-    }, 4000);
+    setInterval(() => {}, 4000);
   }, [nextBtn]);
 
   const prevBtn = () => {
@@ -81,7 +78,7 @@ const Carousel = () => {
       scale: 1,
       zIndex: "5",
       filter: "brightness(100%)",
-      backgroundImage: "url(" + Data[CenterId] + ")",
+      backgroundImage: "url(" + Data[CenterId].bgImg + ")",
       boxShadow: "0px 0px 30px 0px rgba(0,0,0,0.25)",
       transition: {
         type: "spring",
@@ -92,7 +89,7 @@ const Carousel = () => {
       x: "-38rem",
       opacity: 1,
       filter: "brightness(85%)",
-      backgroundImage: "url(" + Data[LeftId] + ")",
+      backgroundImage: "url(" + Data[LeftId].bgImg + ")",
       boxShadow: "0px 0px 30px 0px rgba(0,0,0,0.25)",
       scale: 0.45,
       zIndex: "4",
@@ -106,7 +103,7 @@ const Carousel = () => {
       opacity: 1,
       filter: "brightness(85%)",
       scale: 0.45,
-      backgroundImage: "url(" + Data[mostLeftId] + ")",
+      backgroundImage: "url(" + Data[mostLeftId].bgImg + ")",
       boxShadow: "0px 0px 30px 0px rgba(0,0,0,0.25)",
       zIndex: "3",
       transition: {
@@ -115,7 +112,7 @@ const Carousel = () => {
       },
     },
     right: {
-      backgroundImage: "url(" + Data[RightId] + ")",
+      backgroundImage: "url(" + Data[RightId].bgImg + ")",
       x: "12.5rem",
       opacity: 1,
       filter: "brightness(85%)",
@@ -128,7 +125,7 @@ const Carousel = () => {
       },
     },
     mostRightId: {
-      backgroundImage: "url(" + Data[mostRightId] + ")",
+      backgroundImage: "url(" + Data[mostRightId].bgImg + ")",
       x: "29.5rem",
       opacity: 1,
       boxShadow: "0px 0px 30px 0px rgba(0,0,0,0.25)",
@@ -189,188 +186,194 @@ const Carousel = () => {
       </motion.div>
       <motion.div className="mx-auto relative flex items-center justify-center rounded-2xl  min-h-[500px] lg:min-h-[1000px] max-w-[2000px] overflow-hidden">
         <motion.div className="relative top-[100px] lg:top-[-50px] h-[40rem] ml-[165px] lg:ml-0">
-          <motion.div
-            key={mostLeftId}
-            variants={variants}
-            initial={"mostLeftHidden"}
-            animate="mostLeft"
-            exit={"mostLeftHidden"}
-            className="absolute w-[15rem] h-[25rem] lg:w-[25rem] lg:h-[45rem] bg-center bg-cover bg-no-repeat rounded-xl flex justify-center z-10 overflow-hidden"
-          >
-            <div className="absolute rounded-xl flex flex-col items-center top-[45%]">
+          <AnimatePresence initial={false}>
+            <motion.div
+              key={mostLeftId}
+              variants={variants}
+              initial={"mostLeftHidden"}
+              animate="mostLeft"
+              exit={"mostLeftHidden"}
+              className="absolute w-[15rem] h-[25rem] lg:w-[25rem] lg:h-[45rem] bg-center bg-cover bg-no-repeat rounded-xl flex justify-center z-10 overflow-hidden"
+            >
+              <div className="absolute rounded-xl flex flex-col items-center top-[45%]">
+                <div
+                  className={`relative bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-1 rounded-full transparent`}
+                >
+                  <Image
+                    className={style.hiddenAvatar}
+                    src={Data[mostLeftId].userImg}
+                    loading="lazy"
+                    width={100}
+                    height={100}
+                    alt="avatar"
+                  />
+                </div>
+                <div className={style.hiddenUsername}>
+                  {Data[mostLeftId].userName}
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              key={LeftId}
+              variants={variants}
+              initial={"mostLeft"}
+              animate="left"
+              exit={"leftHidden"}
+              className="absolute w-[15rem] h-[25rem] lg:w-[25rem] lg:h-[45rem] bg-center bg-cover bg-no-repeat rounded-xl flex justify-center z-10 overflow-hidden"
+            >
+              <div className="absolute flex flex-col items-center top-[45%]">
+                <div
+                  className={`relative bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-1 rounded-full transparent`}
+                >
+                  <Image
+                    className={style.hiddenAvatar}
+                    src={Data[LeftId].userImg}
+                    loading="lazy"
+                    width={100}
+                    height={100}
+                    alt="avatar"
+                  />
+                </div>
+                <div className={style.hiddenUsername}>
+                  {Data[LeftId].userName}
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              variants={variants}
+              key={CenterId}
+              initial={FlowDirection ? "right" : "left"}
+              animate="center"
+              className="absolute w-[15rem] h-[25rem] lg:w-[25rem] lg:h-[45rem] bg-center bg-cover bg-no-repeat rounded-xl flex justify-center z-10"
+            >
               <div
-                className={`relative bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-1 rounded-full transparent`}
+                className={`${style.progressbarContainer} w-[80%] lg:w-[90%]`}
               >
+                <div className={`${style.progressbar} rounded-xl`}>
+                  <motion.div
+                    className={style.bar}
+                    animate={{
+                      width: `100%`,
+                    }}
+                    transition={{
+                      duration: 4.1,
+                      ease: "linear",
+                      onComplete: nextBtn,
+                    }}
+                  />
+                </div>
+              </div>
+              <div className={`${style.user} rounded-xl`}>
                 <Image
-                  className={style.hiddenAvatar}
-                  src={images[1]}
+                  className={style.avatar}
+                  src={Data[CenterId].userImg}
                   loading="lazy"
                   width={100}
                   height={100}
                   alt="avatar"
                 />
+                <div className={style.username}>{Data[CenterId].userName}</div>
               </div>
-              <div className={style.hiddenUsername}>hello</div>
-            </div>
-          </motion.div>
-          <motion.div
-            key={LeftId}
-            variants={variants}
-            initial={"mostLeft"}
-            animate="left"
-            exit={"leftHidden"}
-            className="absolute w-[15rem] h-[25rem] lg:w-[25rem] lg:h-[45rem] bg-center bg-cover bg-no-repeat rounded-xl flex justify-center z-10 overflow-hidden"
-          >
-            <div className="absolute flex flex-col items-center top-[45%]">
-              <div
-                className={`relative bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-1 rounded-full transparent`}
-              >
-                <Image
-                  className={style.hiddenAvatar}
-                  src={images[2]}
-                  loading="lazy"
-                  width={100}
-                  height={100}
-                  alt="avatar"
-                />
-              </div>
-              <div className={style.hiddenUsername}>world</div>
-            </div>
-          </motion.div>
-          <motion.div
-            variants={variants}
-            key={CenterId}
-            initial={FlowDirection ? "right" : "left"}
-            animate="center"
-            className="absolute w-[15rem] h-[25rem] lg:w-[25rem] lg:h-[45rem] bg-center bg-cover bg-no-repeat rounded-xl flex justify-center z-10"
-          >
-            <div className={`${style.progressbarContainer} w-[80%] lg:w-[90%]`}>
-              <div className={`${style.progressbar} rounded-xl`}>
-                <motion.div
-                  className={style.bar}
-                  animate={{
-                    width: `100%`,
-                  }}
-                  transition={{
-                    duration: 4.1,
-                    ease: "linear",
-                    onComplete: nextBtn,
-                  }}
-                />
-              </div>
-            </div>
-            <div className={`${style.user} rounded-xl`}>
-              <Image
-                className={style.avatar}
-                src={images[0]}
-                loading="lazy"
-                width={100}
-                height={100}
-                alt="avatar"
-              />
-              <div className={style.username}>schalagashvili</div>
-            </div>
-            <motion.button
-              initial={{ opacity: 0, scale: 0, rotate: "90deg" }}
-              animate={{ opacity: 1, scale: 1, rotate: "90deg" }}
-              transition={{
-                type: "spring",
-                duration: 0.5,
-              }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.8 }}
-              className={style.prevBtn}
-              onClick={prevBtn}
-            >
-              <motion.img
-                // className={style.introArrow}
-                src="/assets/images/down-arrow.svg"
-                alt=""
-                // style={{
-                //   transform: "rotate(90deg)",
-                // }}
-                width={30}
-                height={30}
-                whileHover={{ scale: 1.2 }}
-                transition={{ duration: 0.5 }}
-              />
-            </motion.button>
-            <motion.button
-              initial={{ opacity: 0, scale: 0, rotate: "-90deg" }}
-              animate={{ opacity: 1, scale: 1, rotate: "-90deg" }}
-              transition={{
-                type: "spring",
-                duration: 0.5,
-              }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.8 }}
-              className={style.nextBtn}
-              onClick={nextBtn}
-            >
-              <motion.img
-                // className={style.introArrow}
-                src="/assets/images/down-arrow.svg"
-                alt=""
-                width={30}
-                height={30}
-                style={{
-                  // transform: "rotate(270deg)",
-                  left: "0.5rem",
+              <motion.button
+                initial={{ opacity: 0, scale: 0, rotate: "90deg" }}
+                animate={{ opacity: 1, scale: 1, rotate: "90deg" }}
+                transition={{
+                  type: "spring",
+                  duration: 0.5,
                 }}
-                whileHover={{ scale: 1.2 }}
-                transition={{ duration: 0.5 }}
-              />
-            </motion.button>
-            <div className={`${style.gradient} rounded-xl`} />
-          </motion.div>
-          <motion.div
-            key={RightId}
-            variants={variants}
-            initial={FlowDirection ? "rightHidden" : "center"}
-            animate="right"
-            exit={"rightHidden"}
-            className="absolute w-[15rem] h-[25rem] lg:w-[25rem] lg:h-[45rem] bg-center bg-cover bg-no-repeat rounded-xl flex justify-center z-10 overflow-hidden"
-          >
-            <div className="absolute flex flex-col items-center top-[45%]">
-              <div
-                className={`relative bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-1 rounded-full transparent`}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.8 }}
+                className={style.prevBtn}
+                onClick={prevBtn}
               >
-                <Image
-                  className={style.hiddenAvatar}
-                  src={images[0]}
-                  loading="lazy"
-                  width={100}
-                  height={100}
-                  alt="avatar"
+                <motion.img
+                  src="/assets/images/down-arrow.svg"
+                  alt=""
+                  width={30}
+                  height={30}
+                  whileHover={{ scale: 1.2 }}
+                  transition={{ duration: 0.5 }}
                 />
-              </div>
-              <div className={style.hiddenUsername}>schalagashvili</div>
-            </div>
-          </motion.div>
-          <motion.div
-            key={mostRightId}
-            variants={{ ...variants }}
-            initial={"mostRightHidden"}
-            animate="mostRightId"
-            exit={"mostRightHidden"}
-            className="absolute w-[15rem] h-[25rem] lg:w-[25rem] lg:h-[45rem] bg-center bg-cover bg-no-repeat rounded-xl flex justify-center z-10 overflow-hidden"
-          >
-            <div className="absolute flex flex-col items-center top-[45%]">
-              <div
-                className={`relative bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-1 rounded-full transparent`}
+              </motion.button>
+              <motion.button
+                initial={{ opacity: 0, scale: 0, rotate: "-90deg" }}
+                animate={{ opacity: 1, scale: 1, rotate: "-90deg" }}
+                transition={{
+                  type: "spring",
+                  duration: 0.5,
+                }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.8 }}
+                className={style.nextBtn}
+                onClick={nextBtn}
               >
-                <Image
-                  className={style.hiddenAvatar}
-                  src={images[3]}
-                  loading="lazy"
-                  width={100}
-                  height={100}
-                  alt="avatar"
+                <motion.img
+                  src="/assets/images/down-arrow.svg"
+                  alt=""
+                  width={30}
+                  height={30}
+                  style={{
+                    left: "0.5rem",
+                  }}
+                  whileHover={{ scale: 1.2 }}
+                  transition={{ duration: 0.5 }}
                 />
+              </motion.button>
+              <div className={`${style.gradient} rounded-xl`} />
+            </motion.div>
+            <motion.div
+              key={RightId}
+              variants={variants}
+              initial={FlowDirection ? "rightHidden" : "center"}
+              animate="right"
+              exit={"rightHidden"}
+              className="absolute w-[15rem] h-[25rem] lg:w-[25rem] lg:h-[45rem] bg-center bg-cover bg-no-repeat rounded-xl flex justify-center z-10 overflow-hidden"
+            >
+              <div className="absolute flex flex-col items-center top-[45%]">
+                <div
+                  className={`relative bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-1 rounded-full transparent`}
+                >
+                  <Image
+                    className={style.hiddenAvatar}
+                    src={Data[RightId].userImg}
+                    loading="lazy"
+                    width={100}
+                    height={100}
+                    alt="avatar"
+                  />
+                </div>
+                <div className={style.hiddenUsername}>
+                  {Data[RightId].userName}
+                </div>
               </div>
-              <div className={style.hiddenUsername}>sandro</div>
-            </div>
-          </motion.div>
+            </motion.div>
+            <motion.div
+              key={mostRightId}
+              variants={{ ...variants }}
+              initial={"mostRightHidden"}
+              animate="mostRightId"
+              exit={"mostRightHidden"}
+              className="absolute w-[15rem] h-[25rem] lg:w-[25rem] lg:h-[45rem] bg-center bg-cover bg-no-repeat rounded-xl flex justify-center z-10 overflow-hidden"
+            >
+              <div className="absolute flex flex-col items-center top-[45%]">
+                <div
+                  className={`relative bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-1 rounded-full transparent`}
+                >
+                  <Image
+                    className={style.hiddenAvatar}
+                    src={Data[mostRightId].userImg}
+                    loading="lazy"
+                    width={100}
+                    height={100}
+                    alt="avatar"
+                  />
+                </div>
+                <div className={style.hiddenUsername}>
+                  {Data[mostRightId].userName}
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </motion.div>
       </motion.div>
     </>

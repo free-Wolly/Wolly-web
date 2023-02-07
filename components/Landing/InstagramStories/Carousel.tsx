@@ -41,9 +41,7 @@ const Carousel = () => {
   }, [CenterId, LeftId, RightId]);
 
   useEffect(() => {
-    setInterval(() => {
-      // nextBtn();
-    }, 4000);
+    setInterval(() => {}, 4000);
   }, [nextBtn]);
 
   const prevBtn = () => {
@@ -289,12 +287,8 @@ const Carousel = () => {
                 onClick={prevBtn}
               >
                 <motion.img
-                  // className={style.introArrow}
                   src="/assets/images/down-arrow.svg"
                   alt=""
-                  // style={{
-                  //   transform: "rotate(90deg)",
-                  // }}
                   width={30}
                   height={30}
                   whileHover={{ scale: 1.2 }}
@@ -314,13 +308,11 @@ const Carousel = () => {
                 onClick={nextBtn}
               >
                 <motion.img
-                  // className={style.introArrow}
                   src="/assets/images/down-arrow.svg"
                   alt=""
                   width={30}
                   height={30}
                   style={{
-                    // transform: "rotate(270deg)",
                     left: "0.5rem",
                   }}
                   whileHover={{ scale: 1.2 }}

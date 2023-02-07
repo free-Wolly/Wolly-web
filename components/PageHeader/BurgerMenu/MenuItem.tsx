@@ -1,9 +1,8 @@
 import * as React from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { menuItemVariants } from "./constants";
 
-const MenuItem = (props: { text: string; i: number }) => {
+const MenuItem = ({ text, onClick }: any) => {
   return (
     <motion.li
       className="z-10"
@@ -11,9 +10,12 @@ const MenuItem = (props: { text: string; i: number }) => {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 1 }}
     >
-      <Link href={"/"}>
-        <div className="rounded-1 w-52 flex-1 lg:mt-10 mt-8">{props.text}</div>
-      </Link>
+      <div
+        onClick={onClick}
+        className="rounded-1 w-52 flex-1 lg:mt-10 mt-8 cursor-pointer"
+      >
+        {text}
+      </div>
     </motion.li>
   );
 };

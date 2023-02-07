@@ -14,7 +14,10 @@ const SecondSection = () => {
   }, []);
 
   return (
-    <div className="container mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4">
+    <div
+      id="second-section"
+      className="container mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4"
+    >
       <div className="py-16">
         <h1
           ref={titleRef}

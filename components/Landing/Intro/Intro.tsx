@@ -1,8 +1,8 @@
 import React from "react";
-import introStyles from "./Intro.module.css";
 import { motion } from "framer-motion";
 import { AnimatedText } from "../../Helpers/TextAnimation/AnimateText";
 import rollingTextStyle from "./IntroRollText.module.css";
+import handleClickScroll from "../../helperFuncs";
 
 const Intro = () => {
   const container = {
@@ -14,11 +14,11 @@ const Intro = () => {
   };
 
   return (
-    <div className={introStyles.introMain}>
+    <div id="main" className="relative w-full h-screen flex items-end">
       <div className="container mx-auto px-4">
         <div>
           <video
-            className={introStyles.introVideo}
+            className="object-cover absolute top-0 left-0 w-full h-screen opacity-75"
             autoPlay
             muted
             loop
@@ -26,7 +26,8 @@ const Intro = () => {
           />
         </div>
         <motion.img
-          className={introStyles.introArrow}
+          className="absolute left-0 right-0 bottom-[50px] mx-auto visible cursor-pointer"
+          onClick={() => handleClickScroll("second-section")}
           src="/assets/images/down-arrow.svg"
           alt=""
           width={30}

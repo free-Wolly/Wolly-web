@@ -6,7 +6,7 @@ import wollyLogo from "../../public/assets/images/wolly.png";
 import worldMap from "../../public/assets/images/world.png";
 import menuItems from "../PageHeader/constants";
 import socialNetworksItems from "./socialNetworks";
-import handleClickScroll from "../helperFuncs";
+import handleClickScroll from "../../utils/scrollToSection";
 
 const Footer = () => {
   const renderMenuItems = useMemo(() => {

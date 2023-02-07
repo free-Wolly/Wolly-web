@@ -12,6 +12,7 @@ import BeforeAfter from "../components/Landing/BeforeAfter";
 import GetApp from "../components/Landing/GetApp";
 import StickySections from "../components/Landing/StickySection";
 import Carousel from "../components/Landing/InstagramStories/Carousel";
+import WhatsIncluded from "../components/Landing/WhatsIncluded";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
       <GetApp />
       <Carousel />
       <SocialMedia />
+      <WhatsIncluded />
       <BeforeAfter />
       <Faq />
       <PageFooter />

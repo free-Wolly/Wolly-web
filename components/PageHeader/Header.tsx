@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import BurgerMenu from "./BurgerMenu";
 import styles from "./Header.module.css";
@@ -23,7 +24,16 @@ const Header = () => {
   }, []);
 
   return (
-    <div className={styles.headerMain}>
+    <motion.div
+      initial={{ opacity: 0, y: -180 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        ease: "easeInOut",
+        duration: 1,
+        delay: 0.6,
+      }}
+      className={styles.headerMain}
+    >
       <div className="w-full lg:container lg:mx-auto 2xl:px-32 xl:px-16 lg:pl-0 md:pl-8 sm:pl-4 pl-4">
         <div className={styles.headerContent}>
           <div className="xl:w-full lg:w-6/12 lg:mt-2 sm:mt-1 w-full ">
@@ -46,7 +56,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

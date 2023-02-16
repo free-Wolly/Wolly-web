@@ -1,0 +1,45 @@
+.marquee {
+  position: relative;
+  overflow: hidden;
+}
+.marquee .marquee__inner {
+  width: fit-content;
+  display: flex;
+  position: relative;
+  transform: translate3d(calc(-25%), 0, 0);
+  animation: marquee 5s linear infinite;
+  animation-play-state: paused;
+}
+
+.animate {
+  width: fit-content;
+  display: flex;
+  position: relative;
+  transform: translate3d(calc(-25%), 0, 0);
+  animation: marquee 5s linear infinite;
+  animation-play-state: running;
+}
+
+.marquee .row-title {
+  padding: 0 20vw;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(calc(-25%), 0, 0);
+  }
+
+  100% {
+    transform: translate3d(calc(-50%), 0, 0);
+  }
+}
+
+@keyframes marquee-lg {
+  0% {
+    transform: translate3d(calc(-25% + 10vw), 0, 0);
+  }
+
+  100% {
+    transform: translate3d(calc(-50% + 10vw), 0, 0);
+  }
+}

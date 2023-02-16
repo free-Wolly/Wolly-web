@@ -1,4 +1,6 @@
 import "../styles/globals.css";
+import "../styles/Marquee/marquee.css";
+
 import type { AppProps } from "next/app";
 import localFont from "@next/font/local";
 

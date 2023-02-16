@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { AnimatedText } from "../../Helpers/TextAnimation/AnimateText";
-import rollingTextStyle from "./IntroRollText.module.css";
+
+import AnimatedText from "../../Helpers/TextAnimation/AnimateText";
 import handleClickScroll from "../../../utils/scrollToSection";
-import { arrowVariant, letterContainer } from "./variants";
+import { arrowVariant, banner } from "./variants";
+import Marquee from "./Marquee/Marquee";
 
 const Intro = () => {
   return (
-    <div id="main" className="relative w-full h-screen flex items-end">
-      <div className="container mx-auto px-4">
+    <div id="main" className="relative w-full h-screen">
+      <div className="mx-auto">
         <div className="absolute inset-0">
           <motion.video
             autoPlay
@@ -29,7 +30,7 @@ const Intro = () => {
           variants={arrowVariant}
           initial="init"
           animate="animate"
-          className="absolute left-0 right-0 bottom-[50px] mx-auto visible cursor-pointer"
+          className="absolute left-0 right-0 bottom-[50px] mx-auto visible cursor-pointer z-[100]"
           onClick={() => handleClickScroll("second-section")}
           src="/assets/images/down-arrow.svg"
           alt=""
@@ -39,33 +40,17 @@ const Intro = () => {
           transition={{ duration: 0.5 }}
         />
         <motion.div
-          className="text-5xl font-bold text-center pb-40"
-          initial="hidden"
-          animate="visible"
-          variants={letterContainer}
+          className="h-screen w-full overflow-hidden relative flex flex-col justify-center content-center "
+          variants={banner}
         >
-          <div className="flex items-center justify-center text-center">
-            <div className="flex items-center flex-col">
-              <AnimatedText text="Framer Motion" />
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1, transition: { delay: 0.8 } }}
-                className={rollingTextStyle.roller}
-              >
-                <span id={rollingTextStyle.rolltext}>
-                  HTML
-                  <br />
-                  CSS
-                  <br />
-                  Curiosity
-                  <br />
-                  <span id={rollingTextStyle.spare_time}>
-                    too much spare time?
-                  </span>
-                  <br />
-                </span>
-              </motion.div>
-            </div>
+          <div className="overflow-hidden flex items-center mt-24 pl-8">
+            <AnimatedText title={"brand"} />
+          </div>
+          <div className={"overflow-hidden flex "}>
+            <Marquee title="experience" />
+          </div>
+          <div className={"overflow-hidden flex justify-end pr-8"}>
+            <AnimatedText title={"studio"} />
           </div>
         </motion.div>
       </div>

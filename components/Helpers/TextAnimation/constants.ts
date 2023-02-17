@@ -1,12 +1,19 @@
-export const introTextItem = {
-  hidden: {
-    y: "200%",
-    color: "#0055FF",
-    transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.85 },
+export const banner = {
+  animate: {
+    transition: {
+      delayChildren: 0.4,
+      staggerChildren: 0.1,
+    },
   },
-  visible: {
+};
+
+export const letterAni = {
+  initial: { y: 500 },
+  animate: {
     y: 0,
-    color: "#FF0088",
-    transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.75 },
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      duration: 1,
+    },
   },
 };

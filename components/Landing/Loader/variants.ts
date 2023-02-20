@@ -16,14 +16,6 @@ export const item = {
       duration: 1.6,
     },
   },
-  exit: {
-    opacity: 0,
-    y: -200,
-    transition: {
-      ease: "easeInOut",
-      duration: 0.8,
-    },
-  },
 };
 
 export const itemMain = {

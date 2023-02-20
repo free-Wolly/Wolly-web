@@ -32,21 +32,47 @@ const StickySections = () => {
     });
   }, []);
   return (
-    <div
-      style={{
-        backgroundImage:
-          'url("/assets/images/black-pink-gradient.png"), url("/assets/images/black-pink-gradient.png")',
-        backgroundSize: "cover, cover",
-        backgroundPosition: "center top, center bottom",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <div className="container mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4 py-8 lg:py-32">
-        <div className="w-full relative flex flex-col py-16 ">
-          {renderImages}
+    <>
+      <div
+        style={{
+          backgroundImage: 'url("/assets/images/black-pink-gradient.png")',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+        className="h-[5000px]"
+      >
+        <div className="sticky top-[20%] flex justify-center content-center items-center">
+          <div className="text-center lg:text-left">
+            <div className="text-[100px] lg:text-[200px] font-bold leading-none">
+              Pro.
+              <br />
+              Beyond.
+            </div>
+            <div className="text-[64px]">
+              iPhone 14 Pro and iPhone 14 Pro Max
+            </div>
+            <div className="text-[48px]">
+              From $41.62/mo. for 24 mo. or $999 before trade-in**
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+      <div
+        style={{
+          backgroundImage: 'url("/assets/images/black-pink-gradient.png")',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="container mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4 py-8 lg:py-32">
+          <div className="w-full relative flex flex-col py-16 ">
+            {renderImages}
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

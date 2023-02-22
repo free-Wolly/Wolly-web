@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { imgVariant, openVariant } from "./constants";
 
-const Question = ({ question }: any) => {
+const Question = ({ id, question, inView }: any) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -11,6 +11,17 @@ const Question = ({ question }: any) => {
         open ? "bg-red-100" : "hover:bg-red-100"
       }`}
       onClick={() => setOpen(!open)}
+      initial={{ opacity: 0, y: 100 }}
+      animate={
+        inView && {
+          opacity: 1,
+          y: 0,
+          transition: {
+            delay: id * 0.4,
+            duration: 0.5,
+          },
+        }
+      }
     >
       <motion.div className="flex flex-row items-center justify-between rounded-2xl">
         <motion.div className="text-xl font-bold">

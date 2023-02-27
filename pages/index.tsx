@@ -16,6 +16,7 @@ import StickySections from "../components/Landing/StickySection";
 import Carousel from "../components/Landing/InstagramStories/Carousel";
 import WhatsIncluded from "../components/Landing/WhatsIncluded";
 import Loader from "../components/Landing/Loader";
+import TextHorizontalAnimation from "../components/Landing/TextHorizontalAnimation";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -33,12 +34,13 @@ export default function Home() {
             <Loader setLoading={setLoading} />
           </motion.div>
         ) : (
-          <>
+          <div id="landing-page">
             <PageHeader />
             <Intro />
             <SecondSection />
             <Slider />
             <Blog />
+            <TextHorizontalAnimation />
             <StickySections />
             <Team />
             <GetApp />
@@ -48,7 +50,7 @@ export default function Home() {
             <BeforeAfter />
             <Faq />
             <PageFooter />
-          </>
+          </div>
         )}
       </AnimatePresence>
     </>

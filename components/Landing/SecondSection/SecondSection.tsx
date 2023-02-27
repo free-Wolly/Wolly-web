@@ -1,17 +1,19 @@
 import React, { ReactElement, useMemo, useRef } from "react";
-import { boxItems, boxObj } from "./constants";
+import { boxObj } from "./constants";
 import { useInView } from "framer-motion";
 import Block from "./Block";
 
-const SecondSection = () => {
+const SecondSection = ({ messages }: any) => {
   const titleRef = useRef(null);
   const titleInView: boolean = useInView(titleRef, { once: true });
 
   const renderBoxes = useMemo(() => {
-    return boxItems.map((item: boxObj, id: number): ReactElement => {
-      return <Block key={id} item={item} index={id} />;
-    });
-  }, []);
+    return messages.secondSection.boxText.map(
+      (item: boxObj, id: number): ReactElement => {
+        return <Block key={id} item={item} index={id} />;
+      }
+    );
+  }, [messages.secondSection.boxText]);
 
   return (
     <div
@@ -28,7 +30,7 @@ const SecondSection = () => {
           }}
           className="text-center text-3xl font-bold mb-16"
         >
-          Second Section
+          {messages.secondSection.title}
         </h1>
         <div className="grid gap-16 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2">
           {renderBoxes}

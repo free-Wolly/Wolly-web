@@ -4,7 +4,7 @@ import BeforeAfterSlider from "react-before-after-slider-component";
 import "react-before-after-slider-component/dist/build.css";
 import { images, variants } from "./constants";
 
-const BeforeAfter = () => {
+const BeforeAfter = ({ messages }: any) => {
   const [direction, setDirection] = useState(0);
   const [index, setIndex] = useState(0);
 
@@ -63,7 +63,7 @@ const BeforeAfter = () => {
   return (
     <div className="container mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4 overflow-auto">
       <div className="text-center text-3xl font-bold my-16">
-        Works We Are Proud Of
+        {messages.beforeAfter.title}
       </div>
       {/* Large Screen */}
       <div className="hidden lg:flex gap-16 overflow-auto pb-4">

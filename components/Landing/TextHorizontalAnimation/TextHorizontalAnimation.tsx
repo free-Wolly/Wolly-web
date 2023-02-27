@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useTransform, motion, useScroll } from "framer-motion";
 
-const TextHorizontalAnimation = () => {
+const TextHorizontalAnimation = ({ messages }: any) => {
   const [fromTop, setFromTop] = useState(0);
   const [section, setSection] = useState(0);
   const [screen, setScreen] = useState(0);
@@ -46,7 +46,7 @@ const TextHorizontalAnimation = () => {
               x: animateRight,
             }}
           >
-            Experi
+            {messages.textHorizontalAnimation.leftTop}
           </motion.div>
           <motion.div
             className="text-[100px] font-bold leading-none"
@@ -54,7 +54,7 @@ const TextHorizontalAnimation = () => {
               x: animateLeft,
             }}
           >
-            ence
+            {messages.textHorizontalAnimation.leftBot}
           </motion.div>
         </div>
         <div>
@@ -67,11 +67,10 @@ const TextHorizontalAnimation = () => {
           />
         </div>
         <div className="flex flex-col gap-[50px] max-w-[300px] mb-[50px] lg:mb-0 ">
-          <div className="text-[50px] font-bold leading-none">{`We know what we're doing`}</div>
-          <div>
-            We have spent 15+ years creating and re-creating digital solutions,
-            and learned what makes great businesses stay in business.
+          <div className="text-[50px] font-bold leading-none">
+            {messages.textHorizontalAnimation.right.title}
           </div>
+          <div>{messages.textHorizontalAnimation.right.text}</div>
         </div>
       </div>
     </div>

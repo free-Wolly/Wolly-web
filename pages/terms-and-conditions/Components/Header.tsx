@@ -26,7 +26,7 @@ const Header = ({ messages, locale, setLocale }: any) => {
               className="ml-10"
               onClick={() => setLocale(locale === "en" ? "ka" : "en")}
             >
-              lang
+              {locale === "en" ? "🇬🇪" : "🇺🇸"}
             </button>
           </div>
         </div>

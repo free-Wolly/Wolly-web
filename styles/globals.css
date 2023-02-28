@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "GEOCAPS";
+  src: url("../public/assets/fonts/MarkGEOCAPS-SemiBold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "BOG";
+  src: url("../public/assets/fonts/BOG-Medium.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html,
 body {
   padding: 0;

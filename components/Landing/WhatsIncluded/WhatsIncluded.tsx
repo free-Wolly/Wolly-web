@@ -1,29 +1,30 @@
 import React, { useMemo, useState } from "react";
-import { services, parts } from "./constants";
 
-const WhatsIncluded = () => {
+const WhatsIncluded = ({ messages }: any) => {
   const [chosenService, setChosenService] = useState("repairs");
 
   const renderButtons = useMemo(() => {
-    return services.map(({ service, state }, id) => {
-      return (
-        <button
-          key={id}
-          onClick={() => setChosenService(state)}
-          className={`${
-            chosenService === state ? "bg-[#6002d3]" : "bg-gray-200"
-          } p-8 rounded-full whitespace-nowrap`}
-        >
-          {service}
-        </button>
-      );
-    });
-  }, [chosenService]);
+    return messages.whatsIncluded.services.map(
+      ({ service, state }: any, id: number) => {
+        return (
+          <button
+            key={id}
+            onClick={() => setChosenService(state)}
+            className={`${
+              chosenService === state ? "bg-[#6002d3]" : "bg-gray-200"
+            } p-8 rounded-full whitespace-nowrap`}
+          >
+            {service}
+          </button>
+        );
+      }
+    );
+  }, [chosenService, messages.whatsIncluded.services]);
 
   const renderBoxes = useMemo(() => {
-    return parts.map(({ service, state }) => {
+    return messages.whatsIncluded.parts.map(({ service, state }: any) => {
       if (state === chosenService) {
-        return service.map(({ room, services }, id) => {
+        return service.map(({ room, services }: any, id: number) => {
           return (
             <div
               className="min-w-[300px] flex flex-col rounded-3xl my-12 p-8 bg-gray-100"
@@ -31,7 +32,7 @@ const WhatsIncluded = () => {
             >
               <div className="text-[32px] font-bold">{room}</div>
               <ul className="mt-6">
-                {services.map((serv, id) => {
+                {services.map((serv: any, id: number) => {
                   return <li key={id}>{serv}</li>;
                 })}
               </ul>
@@ -40,7 +41,7 @@ const WhatsIncluded = () => {
         });
       }
     });
-  }, [chosenService]);
+  }, [chosenService, messages.whatsIncluded.parts]);
 
   return (
     <div className="container mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4 border-t-2">

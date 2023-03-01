@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import Image from "next/image";
 import images from "./constants";
 
-const StickySections = () => {
+const StickySections = ({ messages }: any) => {
   const renderImages = useMemo(() => {
     return images.map((image, id: number) => {
       return (
@@ -45,15 +45,15 @@ const StickySections = () => {
         <div className="sticky top-[20%] flex justify-center content-center items-center">
           <div className="text-center lg:text-left">
             <div className="text-[100px] lg:text-[200px] font-bold leading-none">
-              Pro.
+              {messages.stickySection.title.first}
               <br />
-              Beyond.
+              {messages.stickySection.title.second}
             </div>
             <div className="text-[64px]">
-              iPhone 14 Pro and iPhone 14 Pro Max
+              {messages.stickySection.title.third}
             </div>
             <div className="text-[48px]">
-              From $41.62/mo. for 24 mo. or $999 before trade-in**
+              {messages.stickySection.title.fourth}
             </div>
           </div>
         </div>

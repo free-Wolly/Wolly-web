@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import images from "./images";
 import Parallax from "./Paralax";
 
-const Slider = () => {
+const Slider = ({ messages }: any) => {
   const baseVelocity = -50;
 
   const renderImages = useMemo(() => {
@@ -23,7 +23,9 @@ const Slider = () => {
 
   return (
     <div id="services" className="mx-auto w-full border-t-2">
-      <div className="text-center text-3xl font-bold py-16">Slider Section</div>
+      <div className="text-center text-3xl font-bold py-16">
+        {messages.sliderSection.title}
+      </div>
       <motion.div className="whitespace-nowrap flex flex-nowrap ">
         <motion.div
           ref={(ref) =>

@@ -17,9 +17,12 @@ import Carousel from "../components/Landing/InstagramStories/Carousel";
 import WhatsIncluded from "../components/Landing/WhatsIncluded";
 import Loader from "../components/Landing/Loader";
 import TextHorizontalAnimation from "../components/Landing/TextHorizontalAnimation";
+import { useLanguage } from "../components/language";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
+
+  const { locale, setLocale, messages } = useLanguage();
 
   return (
     <>
@@ -35,21 +38,25 @@ export default function Home() {
           </motion.div>
         ) : (
           <div id="landing-page">
-            <PageHeader />
-            <Intro />
-            <SecondSection />
-            <Slider />
-            <Blog />
-            <TextHorizontalAnimation />
-            <StickySections />
-            <Team />
-            <GetApp />
-            <Carousel />
+            <PageHeader
+              locale={locale}
+              setLocale={setLocale}
+              messages={messages}
+            />
+            <Intro messages={messages} />
+            <SecondSection messages={messages} />
+            <Slider messages={messages} />
+            <Blog messages={messages} />
+            <TextHorizontalAnimation messages={messages} />
+            <StickySections messages={messages} />
+            <Team messages={messages} />
+            <GetApp messages={messages} />
+            <Carousel messages={messages} />
             <SocialMedia />
-            <WhatsIncluded />
-            <BeforeAfter />
-            <Faq />
-            <PageFooter />
+            <WhatsIncluded messages={messages} />
+            <BeforeAfter messages={messages} />
+            <Faq messages={messages} />
+            <PageFooter messages={messages} />
           </div>
         )}
       </AnimatePresence>

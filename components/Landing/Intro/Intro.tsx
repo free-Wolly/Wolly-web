@@ -6,7 +6,7 @@ import handleClickScroll from "../../../utils/scrollToSection";
 import { arrowVariant, banner } from "./variants";
 import Marquee from "./Marquee/Marquee";
 
-const Intro = () => {
+const Intro = ({ messages }: any) => {
   return (
     <div id="main" className="relative w-full h-screen">
       <div className="mx-auto">
@@ -44,13 +44,13 @@ const Intro = () => {
           variants={banner}
         >
           <div className="overflow-hidden flex items-center mt-24 pl-8">
-            <AnimatedText title={"brand"} />
+            <AnimatedText title={messages.intro.introAnimatedTextTop} />
           </div>
           <div className={"overflow-hidden flex "}>
-            <Marquee title="experience" />
+            <Marquee title={messages.intro.introAnimatedTextMiddle} />
           </div>
           <div className={"overflow-hidden flex justify-end pr-8"}>
-            <AnimatedText title={"studio"} />
+            <AnimatedText title={messages.intro.introAnimatedTextBottom} />
           </div>
         </motion.div>
       </div>

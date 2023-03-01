@@ -23,7 +23,7 @@ const SectionHeader = ({
       >
         {topTitle}
       </motion.div>
-      <div className="flex justify-center leading-none overflow-hidden text-[52px] text-[#304D63] font-[GEOCAPS] mb-[70px]">
+      <div className="flex justify-center leading-none overflow-hidden text-[18px] sm:text-[30px] md:text-[36px] lg:text-[46px] xl:text-[52px] text-[#304D63] font-[GEOCAPS] mb-[70px]">
         <AnimateText
           title={botTitle}
           delay={delay}

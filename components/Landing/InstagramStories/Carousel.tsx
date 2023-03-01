@@ -6,7 +6,7 @@ import Lottie from "lottie-react";
 import Instagram from "../../../public/assets/animations/instagram.json";
 import { Data } from "./constants";
 
-const Carousel = () => {
+const Carousel = ({ messages }: any) => {
   const [FlowDirection, setFlowDirection] = useState(true);
   const [CenterId, setCenterId] = useState(0);
   const [LeftId, setLeftId] = useState(Data.length - 1);
@@ -179,9 +179,7 @@ const Carousel = () => {
             height={100}
             width={100}
           />
-          <div>
-            We’re not saying we’re the best, but our customers sure are!
-          </div>
+          <div>{messages.instagramStories.text}</div>
         </div>
       </motion.div>
       <motion.div className="mx-auto relative flex items-center justify-center rounded-2xl  min-h-[500px] lg:min-h-[1000px] max-w-[2000px] overflow-hidden">

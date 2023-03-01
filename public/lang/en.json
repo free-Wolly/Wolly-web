@@ -1,0 +1,398 @@
+{
+  "header": {
+    "menuItems": [
+      {
+        "text": "Main",
+        "id": "main"
+      },
+      {
+        "text": "About Us",
+        "id": "about"
+      },
+      {
+        "text": "Integration",
+        "id": "integration"
+      },
+      {
+        "text": "Services",
+        "id": "services"
+      },
+      {
+        "text": "Prices",
+        "id": "prices"
+      },
+      {
+        "text": "FAQ",
+        "id": "faq"
+      },
+      {
+        "text": "Contact",
+        "id": "contact"
+      }
+    ]
+  },
+  "intro": {
+    "introAnimatedTextTop": "brand",
+    "introAnimatedTextMiddle": "experience",
+    "introAnimatedTextBottom": "studio"
+  },
+  "secondSection": {
+    "title": "Second Section",
+    "boxText": [
+      {
+        "imgSource": "1.svg",
+        "title": "CMS",
+        "text": "Write, edit and update content across CMS pages."
+      },
+      {
+        "imgSource": "1.svg",
+        "title": "Fully responsive",
+        "text": "Layouts that adapt to any device."
+      },
+      {
+        "imgSource": "1.svg",
+        "title": "Easy to customize",
+        "text": "Change anything with just a few clicks."
+      },
+      {
+        "imgSource": "1.svg",
+        "title": "Optimized for SEO",
+        "text": "Pages optimized for search engines."
+      },
+      {
+        "imgSource": "1.svg",
+        "title": "Animations And Effects",
+        "text": "A variety of dynamic interactions."
+      },
+      {
+        "imgSource": "1.svg",
+        "title": "Plugins",
+        "text": "Forms, videos, socials and more."
+      }
+    ]
+  },
+  "sliderSection": {
+    "title": "Slider Section"
+  },
+  "blog": {
+    "title": "Blog",
+    "blogItems": [
+      {
+        "title": "10 Casting Decisions That Hurt The Star Wars Prequels \n (And 10 That Saved it)",
+        "text": "",
+        "date": "2023, Jan 16",
+        "img": "1.jpg"
+      },
+      {
+        "title": "Review Of Healthy Breakfast Meals For Energy Boost",
+        "text": "To help you out, we've looked through some of the best offerings on the market and compiled a list of the best video WordPress themes",
+        "date": "2023, Jan 15",
+        "img": "2.jpg"
+      },
+      {
+        "title": "Review Of Healthy Breakfast Meals For Energy Boost",
+        "text": "To help you out, we've looked through some of the best offerings on the market and compiled a list of the best video WordPress themes",
+        "date": "2023, Jan 14",
+        "img": "3.jpg"
+      }
+    ]
+  },
+  "textHorizontalAnimation": {
+    "leftTop": "Experi",
+    "leftBot": "ence",
+    "right": {
+      "title": "We know what we're doing",
+      "text": "10 Casting Decisions That Hurt The Star Wars Prequels \n (And 10 That Saved it)"
+    }
+  },
+  "stickySection": {
+    "title": {
+      "first": "Pro.",
+      "second": "Beyond.",
+      "third": "iPhone 14 Pro and iPhone 14 Pro Max",
+      "fourth": "From $41.62/mo. for 24 mo. or $999 before trade-in**"
+    }
+  },
+  "team": {
+    "mainTitle": "Team",
+    "title": "Title",
+    "text1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "text2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  "getApp": {
+    "text": "Download Our App"
+  },
+  "instagramStories": {
+    "text": "We’re not saying we’re the best, but our customers sure are!"
+  },
+  "whatsIncluded": {
+    "services": [
+      {
+        "service": "After repairs",
+        "state": "repairs"
+      },
+      {
+        "service": "Regular",
+        "state": "regular"
+      },
+      {
+        "service": "General",
+        "state": "general"
+      },
+      {
+        "service": "Housewife",
+        "state": "housewife"
+      }
+    ],
+    "parts": [
+      {
+        "service": [
+          {
+            "room": "Kitchen",
+            "services": [
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla"
+            ]
+          },
+          {
+            "room": "Bathroom",
+            "services": [
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd"
+            ]
+          },
+          {
+            "room": "Reception",
+            "services": [
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd"
+            ]
+          },
+          {
+            "room": "Bedroom",
+            "services": [
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd"
+            ]
+          }
+        ],
+        "state": "repairs"
+      },
+      {
+        "service": [
+          {
+            "room": "Kitchen",
+            "services": [
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla"
+            ]
+          },
+          {
+            "room": "Bathroom",
+            "services": [
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd"
+            ]
+          },
+          {
+            "room": "Reception",
+            "services": [
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd"
+            ]
+          },
+          {
+            "room": "Bedroom",
+            "services": [
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd"
+            ]
+          }
+        ],
+        "state": "regular"
+      },
+      {
+        "service": [
+          {
+            "room": "Kitchen",
+            "services": [
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla"
+            ]
+          },
+          {
+            "room": "Bathroom",
+            "services": [
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd"
+            ]
+          },
+          {
+            "room": "Reception",
+            "services": [
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd"
+            ]
+          },
+          {
+            "room": "Bedroom",
+            "services": [
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd"
+            ]
+          }
+        ],
+        "state": "general"
+      },
+      {
+        "service": [
+          {
+            "room": "Kitchen",
+            "services": [
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla"
+            ]
+          },
+          {
+            "room": "Bathroom",
+            "services": [
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd"
+            ]
+          },
+          {
+            "room": "Reception",
+            "services": [
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd"
+            ]
+          },
+          {
+            "room": "Bedroom",
+            "services": [
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd"
+            ]
+          }
+        ],
+        "state": "housewife"
+      }
+    ]
+  },
+  "beforeAfter": {
+    "title": "Works we are proud of"
+  },
+  "faq": {
+    "title": "FAQ",
+    "questions": [
+      {
+        "question": "Which pricing plan is right for me?",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+      },
+      {
+        "question": "Which pricing plan is right for me?",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+      },
+      {
+        "question": "Which pricing plan is right for me?",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+      },
+      {
+        "question": "Which pricing plan is right for me?",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+      }
+    ]
+  },
+  "footer": {
+    "left": {
+      "title": "",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    "middleLeft": {
+      "title": "Our Office",
+      "text": ""
+    },
+    "middleRight": {
+      "title": "Contact",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\n Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    "right": {
+      "title": "Title",
+      "text": " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    }
+  },
+  "privacyPolicy": {
+    "header": {
+      "item": "Contact"
+    },
+    "title": "Privacy Policy",
+    "text": "This Framer Terms of Service (“Agreement”) is entered into by and between Framer B.V. (“Framer”) and the entity or person placing an order for or accessing the Services (“Customer”). This Agreement consists ofthe terms and conditions set forth below and any Order Form. The“Effective Date” of this Agreement is the date which is the earlier of(a) Customer’s initial access to the Services through any onlineprovisioning, registration or order process or (b) the Effective Date ofthe first Order Form. This Agreement will govern Customer’s initialpurchase on the Effective Date as well as any future purchases made byCustomer that reference this Agreement. Framer may modify this Agreementfrom time to time as permitted in Section 13.4 (Amendment). Capitalized terms shall have the meanings set forth in Section 1, or inthe section where they are first used."
+  },
+  "termsAndConditions": {
+    "header": {
+      "item": "Contact"
+    },
+    "title": "Terms and Conditions",
+    "text": "This Framer Terms of Service (“Agreement”) is entered into by and between Framer B.V. (“Framer”) and the entity or person placing an order for or accessing the Services (“Customer”). This Agreement consists ofthe terms and conditions set forth below and any Order Form. The“Effective Date” of this Agreement is the date which is the earlier of(a) Customer’s initial access to the Services through any onlineprovisioning, registration or order process or (b) the Effective Date ofthe first Order Form. This Agreement will govern Customer’s initialpurchase on the Effective Date as well as any future purchases made byCustomer that reference this Agreement. Framer may modify this Agreementfrom time to time as permitted in Section 13.4 (Amendment). Capitalized terms shall have the meanings set forth in Section 1, or inthe section where they are first used."
+  }
+}

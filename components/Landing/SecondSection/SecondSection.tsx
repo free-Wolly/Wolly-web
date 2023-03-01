@@ -1,10 +1,9 @@
 import React, { ReactElement, useMemo } from "react";
-import { boxItems, boxObj } from "./constants";
+import { boxObj } from "./constants";
 import Block from "./Block";
 import SectionHeader from "../../Helpers/SectionHeader";
 
-const SecondSection = () => {
-
+const SecondSection = ({ messages }: any) => {
   const renderBoxes = useMemo(() => {
     return messages.secondSection.boxText.map(
       (item: boxObj, id: number): ReactElement => {

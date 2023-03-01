@@ -10,15 +10,15 @@ interface LanguageContextProps {
 }
 
 const LanguageContext = createContext<LanguageContextProps>({
-  locale: "en",
+  locale: "ka",
   setLocale: () => {},
-  messages: en,
+  messages: ka,
 });
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const router = useRouter();
-  const [locale, setLocale] = useState(router.locale || "en");
-  const messages = locale === "en" ? en : ka;
+  const [locale, setLocale] = useState(router.locale || "ka");
+  const messages = locale === "ka" ? ka : en;
 
   useEffect(() => {
     router.push(router.pathname, router.asPath, { locale });

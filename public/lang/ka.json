@@ -37,37 +37,36 @@
     "introAnimatedTextBottom": "სტუდიო"
   },
   "secondSection": {
-    "title": "მეორე სექცია",
     "boxText": [
       {
-        "imgSource": "1.svg",
-        "title": "აააა",
-        "text": "ასდასდლაკსდლ"
+        "imgSource": "quality.svg",
+        "title": "ხარისხი",
+        "text": "ჩვენ გთავაზობთ უმაღლეს ხარისხს"
       },
       {
-        "imgSource": "1.svg",
-        "title": "ბბბბ",
-        "text": "კკკკ."
+        "imgSource": "trust.svg",
+        "title": "სანდოობა",
+        "text": "შეგიძლია გვენდო ან შენ როგორც გინდა"
       },
       {
-        "imgSource": "1.svg",
-        "title": "გგგგ",
-        "text": "ზზზზ"
+        "imgSource": "comfort.svg",
+        "title": "კომფორტი",
+        "text": "თუ კომფორტი გიყვარს აქ ვართ"
       },
       {
-        "imgSource": "1.svg",
-        "title": "დდდდ",
-        "text": "სსსსს"
+        "imgSource": "camera.svg",
+        "title": "მონიტორინგი",
+        "text": "შენ შეგიძლია აკონტროლო პროცესი"
       },
       {
-        "imgSource": "1.svg",
-        "title": "საასდქწკმპ",
-        "text": "კმასჯდამსდმოასდ"
+        "imgSource": "bulb.svg",
+        "title": "სიმარტივე",
+        "text": "სიმარტივე ჩვენი მთავარი ერთი ორი"
       },
       {
-        "imgSource": "1.svg",
-        "title": "სადსმკკმ",
-        "text": "ასოკდამდფნიადჯ"
+        "imgSource": "diploma.svg",
+        "title": "გუნდი",
+        "text": "გთავაზობთ და შეგიძლია სცადო"
       }
     ]
   },

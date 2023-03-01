@@ -1,16 +1,22 @@
-import React, { ReactElement, useMemo } from "react";
+import React, { ReactElement, useMemo, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { boxObj } from "./constants";
 import Block from "./Block";
 import SectionHeader from "../../Helpers/SectionHeader";
 
 const SecondSection = ({ messages }: any) => {
+  const boxSectionRef = useRef(null);
+  const boxSectionInView = useInView(boxSectionRef, { once: true });
+
   const renderBoxes = useMemo(() => {
     return messages.secondSection.boxText.map(
       (item: boxObj, id: number): ReactElement => {
-        return <Block key={id} item={item} index={id} />;
+        return (
+          <Block key={id} item={item} index={id} inView={boxSectionInView} />
+        );
       }
     );
-  }, [messages.secondSection.boxText]);
+  }, [boxSectionInView, messages.secondSection.boxText]);
 
   return (
     <div
@@ -24,9 +30,12 @@ const SecondSection = ({ messages }: any) => {
         textBackgroundElementWidth={"22%"}
         staggerChildren={0.05}
       />
-      <div className="grid gap-16 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2">
+      <motion.div
+        ref={boxSectionRef}
+        className="grid gap-16 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2"
+      >
         {renderBoxes}
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import policies from "./constants";
 
-const PrivacyPolicy = () => {
+const PrivacyPolicy = ({ messages }: any) => {
   const renderText = useMemo(() => {
     return policies.map((policy, id: number) => {
       return (
@@ -17,24 +17,10 @@ const PrivacyPolicy = () => {
 
   return (
     <div className="container max-w-[1000px] lg:py-[150px] py-[75px] lg:px-[100px] mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4">
-      <h1 className="text-[64px] font-bold mb-16">Privacy Policy</h1>
-      <p className="text-[20px]">
-        This Framer Terms of Service (“Agreement”) is entered into by and
-        between Framer B.V. (“Framer”) and the entity or person placing an order
-        for or accessing the Services (“Customer”). This Agreement consists of
-        the terms and conditions set forth below and any Order Form. The
-        “Effective Date” of this Agreement is the date which is the earlier of
-        (a) Customer’s initial access to the Services through any online
-        provisioning, registration or order process or (b) the Effective Date of
-        the first Order Form. This Agreement will govern Customer’s initial
-        purchase on the Effective Date as well as any future purchases made by
-        Customer that reference this Agreement. Framer may modify this Agreement
-        from time to time as permitted in Section 13.4 (Amendment).
-        <br />
-        <br />
-        Capitalized terms shall have the meanings set forth in Section 1, or in
-        the section where they are first used.
-      </p>
+      <h1 className="text-[64px] font-bold mb-16">
+        {messages.privacyPolicy.title}
+      </h1>
+      <p className="text-[20px]">{messages.privacyPolicy.text}</p>
       {renderText}
     </div>
   );

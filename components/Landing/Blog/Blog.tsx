@@ -1,11 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import blogItems from "./constanats";
 import SidePost from "./SidePost";
 import images from "./images";
 import SectionHeader from "../../Helpers/SectionHeader";
 
-const Blog = () => {
+const Blog = ({ messages }: any) => {
   return (
     <div className="container mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4">
       <SectionHeader
@@ -26,12 +25,14 @@ const Blog = () => {
             width={1000}
             height={1000}
           />
-          <div className="text-xl font-bold z-10">{blogItems[0].title}</div>
-          <div className="mt-4 z-10">{blogItems[0].date}</div>
+          <div className="text-xl font-bold z-10">
+            {messages.blog.blogItems[0].title}
+          </div>
+          <div className="mt-4 z-10">{messages.blog.blogItems[0].date}</div>
         </div>
         <div className="lg:w-3/6 flex flex-row gap-8">
-          <SidePost blogItem={blogItems[1]} id={1} />
-          <SidePost blogItem={blogItems[2]} id={2} />
+          <SidePost blogItem={messages.blog.blogItems[1]} id={1} />
+          <SidePost blogItem={messages.blog.blogItems[2]} id={2} />
         </div>
       </div>
     </div>

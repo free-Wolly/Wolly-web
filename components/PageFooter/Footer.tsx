@@ -4,13 +4,12 @@ import Link from "next/link";
 
 import wollyLogo from "../../public/assets/images/wolly.png";
 import worldMap from "../../public/assets/images/world.png";
-import menuItems from "../PageHeader/constants";
 import socialNetworksItems from "./socialNetworks";
 import handleClickScroll from "../../utils/scrollToSection";
 
-const Footer = () => {
+const Footer = ({ messages }: any) => {
   const renderMenuItems = useMemo(() => {
-    return menuItems.map(({ text, id }, index: number) => {
+    return messages.header.menuItems.map(({ text, id }: any, index: number) => {
       return (
         <div
           className="cursor-pointer"
@@ -21,7 +20,7 @@ const Footer = () => {
         </div>
       );
     });
-  }, []);
+  }, [messages.header.menuItems]);
 
   const renderSocialNetworks = useMemo(() => {
     return socialNetworksItems.map((item, id: number) => {
@@ -55,15 +54,12 @@ const Footer = () => {
                 width={1000}
                 height={1000}
               />
-              <div>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </div>
+              <div>{messages.footer.left.text}</div>
             </div>
             <div className="flex flex-col w-full">
-              <div className="text-3xl font-bold mb-8">Our Office</div>
+              <div className="text-3xl font-bold mb-8">
+                {messages.footer.middleLeft.title}
+              </div>
               <Image
                 loading="lazy"
                 className="w-64 h-44 mx-auto"
@@ -74,24 +70,16 @@ const Footer = () => {
               />
             </div>
             <div className="flex flex-col w-full">
-              <div className="text-3xl font-bold mb-8">Contact</div>
-              <div>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                <br />
-                <br />
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat.
+              <div className="text-3xl font-bold mb-8">
+                {messages.footer.middleRight.title}
               </div>
+              <div>{messages.footer.middleRight.text}</div>
             </div>
             <div className="flex flex-col w-full">
-              <div className="text-3xl font-bold mb-8">Title</div>
-              <div>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+              <div className="text-3xl font-bold mb-8">
+                {messages.footer.right.title}
               </div>
+              <div>{messages.footer.right.text}</div>
             </div>
           </div>
           <div className="flex flex-row justify-between items-center py-8 border-t-2 border-neutral-300">

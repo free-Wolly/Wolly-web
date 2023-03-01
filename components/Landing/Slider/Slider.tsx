@@ -5,7 +5,7 @@ import images from "./images";
 import Parallax from "./Paralax";
 import SectionHeader from "../../Helpers/SectionHeader";
 
-const Slider = () => {
+const Slider = ({ messages }: any) => {
   const baseVelocity = -50;
 
   const renderImages = useMemo(() => {

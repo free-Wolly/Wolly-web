@@ -5,7 +5,7 @@ import Link from "next/link";
 import wollyAppImg from "../../../public/assets/images/wolly-app.png";
 import storesInfo from "./constants";
 
-const GetApp = () => {
+const GetApp = ({ messages }: any) => {
   const renderStores = useMemo(() => {
     return storesInfo.map((store, id) => {
       return (
@@ -21,7 +21,7 @@ const GetApp = () => {
       <div className="flex items-center justify-between my-32">
         <div className="w-full md:w-2/4 flex flex-col justify-center items-center md:items-start">
           <div className="text-3xl font-bold leading-loose mb-16 text-center md:text-left">
-            გადმოწერეთ ჩვენი აპლიკაცია
+            {messages.getApp.text}
           </div>
           <div className="flex flex-col items-center md:flex-row md:items-start gap-8 w-full lg:w-2/4">
             {renderStores}

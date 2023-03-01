@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "../../../public/assets/images/wolly.png";
 
-const Header = () => {
+const Header = ({ messages, locale, setLocale }: any) => {
   return (
     <div className="bg-transparent fixed w-full top-0 z-50 min-h-[50px]">
       <div className="relative w-full lg:container lg:mx-auto 2xl:px-32 xl:px-16 lg:px-0 md:px-8 sm:px-4 px-4">
@@ -21,7 +21,13 @@ const Header = () => {
             </Link>
           </div>
           <div className="flex justify-end w-full">
-            <Link href={"/"}>კონტაქტი</Link>
+            <Link href={"/"}>{messages.privacyPolicy.header.item}</Link>
+            <button
+              className="ml-10"
+              onClick={() => setLocale(locale === "en" ? "ka" : "en")}
+            >
+              {locale === "en" ? "🇬🇪" : "🇺🇸"}
+            </button>
           </div>
         </div>
       </div>

@@ -5,12 +5,11 @@ import { motion } from "framer-motion";
 
 import BurgerMenu from "./BurgerMenu";
 import styles from "./Header.module.css";
-import menuItems from "./constants";
 import handleClickScroll from "../../utils/scrollToSection";
 
-const Header = () => {
+const Header = ({ locale, setLocale, messages }: any) => {
   const renderMenuItems = useMemo(() => {
-    return menuItems.map(({ text, id }, index: number) => {
+    return messages.header.menuItems.map(({ text, id }: any, index: number) => {
       return (
         <div
           className="cursor-pointer"
@@ -21,7 +20,7 @@ const Header = () => {
         </div>
       );
     });
-  }, []);
+  }, [messages.header.menuItems]);
 
   return (
     <motion.div
@@ -37,7 +36,7 @@ const Header = () => {
       <div className="w-full lg:container lg:mx-auto 2xl:px-32 xl:px-16 lg:pl-0 md:pl-8 sm:pl-4 pl-4">
         <div className={styles.headerContent}>
           <div className="xl:w-full lg:w-6/12 lg:mt-2 sm:mt-1 w-full ">
-            <Link href="/">
+            <Link href="/privacy-policy">
               <Image
                 className="xl:w-24 xl:h-24 lg:w-20 lg:h-20 w-16 h-16"
                 priority
@@ -51,6 +50,12 @@ const Header = () => {
           <div className="hidden lg:flex lg:justify-between lg:w-full">
             {renderMenuItems}
           </div>
+          <button
+            className="ml-10"
+            onClick={() => setLocale(locale === "en" ? "ka" : "en")}
+          >
+            {locale === "en" ? "🇬🇪" : "🇺🇸"}
+          </button>
           <div className="lg:hidden">
             <BurgerMenu />
           </div>

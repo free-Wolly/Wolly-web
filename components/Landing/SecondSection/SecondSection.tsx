@@ -4,11 +4,14 @@ import Block from "./Block";
 import SectionHeader from "../../Helpers/SectionHeader";
 
 const SecondSection = () => {
+
   const renderBoxes = useMemo(() => {
-    return boxItems.map((item: boxObj, id: number): ReactElement => {
-      return <Block key={id} item={item} index={id} />;
-    });
-  }, []);
+    return messages.secondSection.boxText.map(
+      (item: boxObj, id: number): ReactElement => {
+        return <Block key={id} item={item} index={id} />;
+      }
+    );
+  }, [messages.secondSection.boxText]);
 
   return (
     <div

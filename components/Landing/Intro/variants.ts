@@ -1,11 +1,16 @@
 export const arrowVariant = {
-  init: { opacity: 0, scale: 0, y: 100 },
-  animate: {
+  hidden: {
+    opacity: 0,
+    y: -40,
+  },
+  visible: {
     opacity: 1,
-    scale: 1,
     y: 0,
   },
-  hover: { scale: 1.5, rotate: 360 },
+  exit: {
+    opacity: 0,
+    y: 40,
+  },
 };
 
 export const banner = {

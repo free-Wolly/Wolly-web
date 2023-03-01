@@ -17,3 +17,15 @@ export const letterAni = {
     },
   },
 };
+
+export const textBackground = {
+  hidden: {
+    display: "none",
+    width: "0px",
+  },
+  show: {
+    display: "block",
+    width: "40%",
+    transition: { delay: 1, duration: 1 },
+  },
+};

@@ -285,7 +285,7 @@ const Carousel = ({ messages }: any) => {
                 onClick={prevBtn}
               >
                 <motion.img
-                  src="/assets/images/down-arrow.svg"
+                  src="/assets/images/arrow-down.svg"
                   alt=""
                   width={30}
                   height={30}
@@ -306,7 +306,7 @@ const Carousel = ({ messages }: any) => {
                 onClick={nextBtn}
               >
                 <motion.img
-                  src="/assets/images/down-arrow.svg"
+                  src="/assets/images/arrow-down.svg"
                   alt=""
                   width={30}
                   height={30}

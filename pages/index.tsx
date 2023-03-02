@@ -47,15 +47,15 @@ export default function Home() {
             <SecondSection messages={messages} />
             <Slider messages={messages} />
             <Blog messages={messages} />
+            <Team messages={messages} />
+            <BeforeAfter messages={messages} />
+            <SocialMedia />
+            <Faq messages={messages} />
             <TextHorizontalAnimation messages={messages} />
             <StickySections messages={messages} />
-            <Team messages={messages} />
             <GetApp messages={messages} />
             <Carousel messages={messages} />
-            <SocialMedia />
             <WhatsIncluded messages={messages} />
-            <BeforeAfter messages={messages} />
-            <Faq messages={messages} />
             <PageFooter messages={messages} />
           </div>
         )}

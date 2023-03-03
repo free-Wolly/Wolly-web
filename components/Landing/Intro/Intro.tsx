@@ -9,7 +9,7 @@ const Intro = ({ messages }: any) => {
   return (
     <div id="main" className={`font-[GEOCAPS] relative w-full h-screen`}>
       <div className="mx-auto">
-        <div className="absolute inset-0 bg-[#09191CB8]">
+        <div className="absolute inset-0 bg-[#09191C]">
           <motion.video
             autoPlay
             loop

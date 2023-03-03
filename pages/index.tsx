@@ -9,7 +9,6 @@ import Blog from "../components/Landing/Blog";
 import Team from "../components/Landing/Team";
 import PageFooter from "../components/PageFooter";
 import Faq from "../components/Landing/Faq";
-import SocialMedia from "../components/Landing/SocialMedia";
 import BeforeAfter from "../components/Landing/BeforeAfter";
 import GetApp from "../components/Landing/GetApp";
 import StickySections from "../components/Landing/StickySection";
@@ -49,7 +48,6 @@ export default function Home() {
             <Blog messages={messages} />
             <Team messages={messages} />
             <BeforeAfter messages={messages} />
-            <SocialMedia />
             <Faq messages={messages} />
             <TextHorizontalAnimation messages={messages} />
             <StickySections messages={messages} />

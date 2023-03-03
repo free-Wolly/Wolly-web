@@ -11,7 +11,7 @@ const Loader = ({ setLoading }: any) => {
   };
 
   return (
-    <motion.div className="absolute inset-0 origin-center flex justify-center items-center overflow-hidden bg-[#09191CB8]">
+    <motion.div className="absolute inset-0 origin-center flex justify-center items-center overflow-hidden bg-[#09191C]">
       <motion.div
         variants={imageContainer}
         onAnimationComplete={() => wait()}

@@ -14,25 +14,35 @@ const Blog = ({ messages }: any) => {
         textBackgroundElementWidth={"32%"}
         staggerChildren={"0.07"}
       />
-      <div className="w-full flex flex-col lg:flex-row gap-8 mb-16">
-        <div className="relative w-full lg:w-3/6 flex flex-col justify-end rounded-3xl p-6 pt-64 lg:p-12 lg:pt-0">
+      <div className="w-full flex flex-col lg:flex-row gap-16 mb-16">
+        <div className="relative w-full lg:w-[45%] flex flex-col justify-end rounded-3xl p-6 pt-64 lg:p-0 lg:pt-0">
           <Image
             loading="lazy"
             placeholder="blur"
-            className="absolute inset-0 h-full rounded-3xl"
+            className="h-full mb-[25px] rounded-3xl"
             src={images[0]}
             alt=""
             width={1000}
             height={1000}
           />
-          <div className="text-xl font-bold z-10">
-            {messages.blog.blogItems[0].title}
+          <div className="flex flex-col justify-center items-center">
+            <div className="text-[36px] font-bold font-[GEOCAPS] text-[#304D63]">
+              {messages.blog.blogItems[0].title}
+            </div>
+            <div className="text-[22px] text-[#597F9DBF] text-center font-[BOG] tracking-tighter mt-[5px]">
+              {messages.blog.blogItems[0].text}
+            </div>
           </div>
-          <div className="mt-4 z-10">{messages.blog.blogItems[0].date}</div>
         </div>
-        <div className="lg:w-3/6 flex flex-row gap-8">
-          <SidePost blogItem={messages.blog.blogItems[1]} id={1} />
-          <SidePost blogItem={messages.blog.blogItems[2]} id={2} />
+        <div className="lg:w-[55%] flex flex-col gap-8">
+          <div className=" flex flex-row gap-8">
+            <SidePost blogItem={messages.blog.blogItems[1]} id={1} />
+            <SidePost blogItem={messages.blog.blogItems[2]} id={2} />
+          </div>
+          <div className="flex flex-row gap-8">
+            <SidePost blogItem={messages.blog.blogItems[3]} id={3} />
+            <SidePost blogItem={messages.blog.blogItems[4]} id={4} />
+          </div>
         </div>
       </div>
     </div>

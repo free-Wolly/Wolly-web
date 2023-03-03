@@ -6,12 +6,6 @@ export const images = [
     alt2: "Second Image",
   },
   {
-    image1: "/assets/images/sliderImages/1.jpg",
-    image2: "/assets/images/sliderImages/2.jpg",
-    alt1: "First Image",
-    alt2: "Second Image",
-  },
-  {
     image1: "/assets/images/beforeAfter/1.jpg",
     image2: "/assets/images/beforeAfter/2.jpg",
     alt1: "First Image",

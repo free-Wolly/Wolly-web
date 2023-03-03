@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import BeforeAfterSlider from "react-before-after-slider-component";
 import "react-before-after-slider-component/dist/build.css";
 import { images, variants } from "./constants";
+import SectionHeader from "../../Helpers/SectionHeader";
 
 const BeforeAfter = ({ messages }: any) => {
   const [direction, setDirection] = useState(0);
@@ -38,7 +39,7 @@ const BeforeAfter = ({ messages }: any) => {
           custom={direction}
         >
           <BeforeAfterSlider
-            className=" md:min-w-30 overflow-hidden"
+            className="overflow-hidden rounded-[35px]"
             firstImage={{
               imageUrl: image.image1,
               alt: image.alt1,
@@ -52,7 +53,8 @@ const BeforeAfter = ({ messages }: any) => {
               height: 30,
               backgroundSize: "cover",
               borderRadius: "none",
-              backgroundImage: "url('/assets/images/gradient.jpg')",
+              background:
+                "transparent linear-gradient(180deg, #ADDFE5 0%, #00BCD4 100%) 0% 0% no-repeat padding-box",
             }}
           />
         </motion.div>
@@ -61,14 +63,16 @@ const BeforeAfter = ({ messages }: any) => {
   }, [direction]);
 
   return (
-    <div className="container mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4 overflow-auto">
-      <div className="text-center text-3xl font-bold my-16">
-        {messages.beforeAfter.title}
-      </div>
+    <div className="mx-auto overflow-hidden">
+      <SectionHeader
+        topTitle="ბლოგი"
+        botTitle="მანამდე/შემდეგ"
+        delay={1}
+        textBackgroundElementWidth="47%"
+        staggerChildren={0.1}
+      />
       {/* Large Screen */}
-      <div className="hidden lg:flex gap-16 overflow-auto pb-4">
-        {renderImages}
-      </div>
+      <div className="hidden lg:flex gap-12 p-4">{renderImages}</div>
       {/* Mobile/Tablet Screen */}
       <div className="flex lg:hidden">
         <div className="m-auto w-full aspect-video relative overflow-hidden rounded-2xl">

@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import socialNetworks from "./socNetworks";
+import SectionHeader from "../../Helpers/SectionHeader";
 
 const SocialMedia = () => {
   const renderImages = useMemo(() => {
@@ -22,6 +23,13 @@ const SocialMedia = () => {
 
   return (
     <div id="integration" className="mx-auto">
+      <SectionHeader
+        topTitle="ბლოგი"
+        botTitle="სად გვიპოვოთ?"
+        delay={1}
+        textBackgroundElementWidth="40%"
+        staggerChildren={0.1}
+      />
       <div className="bg-[url('/assets/images/gradient.jpg')] bg-center bg-cover py-16">
         <div className="flex justify-center items-center gap-16">
           {renderImages}

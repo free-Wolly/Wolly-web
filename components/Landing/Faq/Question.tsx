@@ -7,9 +7,7 @@ const Question = ({ id, question, inView }: any) => {
 
   return (
     <motion.div
-      className={`w-full rounded-3xl lg:w-3/6 p-4 cursor-pointer ${
-        open ? "bg-red-100" : "hover:bg-red-100"
-      }`}
+      className={`w-full rounded-3xl lg:w-3/6 p-6 cursor-pointer shadow-[0_0_99px_#304D6314] shadow-[#304D6314] `}
       onClick={() => setOpen(!open)}
       initial={{ opacity: 0, y: 100 }}
       animate={

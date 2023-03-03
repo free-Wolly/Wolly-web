@@ -6,25 +6,18 @@
         "id": "main"
       },
       {
-        "text": "About Us",
-        "id": "about"
-      },
-      {
-        "text": "Integration",
-        "id": "integration"
-      },
-      {
         "text": "Services",
         "id": "services"
       },
       {
-        "text": "Prices",
-        "id": "prices"
+        "text": "App",
+        "id": "app"
       },
       {
-        "text": "FAQ",
-        "id": "faq"
+        "text": "About Us",
+        "id": "about"
       },
+
       {
         "text": "Contact",
         "id": "contact"

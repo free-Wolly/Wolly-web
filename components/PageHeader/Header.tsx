@@ -35,7 +35,7 @@ const Header = ({ locale, setLocale, messages }: any) => {
     >
       <div className="w-full lg:container lg:mx-auto 2xl:px-32 xl:px-16 lg:pl-0 md:pl-8 sm:pl-4 pl-4">
         <div className={styles.headerContent}>
-          <div className="xl:w-full lg:w-6/12 lg:mt-2 sm:mt-1 w-full ">
+          <div className="xl:w-75% lg:w-6/12 lg:mt-2 sm:mt-1 w-full ">
             <Link href="/privacy-policy">
               <Image
                 className="xl:w-24 xl:h-24 lg:w-20 lg:h-20 w-16 h-16"
@@ -47,15 +47,16 @@ const Header = ({ locale, setLocale, messages }: any) => {
               />
             </Link>
           </div>
-          <div className="hidden lg:flex lg:justify-between lg:w-full">
+          <div className="hidden lg:flex lg:justify-between lg:w-full text-[20px] font-[BOG] text-white">
             {renderMenuItems}
+            <div
+              className="cursor-pointer"
+              onClick={() => setLocale(locale === "en" ? "ka" : "en")}
+            >
+              {locale === "en" ? "KA" : "EN"}
+            </div>
           </div>
-          <button
-            className="ml-10"
-            onClick={() => setLocale(locale === "en" ? "ka" : "en")}
-          >
-            {locale === "en" ? "🇬🇪" : "🇺🇸"}
-          </button>
+
           <div className="lg:hidden">
             <BurgerMenu />
           </div>

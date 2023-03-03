@@ -4,25 +4,18 @@ const menuItems = [
     id: "main",
   },
   {
-    text: "ჩვენს შესახებ",
-    id: "about",
-  },
-  {
-    text: "ინტეგრაცია",
-    id: "integration",
-  },
-  {
     text: "სერვისები",
     id: "services",
   },
   {
-    text: "ფასები",
-    id: "prices",
+    text: "აპლიკაცია",
+    id: "app",
   },
   {
-    text: "FAQ",
-    id: "faq",
+    text: "ჩვენს შესახებ",
+    id: "about",
   },
+
   {
     text: "კონტაქტი",
     id: "contact",

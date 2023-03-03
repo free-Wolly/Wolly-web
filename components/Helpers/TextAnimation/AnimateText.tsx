@@ -9,6 +9,7 @@ const AnimatedText = ({ title, disabled, side }: any) => {
   return (
     <motion.span
       className={`${style} row-title`}
+      style={{ textShadow: "0px 3px 6px #00000029" }}
       variants={disabled ? undefined : banner}
       initial="initial"
       animate="animate"

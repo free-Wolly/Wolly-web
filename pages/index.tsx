@@ -17,6 +17,7 @@ import WhatsIncluded from "../components/Landing/WhatsIncluded";
 import Loader from "../components/Landing/Loader";
 import TextHorizontalAnimation from "../components/Landing/TextHorizontalAnimation";
 import Liquids from "../components/Landing/Liquids";
+import Tools from "../components/Landing/Tools";
 
 import { useLanguage } from "../components/language";
 
@@ -52,6 +53,7 @@ export default function Home() {
             <BeforeAfter messages={messages} />
             <Faq messages={messages} />
             <Liquids />
+            <Tools />
             <TextHorizontalAnimation messages={messages} />
             <StickySections messages={messages} />
             <GetApp messages={messages} />

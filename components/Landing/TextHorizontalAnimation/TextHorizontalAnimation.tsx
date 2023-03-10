@@ -1,11 +1,10 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect, forwardRef } from "react";
 import { useTransform, motion, useScroll } from "framer-motion";
 
-const TextHorizontalAnimation = ({ messages }: any) => {
+const TextHorizontalAnimation = (props: any, ref: any) => {
   const [fromTop, setFromTop] = useState(0);
   const [section, setSection] = useState(0);
   const [screen, setScreen] = useState(0);
-  const ref: any = useRef(null);
   const { scrollYProgress } = useScroll();
 
   useEffect(() => {
@@ -22,7 +21,7 @@ const TextHorizontalAnimation = ({ messages }: any) => {
       setSection(sectionPercentage);
       setScreen(screenPercentage);
     }
-  }, []);
+  }, [ref]);
 
   const animateRight = useTransform(
     scrollYProgress,
@@ -37,7 +36,7 @@ const TextHorizontalAnimation = ({ messages }: any) => {
   );
 
   return (
-    <div ref={ref} className="container mx-auto">
+    <div className="container mx-auto mt-[20px]" ref={ref}>
       <div className="flex flex-col lg:flex-row justify-between items-center">
         <div className="flex flex-col items-start justify-center">
           <motion.div
@@ -46,7 +45,7 @@ const TextHorizontalAnimation = ({ messages }: any) => {
               x: animateRight,
             }}
           >
-            {messages.textHorizontalAnimation.leftTop}
+            გამოც
           </motion.div>
           <motion.div
             className="text-[100px] font-bold leading-none"
@@ -54,27 +53,12 @@ const TextHorizontalAnimation = ({ messages }: any) => {
               x: animateLeft,
             }}
           >
-            {messages.textHorizontalAnimation.leftBot}
+            დილება
           </motion.div>
-        </div>
-        <div>
-          <video
-            src="/assets/videos/home-phones.mp4"
-            muted
-            autoPlay
-            loop
-            className="w-[600px]"
-          />
-        </div>
-        <div className="flex flex-col gap-[50px] max-w-[300px] mb-[50px] lg:mb-0 ">
-          <div className="text-[50px] font-bold leading-none">
-            {messages.textHorizontalAnimation.right.title}
-          </div>
-          <div>{messages.textHorizontalAnimation.right.text}</div>
         </div>
       </div>
     </div>
   );
 };
 
-export default TextHorizontalAnimation;
+export default forwardRef(TextHorizontalAnimation);

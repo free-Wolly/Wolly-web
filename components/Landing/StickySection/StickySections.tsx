@@ -1,8 +1,25 @@
 import React, { useMemo } from "react";
 import Image from "next/image";
 import images from "./constants";
+import Link from "next/link";
+import storesInfo from "./stores";
 
 const StickySections = ({ messages }: any) => {
+  const renderStores = useMemo(() => {
+    return storesInfo.map((store, id) => {
+      return (
+        <Link
+          key={id}
+          className="lg:sticky lg:top-[80vh] lg:block"
+          href={store.link}
+          target="_blank"
+        >
+          <store.img />
+        </Link>
+      );
+    });
+  }, []);
+
   const renderImages = useMemo(() => {
     return images.map((image, id: number) => {
       return (
@@ -10,7 +27,7 @@ const StickySections = ({ messages }: any) => {
           loading="lazy"
           placeholder="blur"
           key={id}
-          className={`lg:sticky lg:top-[180px] lg:block lg:w-[19%] lg:h-[500px] ml-0 ${
+          className={`lg:sticky lg:top-[15vh] lg:block lg:w-[19%] lg:h-[60vh] lg:max-w-none xl:mb-[10vh] lg:mb-[15vh] max-h-[600px] ml-0 flex flex-col justify-center items-center sm:w-[300px] w-[200px]  ${
             id === 0
               ? "lg:ml-[0%]"
               : id === 1
@@ -22,7 +39,7 @@ const StickySections = ({ messages }: any) => {
               : id === 4
               ? "lg:ml-[80%]"
               : ""
-          } lg:mt-[500px] rounded-2xl mb-2`}
+          } lg:mt-[100vh] rounded-2xl`}
           src={image}
           alt=""
           width={1000}
@@ -59,9 +76,10 @@ const StickySections = ({ messages }: any) => {
         </div>
       </div>
       <div className="bg-[#041919]">
-        <div className="container mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4 py-8 lg:py-32">
-          <div className="w-full relative flex flex-col py-16 ">
-            {renderImages}
+        <div className="container mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4 py-8 lg:py-32 lg:block flex flex-col items-center gap-[50px]">
+          {renderImages}
+          <div className="flex justify-center items-center lg:gap-[3vw] gap-[5vw] lg:h-[2000px] lg:mx-0 h-[300px]">
+            {renderStores}
           </div>
         </div>
       </div>

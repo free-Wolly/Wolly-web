@@ -39,8 +39,8 @@ const Header = ({ locale, setLocale, messages }: any) => {
     >
       <div className="w-full lg:container lg:mx-auto 2xl:px-32 xl:px-16 lg:pl-0 md:pl-8 sm:pl-4 pl-4">
         <div className="w-full flex justify-center items-center">
-          <div className="xl:w-75% lg:w-6/12 lg:mt-2 sm:mt-1 w-full ">
-            <Link href="/privacy-policy">
+          <div className="xl:w-75% lg:w-6/12 lg:mt-2 sm:mt-1 w-full flex">
+            <Link href="/">
               <Image
                 className="xl:w-24 lg:w-20 w-16"
                 priority
@@ -62,7 +62,7 @@ const Header = ({ locale, setLocale, messages }: any) => {
           </div>
 
           <div className="lg:hidden">
-            <BurgerMenu />
+            <BurgerMenu locale={locale} setLocale={setLocale} />
           </div>
         </div>
       </div>

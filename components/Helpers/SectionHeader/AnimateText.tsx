@@ -24,7 +24,7 @@ const AnimateText = ({
       className="relative flex whitespace-pre-wrap"
     >
       {[...title].map((letter, id) => (
-        <motion.span key={id} variants={letterAni} className="z-50">
+        <motion.span key={id} variants={letterAni} className="z-10">
           {letter}
         </motion.span>
       ))}

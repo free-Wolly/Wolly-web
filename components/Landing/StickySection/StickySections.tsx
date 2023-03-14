@@ -1,10 +1,12 @@
-import React, { useMemo } from "react";
 import Image, { StaticImageData } from "next/image";
+import React, { useMemo, useRef } from "react";
 import images from "./constants";
 import Link from "next/link";
 import storesInfo from "./stores";
+import TextHorizontalAnimation from "../TextHorizontalAnimation";
 
 const StickySections = ({ messages }: any): JSX.Element => {
+  const sectionRef = useRef(null);
   const renderStores = useMemo(() => {
     return storesInfo.map(
       (store: { img: () => JSX.Element; link: string }, id: number) => {
@@ -54,6 +56,7 @@ const StickySections = ({ messages }: any): JSX.Element => {
   return (
     <>
       <div
+        ref={sectionRef}
         style={{
           backgroundImage: 'url("/assets/images/stickySection/bck.png")',
           backgroundSize: "cover",
@@ -65,9 +68,7 @@ const StickySections = ({ messages }: any): JSX.Element => {
         <div className="sticky top-[20%] flex justify-center content-center items-center text-[#041919]">
           <div className="text-center lg:text-left">
             <div className="text-[100px] lg:text-[200px] font-bold leading-none">
-              {messages.stickySection.title.first}
-              <br />
-              {messages.stickySection.title.second}
+              <TextHorizontalAnimation ref={sectionRef} />
             </div>
             <div className="text-[64px]">
               {messages.stickySection.title.third}

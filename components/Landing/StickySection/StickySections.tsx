@@ -10,9 +10,10 @@ const StickySections = ({ messages }: any) => {
       return (
         <Link
           key={id}
-          className="lg:sticky lg:top-[80vh] lg:block"
+          className="lg:sticky xl:top-[40.625rem] lg:top-[28rem] lg:block"
           href={store.link}
           target="_blank"
+          rel="noopener noreferrer"
         >
           <store.img />
         </Link>
@@ -27,7 +28,7 @@ const StickySections = ({ messages }: any) => {
           loading="lazy"
           placeholder="blur"
           key={id}
-          className={`lg:sticky lg:top-[15vh] lg:block lg:w-[19%] lg:h-[60vh] lg:max-w-none xl:mb-[10vh] lg:mb-[15vh] max-h-[600px] ml-0 flex flex-col justify-center items-center sm:w-[300px] w-[200px]  ${
+          className={`lg:sticky lg:top-[6.25rem] lg:block lg:w-[19%] xl:h-[31.25rem] lg:h-[20rem] lg:max-w-none lg:mb-[6.25rem] max-h-[37.5rem] ml-0 flex flex-col justify-center items-center sm:w-[18.75rem] w-[12.5rem]  ${
             id === 0
               ? "lg:ml-[0%]"
               : id === 1
@@ -39,7 +40,7 @@ const StickySections = ({ messages }: any) => {
               : id === 4
               ? "lg:ml-[80%]"
               : ""
-          } lg:mt-[100vh] rounded-2xl`}
+          } lg:mt-[43.75rem] rounded-2xl`}
           src={image}
           alt=""
           width={1000}
@@ -76,9 +77,9 @@ const StickySections = ({ messages }: any) => {
         </div>
       </div>
       <div className="bg-[#041919]">
-        <div className="container mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4 py-8 lg:py-32 lg:block flex flex-col items-center gap-[50px]">
+        <div className="container mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4 py-8 lg:py-32 lg:block flex flex-col items-center gap-[3.125rem]">
           {renderImages}
-          <div className="flex justify-center items-center lg:gap-[3vw] gap-[5vw] lg:h-[2000px] lg:mx-0 h-[300px]">
+          <div className="flex justify-center items-center lg:gap-[1.875rem] gap-[3.125rem] lg:h-[125rem] lg:mx-0 h-[18.75rem]">
             {renderStores}
           </div>
         </div>

@@ -25,7 +25,12 @@ const Footer = ({ messages }: any) => {
   const renderSocialNetworks = useMemo(() => {
     return socialNetworksItems.map((item, id: number) => {
       return (
-        <Link key={id} href={item.link} target="_blank">
+        <Link
+          key={id}
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <div className="flex items-center rounded-full bg-white w-10 h-10">
             <Image
               className="h-5"

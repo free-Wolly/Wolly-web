@@ -33,7 +33,7 @@ export default function Home() {
         <link rel="icon" href="/assets/images/wolly.png" />
       </Head>
       <AnimatePresence>
-        {loading ? (
+      {loading ? (
           <motion.div key="loader">
             <Loader setLoading={setLoading} />
           </motion.div>

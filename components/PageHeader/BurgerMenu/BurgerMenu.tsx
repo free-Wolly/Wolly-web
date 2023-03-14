@@ -6,26 +6,34 @@ import MenuToggle from "./MenuToggle";
 import Navigation from "./Navigation";
 import { sidebarVariants } from "./constants";
 
-const BurgerMenu = () => {
+const BurgerMenu = ({ locale, setLocale }: any) => {
   const [menuExpanded, isMenuExpanded] = useState(false);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
 
   return (
-    <motion.nav
-      className="absolute top-0 right-0"
-      ref={containerRef}
-      initial={false}
-      animate={menuExpanded ? "open" : "closed"}
-      custom={height}
-    >
-      <motion.div
-        className="absolute top-0 right-0 w-60 bg-white h-screen"
-        variants={sidebarVariants}
+    <>
+      <div
+        className={`${
+          menuExpanded ? "block" : "hidden"
+        } absolute w-screen h-screen inset-0`}
+        onClick={() => menuExpanded && isMenuExpanded(false)}
       />
-      <Navigation />
-      <MenuToggle toggle={() => isMenuExpanded(!menuExpanded)} />
-    </motion.nav>
+      <motion.nav
+        className="absolute top-0 right-0"
+        ref={containerRef}
+        initial={false}
+        animate={menuExpanded ? "open" : "closed"}
+        custom={height}
+      >
+        <motion.div
+          className="absolute top-0 right-0 w-60 bg-white h-screen"
+          variants={sidebarVariants}
+        />
+        <Navigation locale={locale} setLocale={setLocale} />
+        <MenuToggle toggle={() => isMenuExpanded(!menuExpanded)} />
+      </motion.nav>
+    </>
   );
 };
 

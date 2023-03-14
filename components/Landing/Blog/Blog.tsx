@@ -15,7 +15,7 @@ const Blog = ({ messages }: any) => {
         staggerChildren={"0.07"}
       />
       <div className="w-full flex flex-col lg:flex-row gap-16 mb-16">
-        <div className="relative w-full lg:w-[45%] flex flex-col justify-end rounded-3xl p-6 pt-64 lg:p-0 lg:pt-0">
+        <div className="relative w-full lg:w-[45%] flex flex-col justify-end rounded-3xl p-6 lg:p-0 lg:pt-0">
           <Image
             loading="lazy"
             placeholder="blur"

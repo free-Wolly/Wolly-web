@@ -8,7 +8,6 @@ import Team from "../components/Landing/Team";
 import PageFooter from "../components/PageFooter";
 import Faq from "../components/Landing/Faq";
 import BeforeAfter from "../components/Landing/BeforeAfter";
-import GetApp from "../components/Landing/GetApp";
 import StickySections from "../components/Landing/StickySection";
 import Carousel from "../components/Landing/InstagramStories/Carousel";
 import WhatsIncluded from "../components/Landing/WhatsIncluded";
@@ -37,7 +36,6 @@ export default function Home() {
         <Faq messages={messages} />
         <LiquidsAndTools />
         <StickySections messages={messages} />
-        <GetApp messages={messages} />
         <Carousel messages={messages} />
         <WhatsIncluded messages={messages} />
         <PageFooter messages={messages} />

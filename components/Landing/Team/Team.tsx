@@ -41,7 +41,7 @@ const Team = ({ messages }: any) => {
         <div ref={imagesRef} className="relative w-full h-112 lg:w-4/6 ">
           {renderImageComps}
         </div>
-        <div className="flex flex-col items-center w-full lg:w-2/6 py-12">
+        <div className="flex flex-col items-center w-full lg:w-2/6 pt-12">
           <div className="text-center text-[30px] font-bold font-[GEOCAPS] text-[#304D63] pb-8 ">
             დივნის ალაგება
           </div>

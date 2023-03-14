@@ -5,7 +5,7 @@ import menuItems from "../constants";
 import { navigationVariants } from "./constants";
 import handleClickScroll from "../../../utils/scrollToSection";
 
-const Navigation = () => {
+const Navigation = ({ locale, setLocale }: any) => {
   return (
     <motion.ul variants={navigationVariants} className="flex flex-col">
       {menuItems.map(({ text, id }, index: number) => (
@@ -16,6 +16,10 @@ const Navigation = () => {
           key={index}
         />
       ))}
+      <MenuItem
+        onClick={() => setLocale(locale === "en" ? "ka" : "en")}
+        text={locale === "en" ? "KA" : "EN"}
+      />
     </motion.ul>
   );
 };

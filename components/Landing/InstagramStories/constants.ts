@@ -1,6 +1,11 @@
+import { StaticImageData } from "next/image";
 import images from "../Slider/images";
 
-export const Data = [
+export const Data: {
+  bgImg: string;
+  userName: string;
+  userImg: StaticImageData;
+}[] = [
   {
     bgImg:
       "https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=662&q=80",

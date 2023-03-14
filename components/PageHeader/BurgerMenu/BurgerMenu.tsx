@@ -6,10 +6,16 @@ import MenuToggle from "./MenuToggle";
 import Navigation from "./Navigation";
 import { sidebarVariants } from "./constants";
 
-const BurgerMenu = ({ locale, setLocale }: any) => {
+const BurgerMenu = ({
+  locale,
+  setLocale,
+}: {
+  locale: string;
+  setLocale: any;
+}): JSX.Element => {
   const [menuExpanded, isMenuExpanded] = useState(false);
   const containerRef = useRef(null);
-  const { height } = useDimensions(containerRef);
+  const { height }: { height: number } = useDimensions(containerRef);
 
   return (
     <>

@@ -4,7 +4,7 @@ import SidePost from "./SidePost";
 import images from "./images";
 import SectionHeader from "../../Helpers/SectionHeader";
 
-const Blog = ({ messages }: any) => {
+const Blog = ({ messages }: any): JSX.Element => {
   return (
     <div className="container mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4">
       <SectionHeader
@@ -12,7 +12,7 @@ const Blog = ({ messages }: any) => {
         botTitle="გაეცანი სიახლეებს ჩვენთან"
         delay={2}
         textBackgroundElementWidth={"32%"}
-        staggerChildren={"0.07"}
+        staggerChildren={0.07}
       />
       <div className="w-full flex flex-col lg:flex-row gap-16 mb-16">
         <div className="relative w-full lg:w-[45%] flex flex-col justify-end rounded-3xl p-6 lg:p-0 lg:pt-0">

@@ -7,21 +7,31 @@ import BurgerMenu from "./BurgerMenu";
 import handleClickScroll from "../../utils/scrollToSection";
 import useScrollDirection from "./useScrollDirection";
 
-const Header = ({ locale, setLocale, messages }: any) => {
+const Header = ({
+  locale,
+  setLocale,
+  messages,
+}: {
+  locale: string;
+  setLocale: any;
+  messages: any;
+}): JSX.Element => {
   const scrollDirection = useScrollDirection();
 
   const renderMenuItems = useMemo(() => {
-    return messages.header.menuItems.map(({ text, id }: any, index: number) => {
-      return (
-        <div
-          className="cursor-pointer"
-          key={index}
-          onClick={() => handleClickScroll(id)}
-        >
-          {text}
-        </div>
-      );
-    });
+    return messages.header.menuItems.map(
+      ({ text, id }: { text: string; id: string }, index: number) => {
+        return (
+          <div
+            className="cursor-pointer"
+            key={index}
+            onClick={() => handleClickScroll(id)}
+          >
+            {text}
+          </div>
+        );
+      }
+    );
   }, [messages.header.menuItems]);
 
   return (

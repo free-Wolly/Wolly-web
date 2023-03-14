@@ -1,6 +1,7 @@
 import images from "./images";
+import { ImagePropsInt } from "./interfaces";
 
-const imageProps = [
+const imageProps: ImagePropsInt[] = [
   {
     image: images[0],
     className: "z-0 inset-0 h-[450px] w-4/6",

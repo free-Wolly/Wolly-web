@@ -1,4 +1,6 @@
-export const banner = {
+import { Variants } from "framer-motion";
+
+export const banner: Variants = {
   animate: {
     transition: {
       delayChildren: 0.4,
@@ -7,7 +9,7 @@ export const banner = {
   },
 };
 
-export const letterAni = {
+export const letterAni: Variants = {
   initial: { y: 500 },
   animate: {
     y: 0,
@@ -18,7 +20,7 @@ export const letterAni = {
   },
 };
 
-export const textBackground = {
+export const textBackground: Variants = {
   hidden: {
     display: "none",
     width: "0px",

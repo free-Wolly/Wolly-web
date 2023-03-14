@@ -1,28 +1,30 @@
 import React, { useMemo } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import images from "./constants";
 import Link from "next/link";
 import storesInfo from "./stores";
 
-const StickySections = ({ messages }: any) => {
+const StickySections = ({ messages }: any): JSX.Element => {
   const renderStores = useMemo(() => {
-    return storesInfo.map((store, id) => {
-      return (
-        <Link
-          key={id}
-          className="lg:sticky xl:top-[40.625rem] lg:top-[28rem] lg:block"
-          href={store.link}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <store.img />
-        </Link>
-      );
-    });
+    return storesInfo.map(
+      (store: { img: () => JSX.Element; link: string }, id: number) => {
+        return (
+          <Link
+            key={id}
+            className="lg:sticky xl:top-[40.625rem] lg:top-[28rem] lg:block"
+            href={store.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <store.img />
+          </Link>
+        );
+      }
+    );
   }, []);
 
   const renderImages = useMemo(() => {
-    return images.map((image, id: number) => {
+    return images.map((image: StaticImageData, id: number) => {
       return (
         <Image
           loading="lazy"

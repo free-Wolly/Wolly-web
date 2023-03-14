@@ -4,12 +4,13 @@ import { motion } from "framer-motion";
 import images from "./images";
 import Parallax from "./Paralax";
 import SectionHeader from "../../Helpers/SectionHeader";
+import { StaticImageData } from "next/image";
 
-const Slider = ({ messages }: any) => {
-  const baseVelocity = -50;
+const Slider = () => {
+  const baseVelocity: number = -50;
 
   const renderImages = useMemo(() => {
-    return images.map((image, id: number) => {
+    return images.map((image: StaticImageData, id: number) => {
       return (
         <Parallax
           key={id}

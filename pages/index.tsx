@@ -33,7 +33,7 @@ export default function Home() {
         <link rel="icon" href="/assets/images/wolly.png" />
       </Head>
       <AnimatePresence>
-      {loading ? (
+        {loading ? (
           <motion.div key="loader">
             <Loader setLoading={setLoading} />
           </motion.div>
@@ -44,12 +44,12 @@ export default function Home() {
               setLocale={setLocale}
               messages={messages}
             />
-            <Intro messages={messages} />
+            <Intro />
             <SecondSection messages={messages} />
-            <Slider messages={messages} />
+            <Slider />
             <Blog messages={messages} />
-            <Team messages={messages} />
-            <BeforeAfter messages={messages} />
+            <Team />
+            <BeforeAfter />
             <Faq messages={messages} />
             <Liquids />
             <Tools />

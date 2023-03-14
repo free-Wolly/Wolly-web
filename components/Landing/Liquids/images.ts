@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import acid from "../../../public/assets/images/liquids/acid-power.webp";
 import appleEcolabel from "../../../public/assets/images/liquids/apple-ecolabel.webp";
 import cleaner from "../../../public/assets/images/liquids/cleaner-2000.webp";
@@ -7,7 +8,7 @@ import sf120 from "../../../public/assets/images/liquids/S.F-120.webp";
 import sf210 from "../../../public/assets/images/liquids/S.F-210.webp";
 import xtraCalc from "../../../public/assets/images/liquids/XTRA-CALC-Ecolabel.webp";
 
-const images = [
+const images: { image: StaticImageData; style: string }[] = [
   {
     image: acid,
     style:

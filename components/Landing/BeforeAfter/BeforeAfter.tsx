@@ -5,9 +5,9 @@ import "react-before-after-slider-component/dist/build.css";
 import { images, variants } from "./constants";
 import SectionHeader from "../../Helpers/SectionHeader";
 
-const BeforeAfter = ({ messages }: any) => {
-  const [direction, setDirection] = useState(0);
-  const [index, setIndex] = useState(0);
+const BeforeAfter = (): JSX.Element => {
+  const [direction, setDirection] = useState<number>(0);
+  const [index, setIndex] = useState<number>(0);
 
   function nextStep() {
     setDirection(1);

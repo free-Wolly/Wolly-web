@@ -1,8 +1,9 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import { menuItemVariants } from "./constants";
+import { MenuItemProps } from "./interfaces";
 
-const MenuItem = ({ text, onClick }: any) => {
+const MenuItem = ({ text, onClick }: MenuItemProps): JSX.Element => {
   return (
     <motion.li
       className="z-10"

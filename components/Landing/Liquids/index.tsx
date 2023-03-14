@@ -1,20 +1,32 @@
 import React, { MouseEventHandler, useEffect, useRef, useState } from "react";
-import { motion, useInView, useMotionValue, useTransform } from "framer-motion";
+import {
+  motion,
+  MotionValue,
+  useInView,
+  useMotionValue,
+  useTransform,
+} from "framer-motion";
 import images from "./images";
 
 const Liquids = () => {
   const sectionRef: any = useRef(null);
-  const sectionInView = useInView(sectionRef, { once: true, margin: "-300px" });
+  const sectionInView: boolean = useInView(sectionRef, {
+    once: true,
+    margin: "-300px",
+  });
 
-  const imageStyle =
+  const imageStyle: string =
     "absolute 2xl:w-[240px] 2xl:h-[240px] xl:w-[200px] xl:h-[200px] lg:w-[150px] lg:h-[150px] sm:w-[200px] sm:h-[200px] h-[150px] w-[150px] cursor-pointer drop-shadow-[0_10px_10px_rgba(0,0,0,0.3)]";
 
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [sectionHeight, setSectionHeight] = useState(0);
-  const [sectionWidth, setSectionWidth] = useState(0);
-  const [fromTopToSection, setFromTopToSection] = useState(0);
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
+  const [mousePos, setMousePos] = useState<{ x: number; y: number }>({
+    x: 0,
+    y: 0,
+  });
+  const [sectionHeight, setSectionHeight] = useState<number>(0);
+  const [sectionWidth, setSectionWidth] = useState<number>(0);
+  const [fromTopToSection, setFromTopToSection] = useState<number>(0);
+  const mouseX = useMotionValue<number>(0);
+  const mouseY = useMotionValue<number>(0);
 
   useEffect(() => {
     setSectionWidth(sectionRef.current.offsetWidth);
@@ -29,14 +41,18 @@ const Liquids = () => {
   mouseX.set(mousePos.x);
   mouseY.set(mousePos.y);
 
-  const x = useTransform(mouseX, [0, sectionWidth], [0, -60]);
-  const y = useTransform(
+  const x: MotionValue<number> = useTransform(
+    mouseX,
+    [0, sectionWidth],
+    [0, -60]
+  );
+  const y: MotionValue<number> = useTransform(
     mouseY,
     [fromTopToSection, fromTopToSection + sectionHeight],
     [0, -60]
   );
 
-  const renderImages = images.map((image, id) => (
+  const renderImages: JSX.Element[] = images.map((image, id) => (
     <motion.img
       key={id}
       src={image.image.src}

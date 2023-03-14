@@ -1,6 +1,7 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { letterAni } from "./variants";
+import { AnimateTextProps } from "./interfaces";
 
 const AnimateText = ({
   title,
@@ -8,8 +9,8 @@ const AnimateText = ({
   inView,
   textBackgroundElementWidth,
   staggerChildren,
-}: any) => {
-  const banner = {
+}: AnimateTextProps): JSX.Element => {
+  const banner: Variants = {
     animate: {
       transition: {
         staggerChildren,

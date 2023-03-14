@@ -3,16 +3,24 @@ import terms from "./constants";
 
 const Terms = ({ messages }: any) => {
   const renderText = useMemo(() => {
-    return terms.map((term, id: number) => {
-      return (
-        <div key={id}>
-          <h1 className="text-[32px] font-bold mt-16">{term.title}</h1>
-          <p className="text-[20px] whitespace-pre-wrap text-start">
-            {term.text}
-          </p>
-        </div>
-      );
-    });
+    return terms.map(
+      (
+        term: {
+          title: string;
+          text: string;
+        },
+        id: number
+      ) => {
+        return (
+          <div key={id}>
+            <h1 className="text-[32px] font-bold mt-16">{term.title}</h1>
+            <p className="text-[20px] whitespace-pre-wrap text-start">
+              {term.text}
+            </p>
+          </div>
+        );
+      }
+    );
   }, []);
 
   return (

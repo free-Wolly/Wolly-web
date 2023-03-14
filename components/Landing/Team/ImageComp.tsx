@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { ImageCompProps } from "./interfaces";
 
 const ImageComp = ({
   imageInView,
@@ -10,7 +11,7 @@ const ImageComp = ({
   transformY,
   delay,
   imageHeight,
-}: any) => {
+}: ImageCompProps): JSX.Element => {
   return (
     <motion.div
       className={`absolute drop-shadow-2xl ${className}`}

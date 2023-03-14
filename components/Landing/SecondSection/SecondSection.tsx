@@ -1,16 +1,16 @@
 import React, { ReactElement, useMemo, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { boxObj } from "./constants";
+import { BoxObj } from "./interfaces";
 import Block from "./Block";
 import SectionHeader from "../../Helpers/SectionHeader";
 
 const SecondSection = ({ messages }: any) => {
-  const boxSectionRef = useRef(null);
-  const boxSectionInView = useInView(boxSectionRef, { once: true });
+  const boxSectionRef = useRef<HTMLDivElement>(null);
+  const boxSectionInView: boolean = useInView(boxSectionRef, { once: true });
 
   const renderBoxes = useMemo(() => {
     return messages.secondSection.boxText.map(
-      (item: boxObj, id: number): ReactElement => {
+      (item: BoxObj, id: number): ReactElement => {
         return (
           <Block key={id} item={item} index={id} inView={boxSectionInView} />
         );

@@ -1,4 +1,6 @@
-export const arrowVariant = {
+import { Variants } from "framer-motion";
+
+export const arrowVariant: Variants = {
   hidden: {
     opacity: 0,
     y: -40,
@@ -13,7 +15,7 @@ export const arrowVariant = {
   },
 };
 
-export const banner = {
+export const banner: Variants = {
   animate: {
     transition: {
       delayChildren: 0.4,

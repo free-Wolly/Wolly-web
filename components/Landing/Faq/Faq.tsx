@@ -5,15 +5,17 @@ import Question from "./Question";
 import SectionHeader from "../../Helpers/SectionHeader";
 
 const Faq = ({ messages }: any) => {
-  const faqRef = useRef(null);
+  const faqRef = useRef<HTMLDivElement>(null);
   const faqInView: boolean = useInView(faqRef, { once: true });
 
   const renderQuestions = useMemo(() => {
-    return messages.faq.questions.map((question: any, id: number) => {
-      return (
-        <Question key={id} id={id} question={question} inView={faqInView} />
-      );
-    });
+    return messages.faq.questions.map(
+      (question: { question: string; answer: string }, id: number) => {
+        return (
+          <Question key={id} id={id} question={question} inView={faqInView} />
+        );
+      }
+    );
   }, [faqInView, messages.faq.questions]);
 
   return (

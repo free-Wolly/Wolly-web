@@ -6,24 +6,27 @@ import wollyLogo from "../../public/assets/images/wolly.png";
 import worldMap from "../../public/assets/images/world.png";
 import socialNetworksItems from "./socialNetworks";
 import handleClickScroll from "../../utils/scrollToSection";
+import { MenuItems, SocialNetworks } from "./interfaces";
 
 const Footer = ({ messages }: any) => {
   const renderMenuItems = useMemo(() => {
-    return messages.header.menuItems.map(({ text, id }: any, index: number) => {
-      return (
-        <div
-          className="cursor-pointer"
-          key={index}
-          onClick={() => handleClickScroll(id)}
-        >
-          {text}
-        </div>
-      );
-    });
+    return messages.header.menuItems.map(
+      ({ text, id }: MenuItems, index: number) => {
+        return (
+          <div
+            className="cursor-pointer"
+            key={index}
+            onClick={() => handleClickScroll(id)}
+          >
+            {text}
+          </div>
+        );
+      }
+    );
   }, [messages.header.menuItems]);
 
   const renderSocialNetworks = useMemo(() => {
-    return socialNetworksItems.map((item, id: number) => {
+    return socialNetworksItems.map((item: SocialNetworks, id: number) => {
       return (
         <Link
           key={id}

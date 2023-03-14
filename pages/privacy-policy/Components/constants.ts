@@ -1,4 +1,7 @@
-const policies = [
+const policies: {
+  title: string;
+  text: string;
+}[] = [
   {
     title: "1. Definitions",
     text: `

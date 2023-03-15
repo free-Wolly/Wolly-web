@@ -14,6 +14,7 @@ import WhatsIncluded from "../components/Landing/WhatsIncluded";
 import LiquidsAndTools from "../components/Landing/ToolsAndLiquids";
 
 import { useLanguage } from "../components/language";
+import PricingPlan from "../components/Landing/PricingPlan";
 
 export default function Home() {
   const { locale, setLocale, messages } = useLanguage();
@@ -33,6 +34,7 @@ export default function Home() {
         <Blog messages={messages} />
         <Team />
         <BeforeAfter />
+        <PricingPlan />
         <Faq messages={messages} />
         <LiquidsAndTools />
         <StickySections messages={messages} />

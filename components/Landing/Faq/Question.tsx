@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { imgVariant, openVariant } from "./constants";
+import { QuestionProps } from "./iterfaces";
 
-const Question = ({ id, question, inView }: any) => {
-  const [open, setOpen] = useState(false);
+const Question = ({ id, question, inView }: QuestionProps) => {
+  const [open, setOpen] = useState<boolean>(false);
 
   return (
     <motion.div

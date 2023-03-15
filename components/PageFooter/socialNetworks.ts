@@ -2,8 +2,9 @@ import facebookImg from "../../public/assets/images/socialNetwork/facebook.svg";
 import instagramImg from "../../public/assets/images/socialNetwork/instagram.svg";
 import linkedinImg from "../../public/assets/images/socialNetwork/linkedin.svg";
 import twitterImg from "../../public/assets/images/socialNetwork/twitter.svg";
+import { SocialNetworks } from "./interfaces";
 
-const socialNetworksItems = [
+const socialNetworksItems: SocialNetworks[] = [
   {
     img: facebookImg,
     link: "https://www.facebook.com/",

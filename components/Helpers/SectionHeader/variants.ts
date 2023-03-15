@@ -1,4 +1,6 @@
-export const letterAni = {
+import { Variants } from "framer-motion";
+
+export const letterAni: Variants = {
   initial: { y: 500 },
   animate: {
     y: 0,

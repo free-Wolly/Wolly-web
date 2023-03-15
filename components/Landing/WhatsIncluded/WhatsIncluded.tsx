@@ -1,11 +1,26 @@
 import React, { useMemo, useState } from "react";
 
-const WhatsIncluded = ({ messages }: any) => {
+interface IncludedServices {
+  service: string;
+  state: string;
+}
+
+interface IncludedParts {
+  service: IncludedPartsServices[];
+  state: string;
+}
+
+interface IncludedPartsServices {
+  room: string;
+  services: string[];
+}
+
+const WhatsIncluded = ({ messages }: any): JSX.Element => {
   const [chosenService, setChosenService] = useState("repairs");
 
   const renderButtons = useMemo(() => {
     return messages.whatsIncluded.services.map(
-      ({ service, state }: any, id: number) => {
+      ({ service, state }: IncludedServices, id: number) => {
         return (
           <button
             key={id}
@@ -22,25 +37,29 @@ const WhatsIncluded = ({ messages }: any) => {
   }, [chosenService, messages.whatsIncluded.services]);
 
   const renderBoxes = useMemo(() => {
-    return messages.whatsIncluded.parts.map(({ service, state }: any) => {
-      if (state === chosenService) {
-        return service.map(({ room, services }: any, id: number) => {
-          return (
-            <div
-              className="min-w-[300px] flex flex-col rounded-3xl my-12 p-8 bg-gray-100"
-              key={id}
-            >
-              <div className="text-[32px] font-bold">{room}</div>
-              <ul className="mt-6">
-                {services.map((serv: any, id: number) => {
-                  return <li key={id}>{serv}</li>;
-                })}
-              </ul>
-            </div>
+    return messages.whatsIncluded.parts.map(
+      ({ service, state }: IncludedParts) => {
+        if (state === chosenService) {
+          return service.map(
+            ({ room, services }: IncludedPartsServices, id: number) => {
+              return (
+                <div
+                  className="min-w-[300px] flex flex-col rounded-3xl my-12 p-8 bg-gray-100"
+                  key={id}
+                >
+                  <div className="text-[32px] font-bold">{room}</div>
+                  <ul className="mt-6">
+                    {services.map((serv: any, id: number) => {
+                      return <li key={id}>{serv}</li>;
+                    })}
+                  </ul>
+                </div>
+              );
+            }
           );
-        });
+        }
       }
-    });
+    );
   }, [chosenService, messages.whatsIncluded.parts]);
 
   return (

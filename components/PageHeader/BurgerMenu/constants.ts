@@ -1,4 +1,6 @@
-export const sidebarVariants = {
+import { Variants } from "framer-motion";
+
+export const sidebarVariants: Variants = {
   open: (height = 1000) => ({
     clipPath: `circle(${height * 2 + 200}px at 211px 26px)`,
     transition: {
@@ -18,7 +20,7 @@ export const sidebarVariants = {
   },
 };
 
-export const menuItemVariants = {
+export const menuItemVariants: Variants = {
   open: {
     display: "block",
     y: 0,
@@ -37,7 +39,7 @@ export const menuItemVariants = {
   },
 };
 
-export const navigationVariants = {
+export const navigationVariants: Variants = {
   open: {
     transition: { staggerChildren: 0.07, delayChildren: 0.2 },
   },

@@ -3,13 +3,14 @@ import { useInView } from "framer-motion";
 import ImageComp from "./ImageComp";
 import imageProps from "./constants";
 import SectionHeader from "../../Helpers/SectionHeader";
+import { ImagePropsInt } from "./interfaces";
 
-const Team = ({ messages }: any) => {
-  const imagesRef = useRef(null);
-  const imagesInView = useInView(imagesRef, { once: true });
+const Team = (): JSX.Element => {
+  const imagesRef = useRef<HTMLDivElement>(null);
+  const imagesInView: boolean = useInView(imagesRef, { once: true });
 
   const renderImageComps = useMemo(() => {
-    return imageProps.map((image: any, id: number) => {
+    return imageProps.map((image: ImagePropsInt, id: number) => {
       return (
         <ImageComp
           key={id}

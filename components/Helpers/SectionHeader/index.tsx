@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
 import AnimateText from "./AnimateText";
+import { SectionHeaderProps } from "./interfaces";
 
 const SectionHeader = ({
   topTitle,
@@ -8,8 +9,8 @@ const SectionHeader = ({
   delay,
   textBackgroundElementWidth,
   staggerChildren,
-}: any) => {
-  const mainRef = useRef(null);
+}: SectionHeaderProps): JSX.Element => {
+  const mainRef = useRef<HTMLDivElement>(null);
   const headerInView = useInView(mainRef);
 
   return (

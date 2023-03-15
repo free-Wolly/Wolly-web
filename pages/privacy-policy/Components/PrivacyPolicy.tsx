@@ -3,16 +3,24 @@ import policies from "./constants";
 
 const PrivacyPolicy = ({ messages }: any) => {
   const renderText = useMemo(() => {
-    return policies.map((policy, id: number) => {
-      return (
-        <div key={id}>
-          <h1 className="text-[32px] font-bold mt-16">{policy.title}</h1>
-          <p className="text-[20px] whitespace-pre-wrap text-start">
-            {policy.text}
-          </p>
-        </div>
-      );
-    });
+    return policies.map(
+      (
+        policy: {
+          title: string;
+          text: string;
+        },
+        id: number
+      ) => {
+        return (
+          <div key={id}>
+            <h1 className="text-[32px] font-bold mt-16">{policy.title}</h1>
+            <p className="text-[20px] whitespace-pre-wrap text-start">
+              {policy.text}
+            </p>
+          </div>
+        );
+      }
+    );
   }, []);
 
   return (

@@ -27,12 +27,12 @@ export default function Home() {
       </Head>
       <div id="landing-page">
         <PageHeader locale={locale} setLocale={setLocale} messages={messages} />
-        <Intro messages={messages} />
+        <Intro />
         <SecondSection messages={messages} />
-        <Slider messages={messages} />
+        <Slider />
         <Blog messages={messages} />
-        <Team messages={messages} />
-        <BeforeAfter messages={messages} />
+        <Team />
+        <BeforeAfter />
         <Faq messages={messages} />
         <LiquidsAndTools />
         <StickySections messages={messages} />

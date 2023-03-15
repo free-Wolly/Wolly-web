@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import images from "./images";
+import { SidePostProps } from "./interfaces";
 
-const SidePost = ({ blogItem, id }: any) => {
+const SidePost = ({ blogItem, id }: SidePostProps): JSX.Element => {
   return (
     <div className="w-3/6 flex flex-col gap-4">
       <Image

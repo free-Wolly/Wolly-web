@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import AnimatedText from "../../../Helpers/TextAnimation/AnimateText";
 
 const Marquee = ({ title }: any) => {
-  const [playMarquee, setPlayMarquee] = useState(false);
+  const [playMarquee, setPlayMarquee] = useState<boolean>(false);
 
   useEffect(() => {
     setTimeout(() => {

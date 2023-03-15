@@ -1,4 +1,7 @@
-const menuItems = [
+const menuItems: {
+  text: string;
+  id: string;
+}[] = [
   {
     text: "მთავარი",
     id: "main",

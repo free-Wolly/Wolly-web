@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 import style from "./carousel.module.css";
 import Image from "next/image";
 import Lottie from "lottie-react";
@@ -7,12 +7,12 @@ import Instagram from "../../../public/assets/animations/instagram.json";
 import { Data } from "./constants";
 
 const Carousel = ({ messages }: any) => {
-  const [FlowDirection, setFlowDirection] = useState(true);
-  const [CenterId, setCenterId] = useState(0);
-  const [LeftId, setLeftId] = useState(Data.length - 1);
-  const [RightId, setRightId] = useState(1);
-  const [mostLeftId, setMostLeftId] = useState(Data.length - 2);
-  const [mostRightId, setMostRightId] = useState(2);
+  const [FlowDirection, setFlowDirection] = useState<boolean>(true);
+  const [CenterId, setCenterId] = useState<number>(0);
+  const [LeftId, setLeftId] = useState<number>(Data.length - 1);
+  const [RightId, setRightId] = useState<number>(1);
+  const [mostLeftId, setMostLeftId] = useState<number>(Data.length - 2);
+  const [mostRightId, setMostRightId] = useState<number>(2);
 
   const nextBtn = useCallback(() => {
     if (LeftId === Data.length - 1) {
@@ -71,7 +71,7 @@ const Carousel = ({ messages }: any) => {
     }
   };
 
-  const variants = {
+  const variants: Variants = {
     center: {
       x: "-12.8rem",
       opacity: 1,

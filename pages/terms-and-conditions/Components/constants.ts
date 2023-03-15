@@ -1,4 +1,7 @@
-const terms = [
+const terms: {
+  title: string;
+  text: string;
+}[] = [
   {
     title: "1. Definitions",
     text: `

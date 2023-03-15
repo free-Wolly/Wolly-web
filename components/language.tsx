@@ -15,7 +15,11 @@ const LanguageContext = createContext<LanguageContextProps>({
   messages: ka,
 });
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
+export function LanguageProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}): JSX.Element {
   const router = useRouter();
   const [locale, setLocale] = useState(router.locale || "ka");
   const messages = locale === "ka" ? ka : en;

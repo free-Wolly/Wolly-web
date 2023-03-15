@@ -5,14 +5,19 @@ import menuItems from "../constants";
 import { navigationVariants } from "./constants";
 import handleClickScroll from "../../../utils/scrollToSection";
 
-const Navigation = ({ locale, setLocale }: any) => {
+const Navigation = ({
+  locale,
+  setLocale,
+}: {
+  locale: string;
+  setLocale: any;
+}): JSX.Element => {
   return (
     <motion.ul variants={navigationVariants} className="flex flex-col">
       {menuItems.map(({ text, id }, index: number) => (
         <MenuItem
           onClick={() => handleClickScroll(id)}
           text={text}
-          i={index}
           key={index}
         />
       ))}

@@ -5,7 +5,7 @@ import AnimatedText from "../../Helpers/TextAnimation/AnimateText";
 import { arrowVariant, banner } from "./variants";
 import Marquee from "./Marquee/Marquee";
 
-const Intro = ({ messages }: any) => {
+const Intro = () => {
   return (
     <div id="main" className={`font-[GEOCAPS] relative w-full h-screen`}>
       <div className="mx-auto">

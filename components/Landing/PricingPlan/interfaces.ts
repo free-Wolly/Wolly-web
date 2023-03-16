@@ -8,7 +8,7 @@ export interface PlanProps {
   setSeeMore: (value: boolean) => void;
 }
 
-export interface PlanInt {
+export interface PlanInterface {
   title: string;
   recommendation: string;
   price: string;

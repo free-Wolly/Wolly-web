@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SectionHeader from "../../Helpers/SectionHeader";
 import { plans } from "./constants";
-import { PlanInt } from "./interfaces";
+import { PlanInterface } from "./interfaces";
 import Plan from "./Plan";
 
 const PricingPlan = (): JSX.Element => {
@@ -16,10 +16,16 @@ const PricingPlan = (): JSX.Element => {
         textBackgroundElementWidth="50%"
         staggerChildren={0.05}
       />
-      <div className="w-full flex flex-row items-center justify-between gap-[2rem]">
+      <div className="hidden lg:w-full lg:flex lg:flex-row lg:items-center lg:justify-between lg:gap-[2rem]">
         {plans.map(
           (
-            { title, recommendation, price, included, notIncluded }: PlanInt,
+            {
+              title,
+              recommendation,
+              price,
+              included,
+              notIncluded,
+            }: PlanInterface,
             id: number
           ) => (
             <Plan
@@ -35,6 +41,7 @@ const PricingPlan = (): JSX.Element => {
           )
         )}
       </div>
+      <div className="block lg:hidden"></div>
     </div>
   );
 };

@@ -1,6 +1,6 @@
-import { PlanInt } from "./interfaces";
+import { PlanInterface } from "./interfaces";
 
-export const plans: PlanInt[] = [
+export const plans: PlanInterface[] = [
   {
     title: "სტანდარტი",
     recommendation: "ხარისხი გარანტირებულია",

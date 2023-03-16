@@ -1,9 +1,15 @@
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
 import tick from "../../../public/assets/images/pircingPlan/tick.svg";
 import x from "../../../public/assets/images/pircingPlan/x.svg";
 import { PlanProps } from "./interfaces";
-import { motion } from "framer-motion";
+
+const variant = {
+  enlarge: { height: "auto" },
+  shrink: { height: "30rem" },
+};
 
 const Plan = ({
   title,
@@ -16,8 +22,7 @@ const Plan = ({
 }: PlanProps): JSX.Element => {
   return (
     <motion.div
-      className={`relative w-1/3 h-[40rem] flex flex-col items-start p-[2rem] rounded-[1rem] bg-gradient-to-r from-[#00BCD4] to-[#7FD3E6] pb-[5rem] overflow-hidden`}
-      animate={seeMore ? { height: "55rem" } : { height: "40rem" }}
+      className={`relative lg:w-1/3 w-[80%] flex flex-col items-start p-[2rem] rounded-[1rem] bg-gradient-to-r from-[#00BCD4] to-[#7FD3E6] pb-[5rem] overflow-hidden`}
     >
       <div className="w-full flex flex-row justify-between items-center pb-[2rem] border-b mb-[1rem] ">
         <div className="flex flex-col">
@@ -30,14 +35,19 @@ const Plan = ({
         </div>
         <div className="text-[2rem] text-white">{`${price}₾-დან`}</div>
       </div>
-      <div className={`w-full overflow-hidden`}>
+      <motion.div
+        className={`w-full overflow-hidden`}
+        initial={"shrink"}
+        animate={seeMore ? "enlarge" : "shrink"}
+        variants={variant}
+      >
         {included.map((text: string, id: number) => (
           <div
             key={id}
             className="w-full flex justify-between items-center my-[0.25rem]"
           >
-            <div className="text-[1rem]">{text}</div>
-            <div className="w-[1rem] h-[1rem]">
+            <div className="text-[1rem] w-[90%]">{text}</div>
+            <div className="w-[1rem] h-[1rem] ml-[0.5rem]">
               <Image src={tick} alt={"yep"} width={50} height={50} />
             </div>
           </div>
@@ -47,13 +57,13 @@ const Plan = ({
             key={id}
             className="w-full flex justify-between items-center my-[0.25rem]"
           >
-            <div className="text-[1rem]">{text}</div>
+            <div className="text-[1rem] w-[90%]">{text}</div>
             <div className="w-[1rem] h-[1rem]">
               <Image src={x} alt={"nope"} width={50} height={50} />
             </div>
           </div>
         ))}
-      </div>
+      </motion.div>
       <div className="absolute bottom-0">
         <motion.div
           className="h-[4rem] flex items-center text-white font-bold cursor-pointer"

@@ -8,7 +8,7 @@ import { PlanProps } from "./interfaces";
 
 const variant = {
   enlarge: { height: "auto" },
-  shrink: { height: "30rem" },
+  shrink: { height: "25rem" },
 };
 
 const Plan = ({
@@ -22,7 +22,7 @@ const Plan = ({
 }: PlanProps): JSX.Element => {
   return (
     <motion.div
-      className={`relative lg:w-1/3 w-[80%] flex flex-col items-start p-[2rem] rounded-[1rem] bg-gradient-to-r from-[#00BCD4] to-[#7FD3E6] pb-[5rem] overflow-hidden`}
+      className={`relative lg:w-1/3 lg:min-w-0 min-w-[90%] flex flex-col items-start p-[2rem] rounded-[1rem] bg-gradient-to-r from-[#00BCD4] to-[#7FD3E6] pb-[5rem] overflow-hidden`}
     >
       <div className="w-full flex flex-row justify-between items-center pb-[2rem] border-b mb-[1rem] ">
         <div className="flex flex-col">
@@ -57,7 +57,7 @@ const Plan = ({
             key={id}
             className="w-full flex justify-between items-center my-[0.25rem]"
           >
-            <div className="text-[1rem] w-[90%]">{text}</div>
+            <div className="text-[1rem] text-black/40 w-[90%]">{text}</div>
             <div className="w-[1rem] h-[1rem]">
               <Image src={x} alt={"nope"} width={50} height={50} />
             </div>

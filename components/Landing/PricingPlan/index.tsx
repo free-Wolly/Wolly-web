@@ -3,6 +3,7 @@ import SectionHeader from "../../Helpers/SectionHeader";
 import { plans } from "./constants";
 import { PlanInterface } from "./interfaces";
 import Plan from "./Plan";
+import PlanSmall from "./PlanSmall";
 
 const PricingPlan = (): JSX.Element => {
   const [seeMore, setSeeMore] = useState(false);
@@ -41,7 +42,9 @@ const PricingPlan = (): JSX.Element => {
           )
         )}
       </div>
-      <div className="block lg:hidden"></div>
+      <div className="lg:hidden flex items-center sm:px-[3.125rem] sm:gap-[3.125rem] px-[1rem] gap-[1rem] overflow-x-auto">
+        <PlanSmall seeMore={seeMore} setSeeMore={setSeeMore} />
+      </div>
     </div>
   );
 };

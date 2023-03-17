@@ -25,6 +25,10 @@ module.exports = {
       backgroundSize: {
         fill: "100% 100%",
       },
+      colors: {
+        wollyBlue: "#00BCD4",
+        wollyLightBlue: "#7FD3E6",
+      },
     },
   },
   plugins: [],

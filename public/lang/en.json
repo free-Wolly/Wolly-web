@@ -395,5 +395,98 @@
     },
     "title": "Terms and Conditions",
     "text": "This Framer Terms of Service (“Agreement”) is entered into by and between Framer B.V. (“Framer”) and the entity or person placing an order for or accessing the Services (“Customer”). This Agreement consists ofthe terms and conditions set forth below and any Order Form. The“Effective Date” of this Agreement is the date which is the earlier of(a) Customer’s initial access to the Services through any onlineprovisioning, registration or order process or (b) the Effective Date ofthe first Order Form. This Agreement will govern Customer’s initialpurchase on the Effective Date as well as any future purchases made byCustomer that reference this Agreement. Framer may modify this Agreementfrom time to time as permitted in Section 13.4 (Amendment). Capitalized terms shall have the meanings set forth in Section 1, or inthe section where they are first used."
+  },
+  "pricingPlan": {
+    "sectionTitle": "Blog",
+    "title": "Pricing Plan",
+    "from": "from",
+    "less": "Less...",
+    "more": "More...",
+    "plans": [
+      {
+        "title": "Standard",
+        "recommendation": "Quality is guaranteed",
+        "price": "100",
+        "included": [
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk"
+        ],
+        "notIncluded": [
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk"
+        ]
+      },
+      {
+        "title": "Premium",
+        "recommendation": "Quality is guaranteed",
+        "price": "200",
+        "included": [
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk"
+        ],
+        "notIncluded": ["ksmdmfalsmdfk", "ksmdmfalsmdfk", "ksmdmfalsmdfk"]
+      },
+      {
+        "title": "Elite",
+        "recommendation": "Quality is guaranteed",
+        "price": "300",
+        "included": [
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk"
+        ]
+      }
+    ]
   }
 }

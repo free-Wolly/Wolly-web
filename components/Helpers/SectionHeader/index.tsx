@@ -20,7 +20,7 @@ const SectionHeader = ({
         animate={
           headerInView && { y: 0, opacity: 1, transition: { duration: 1 } }
         }
-        className="text-center text-[28px] text-[#00BCD4] font-[BOG] mb-[25px] mt-[100px]"
+        className="text-center text-[28px] text-wollyBlue font-[BOG] mb-[25px] mt-[100px]"
         style={{ textShadow: "0px 3px 6px #00000029" }}
       >
         {topTitle}

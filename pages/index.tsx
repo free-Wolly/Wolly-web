@@ -34,7 +34,7 @@ export default function Home() {
         <Blog messages={messages} />
         <Team />
         <BeforeAfter />
-        <PricingPlan />
+        <PricingPlan messages={messages} locale={locale} />
         <Faq messages={messages} />
         <LiquidsAndTools />
         <StickySections messages={messages} />

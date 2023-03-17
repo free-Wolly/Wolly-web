@@ -19,10 +19,12 @@ const Plan = ({
   notIncluded,
   seeMore,
   setSeeMore,
+  messages,
+  locale,
 }: PlanProps): JSX.Element => {
   return (
     <motion.div
-      className={`relative lg:w-1/3 lg:min-w-0 min-w-[90%] flex flex-col items-start p-[2rem] rounded-[1rem] bg-gradient-to-r from-[#00BCD4] to-[#7FD3E6] pb-[5rem] overflow-hidden`}
+      className={`relative lg:w-1/3 lg:min-w-0 min-w-[90%] flex flex-col items-start p-[2rem] rounded-[1rem] bg-gradient-to-r from-wollyBlue to-wollyLightBlue pb-[5rem] overflow-hidden`}
     >
       <div className="w-full flex flex-row justify-between items-center pb-[2rem] border-b mb-[1rem] ">
         <div className="flex flex-col">
@@ -33,7 +35,9 @@ const Plan = ({
             {recommendation}
           </div>
         </div>
-        <div className="text-[2rem] text-white">{`${price}₾-დან`}</div>
+        <div className="text-[2rem] text-white">
+          {locale === "ka" ? `${price}₾-დან` : `From ${price}₾`}
+        </div>
       </div>
       <motion.div
         className={`w-full overflow-hidden`}
@@ -72,7 +76,7 @@ const Plan = ({
           }}
           whileHover={{ scale: 1.2, transition: { duration: 0.3 } }}
         >
-          {seeMore ? "ნაკლები..." : "მეტი..."}
+          {seeMore ? messages.pricingPlan.less : messages.pricingPlan.more}
         </motion.div>
       </div>
     </motion.div>

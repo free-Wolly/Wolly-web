@@ -1,24 +1,23 @@
 import React, { useState } from "react";
 import SectionHeader from "../../Helpers/SectionHeader";
-import { plans } from "./constants";
 import { PlanInterface } from "./interfaces";
 import Plan from "./Plan";
 import PlanSmall from "./PlanSmall";
 
-const PricingPlan = (): JSX.Element => {
+const PricingPlan = ({ messages, locale }: any): JSX.Element => {
   const [seeMore, setSeeMore] = useState(false);
 
   return (
     <div className="container mx-auto">
       <SectionHeader
-        topTitle="ბლოგი"
-        botTitle="ფასები"
+        topTitle={messages.pricingPlan.sectionTitle}
+        botTitle={messages.pricingPlan.title}
         delay={2}
         textBackgroundElementWidth="50%"
         staggerChildren={0.05}
       />
       <div className="hidden lg:w-full lg:flex lg:flex-row lg:items-center lg:justify-between lg:gap-[2rem]">
-        {plans.map(
+        {messages.pricingPlan.plans.map(
           (
             {
               title,
@@ -38,12 +37,19 @@ const PricingPlan = (): JSX.Element => {
               notIncluded={notIncluded}
               seeMore={seeMore}
               setSeeMore={setSeeMore}
+              messages={messages}
+              locale={locale}
             />
           )
         )}
       </div>
       <div className="lg:hidden flex items-center sm:px-[3.125rem] sm:gap-[3.125rem] px-[1rem] gap-[1rem] overflow-x-auto">
-        <PlanSmall seeMore={seeMore} setSeeMore={setSeeMore} />
+        <PlanSmall
+          seeMore={seeMore}
+          setSeeMore={setSeeMore}
+          messages={messages}
+          locale={locale}
+        />
       </div>
     </div>
   );

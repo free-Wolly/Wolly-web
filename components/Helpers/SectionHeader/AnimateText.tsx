@@ -35,7 +35,7 @@ const AnimateText = ({
           inView && { display: "block", width: textBackgroundElementWidth }
         }
         transition={{ delay, duration: 1 }}
-        className="absolute right-0 bottom-0 rounded-[100px] bg-gradient-to-r from-[#00BCD4] to-[#7FD3E6] mr-[-5px] lg:mr-[-10px] h-[10px] sm:h-[16px] md:h-[20px] lg:h-[24px] xl:h-[28px] z-0"
+        className="absolute right-0 bottom-0 rounded-[100px] bg-gradient-to-r from-wollyBlue to-wollyLightBlue mr-[-5px] lg:mr-[-10px] h-[10px] sm:h-[16px] md:h-[20px] lg:h-[24px] xl:h-[28px] z-0"
       />
     </motion.span>
   );

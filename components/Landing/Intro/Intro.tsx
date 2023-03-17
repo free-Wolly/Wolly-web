@@ -50,7 +50,7 @@ const Intro = () => {
           <div className="overflow-hidden flex items-center mt-24 pl-8 text-white">
             <AnimatedText title={"პრემიუმ"} side />
           </div>
-          <div className={"overflow-hidden flex text-[#00BCD4]"}>
+          <div className={"overflow-hidden flex text-wollyBlue"}>
             <Marquee title="კომფორტი" />
           </div>
           <div className={"overflow-hidden flex justify-end pr-8 text-white"}>

@@ -1,17 +1,20 @@
 import React from "react";
-import { plans } from "./constants";
 import { PlanInterface } from "./interfaces";
 import Plan from "./Plan";
 
 const PlanSmall = ({
   seeMore,
   setSeeMore,
+  messages,
+  locale,
 }: {
   seeMore: boolean;
   setSeeMore: (value: boolean) => void;
+  messages: any;
+  locale: string;
 }): JSX.Element => (
   <>
-    {plans.map(
+    {messages.pricingPlan.plans.map(
       (
         { title, recommendation, price, included, notIncluded }: PlanInterface,
         id: number
@@ -25,6 +28,8 @@ const PlanSmall = ({
           notIncluded={notIncluded}
           seeMore={seeMore}
           setSeeMore={setSeeMore}
+          messages={messages}
+          locale={locale}
         />
       )
     )}

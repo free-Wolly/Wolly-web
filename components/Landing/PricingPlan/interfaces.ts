@@ -6,6 +6,8 @@ export interface PlanProps {
   notIncluded?: string[];
   seeMore: boolean;
   setSeeMore: (value: boolean) => void;
+  messages: any;
+  locale: string;
 }
 
 export interface PlanInterface {

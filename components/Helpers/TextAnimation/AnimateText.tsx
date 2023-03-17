@@ -33,7 +33,7 @@ const AnimatedText = ({
           variants={textBackground}
           initial="hidden"
           animate="show"
-          className="absolute right-0 top-[calc(50%+10px)] md:top-[calc(50%+30px)] rounded-[100px] bg-[#00BCD4] mr-[-20px] h-[28px] sm:h-[32px] md:h-[40px] lg:h-[48px] xl:h-[80px] z-[0]"
+          className="absolute right-0 top-[calc(50%+10px)] md:top-[calc(50%+30px)] rounded-[100px] bg-gradient-to-r from-wollyBlue to-wollyLightBlue mr-[-20px] h-[28px] sm:h-[32px] md:h-[40px] lg:h-[48px] xl:h-[80px] z-[0]"
         />
       )}
     </motion.span>

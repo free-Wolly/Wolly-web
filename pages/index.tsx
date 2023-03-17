@@ -4,13 +4,13 @@ import Intro from "../components/Landing/Intro";
 import SecondSection from "../components/Landing/SecondSection";
 import Slider from "../components/Landing/Slider";
 import Blog from "../components/Landing/Blog";
-import Team from "../components/Landing/Team";
+// import Team from "../components/Landing/Team";
 import PageFooter from "../components/PageFooter";
 import Faq from "../components/Landing/Faq";
 import BeforeAfter from "../components/Landing/BeforeAfter";
 import StickySections from "../components/Landing/StickySection";
 import Carousel from "../components/Landing/InstagramStories/Carousel";
-import WhatsIncluded from "../components/Landing/WhatsIncluded";
+// import WhatsIncluded from "../components/Landing/WhatsIncluded";
 import LiquidsAndTools from "../components/Landing/ToolsAndLiquids";
 
 import { useLanguage } from "../components/language";
@@ -27,17 +27,17 @@ export default function Home() {
       </Head>
       <div id="landing-page">
         <PageHeader locale={locale} setLocale={setLocale} messages={messages} />
-        <Intro />
+        <Intro messages={messages} />
         <SecondSection messages={messages} />
-        <Slider />
+        <Slider messages={messages} />
         <Blog messages={messages} />
-        <Team />
-        <BeforeAfter />
+        {/* <Team /> */}
+        <BeforeAfter messages={messages} />
         <Faq messages={messages} />
-        <LiquidsAndTools />
+        <LiquidsAndTools messages={messages} />
         <StickySections messages={messages} />
         <Carousel messages={messages} />
-        <WhatsIncluded messages={messages} />
+        {/* <WhatsIncluded messages={messages} /> */}
         <PageFooter messages={messages} />
       </div>
     </>

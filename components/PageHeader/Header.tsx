@@ -23,7 +23,7 @@ const Header = ({
       ({ text, id }: { text: string; id: string }, index: number) => {
         return (
           <div
-            className="cursor-pointer"
+            className="cursor-pointer "
             key={index}
             onClick={() => handleClickScroll(id)}
           >
@@ -48,11 +48,11 @@ const Header = ({
       } transition-all duration-500`}
     >
       <div className="w-full lg:container lg:mx-auto 2xl:px-32 xl:px-16 lg:pl-0 md:pl-8 sm:pl-4 pl-4">
-        <div className="w-full flex justify-center items-center">
-          <div className="xl:w-75% lg:w-6/12 lg:mt-2 sm:mt-1 w-full flex">
+        <div className="w-full flex justify-center items-center lg:mt-2">
+          <div className="xl:w-[75%] lg:w-6/12 mt-1 w-full flex">
             <Link href="/">
               <Image
-                className="xl:w-24 lg:w-20 w-16"
+                className="w-[4rem]"
                 priority
                 src="/assets/images/wolly.png"
                 alt=""
@@ -61,10 +61,10 @@ const Header = ({
               />
             </Link>
           </div>
-          <div className="hidden lg:flex lg:justify-between lg:w-full text-[20px] font-[BOG] text-white">
+          <div className="hidden lg:flex lg:justify-between lg:w-full text-[1rem] font-[BOG] text-white">
             {renderMenuItems}
             <div
-              className="cursor-pointer"
+              className="cursor-pointer "
               onClick={() => setLocale(locale === "en" ? "ka" : "en")}
             >
               {locale === "en" ? "KA" : "EN"}
@@ -72,7 +72,11 @@ const Header = ({
           </div>
 
           <div className="lg:hidden">
-            <BurgerMenu locale={locale} setLocale={setLocale} />
+            <BurgerMenu
+              locale={locale}
+              messages={messages}
+              setLocale={setLocale}
+            />
           </div>
         </div>
       </div>

@@ -25,11 +25,13 @@
     ]
   },
   "intro": {
-    "introAnimatedTextTop": "ბრენდ",
-    "introAnimatedTextMiddle": "ეხპერიენცე",
-    "introAnimatedTextBottom": "სტუდიო"
+    "introAnimatedTextTop": "პრემიუმ",
+    "introAnimatedTextMiddle": "კომფორტი",
+    "introAnimatedTextBottom": "ხარისხი"
   },
   "secondSection": {
+    "sectionTitle": "პრემიუმ ხარისხი",
+    "title": "ხარისხი და კომფორტი კარგია?",
     "boxText": [
       {
         "imgSource": "quality.svg",
@@ -64,10 +66,12 @@
     ]
   },
   "sliderSection": {
-    "title": "სლაიდერის სექცია"
+    "sectionTitle": "ვოლის გუნდი",
+    "title": "გუნდი რომელსაც შეგიძლია ენდო"
   },
   "blog": {
-    "title": "ბლოგი",
+    "sectionTitle": "ბლოგი",
+    "title": "გაეცანი სიახლეებს ჩვენთან",
     "blogItems": [
       {
         "title": "რა არის ახალი?",
@@ -96,15 +100,11 @@
       }
     ]
   },
-  "textHorizontalAnimation": {
-    "leftTop": "გამოც",
-    "leftBot": "დილება",
-    "right": {
-      "title": "ჩვენ ვიცით რას ვაკეთებთ",
-      "text": "მსდოაჯსმდოჯქწჯდნწნეიუნქონკ ლნჯკდსნ ალჯსნდჯანს ლანსლ ნალს ნალკსდ ნლაკსნდლ კანსლდას დ"
-    }
-  },
   "stickySection": {
+    "textHorizontalAnimation": {
+      "top": "გამოც",
+      "bottom": "დილება"
+    },
     "title": {
       "first": "ა.",
       "second": "ბ.",
@@ -347,9 +347,11 @@
     ]
   },
   "beforeAfter": {
-    "title": "სამუშაოები რომლითაც ვამაყოფთ"
+    "sectionTitle": "ბლოგი",
+    "title": "მანამდე/შემდეგ"
   },
   "faq": {
+    "sectionTitle": "ბლოგი",
     "title": "ხშირად დასმული კითხვები",
     "questions": [
       {
@@ -365,6 +367,10 @@
         "answer": "დედამიწაზე დაახლოებით ცხოვრობს ძალიან ბევრი ადამიანი. შენ უფრო კონკრეტულად რა გაინტერესებს? დედამიწაზე დაახლოებით ცხოვრობს ძალიან ბევრი ადამიანი. შენ უფრო კონკრეტულად რა გაინტერესებს?"
       }
     ]
+  },
+  "liquidsTools": {
+    "liquids": "სითხეები",
+    "tools": "იარაღები"
   },
   "footer": {
     "left": {

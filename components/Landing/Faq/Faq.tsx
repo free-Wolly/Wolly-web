@@ -24,8 +24,8 @@ const Faq = ({ messages }: any) => {
       className="container mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4 pb-16 border-t-2"
     >
       <SectionHeader
-        topTitle="ბლოგი"
-        botTitle="ხშირად დასმული კითხვები"
+        topTitle={messages.faq.sectionTitle}
+        botTitle={messages.faq.title}
         delay={2}
         textBackgroundElementWidth="30%"
         staggerChildren={0.05}

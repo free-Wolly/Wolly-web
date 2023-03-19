@@ -5,7 +5,7 @@ import "react-before-after-slider-component/dist/build.css";
 import { images, variants } from "./constants";
 import SectionHeader from "../../Helpers/SectionHeader";
 
-const BeforeAfter = (): JSX.Element => {
+const BeforeAfter = ({ messages }: any): JSX.Element => {
   const [direction, setDirection] = useState<number>(0);
   const [index, setIndex] = useState<number>(0);
 
@@ -65,8 +65,8 @@ const BeforeAfter = (): JSX.Element => {
   return (
     <div className="mx-auto overflow-hidden">
       <SectionHeader
-        topTitle="ბლოგი"
-        botTitle="მანამდე/შემდეგ"
+        topTitle={messages.beforeAfter.sectionTitle}
+        botTitle={messages.beforeAfter.title}
         delay={1}
         textBackgroundElementWidth="47%"
         staggerChildren={0.1}

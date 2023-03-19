@@ -45,7 +45,7 @@ const TextHorizontalAnimation = (props: any, ref: any) => {
               x: animateRight,
             }}
           >
-            გამოც
+            {props.messages.stickySection.textHorizontalAnimation.top}
           </motion.div>
           <motion.div
             className="md:text-[6rem] text-[3.5rem] font-bold leading-none"
@@ -53,7 +53,7 @@ const TextHorizontalAnimation = (props: any, ref: any) => {
               x: animateLeft,
             }}
           >
-            დილება
+            {props.messages.stickySection.textHorizontalAnimation.bottom}
           </motion.div>
         </div>
       </div>

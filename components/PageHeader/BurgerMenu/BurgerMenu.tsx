@@ -9,9 +9,11 @@ import { sidebarVariants } from "./constants";
 const BurgerMenu = ({
   locale,
   setLocale,
+  messages,
 }: {
   locale: string;
   setLocale: any;
+  messages: any;
 }): JSX.Element => {
   const [menuExpanded, isMenuExpanded] = useState(false);
   const containerRef = useRef(null);
@@ -36,7 +38,7 @@ const BurgerMenu = ({
           className="absolute top-0 right-0 w-60 bg-white h-screen"
           variants={sidebarVariants}
         />
-        <Navigation locale={locale} setLocale={setLocale} />
+        <Navigation locale={locale} setLocale={setLocale} messages={messages} />
         <MenuToggle toggle={() => isMenuExpanded(!menuExpanded)} />
       </motion.nav>
     </>

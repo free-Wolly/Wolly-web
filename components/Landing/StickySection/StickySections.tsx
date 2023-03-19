@@ -68,7 +68,7 @@ const StickySections = ({ messages }: any): JSX.Element => {
         <div className="sticky top-[20%] flex justify-center content-center items-center text-[#041919]">
           <div className="text-center lg:text-left">
             <div className="text-[100px] lg:text-[200px] font-bold leading-none">
-              <TextHorizontalAnimation ref={sectionRef} />
+              <TextHorizontalAnimation ref={sectionRef} messages={messages} />
             </div>
             <div className="md:text-[4rem] text-[2rem]">
               {messages.stickySection.title.third}

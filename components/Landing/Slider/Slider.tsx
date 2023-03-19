@@ -6,7 +6,7 @@ import Parallax from "./Paralax";
 import SectionHeader from "../../Helpers/SectionHeader";
 import { StaticImageData } from "next/image";
 
-const Slider = () => {
+const Slider = ({ messages }: any) => {
   const baseVelocity: number = -50;
 
   const renderImages = useMemo(() => {
@@ -26,8 +26,8 @@ const Slider = () => {
   return (
     <div id="services" className="mx-auto w-full">
       <SectionHeader
-        topTitle="ვოლის გუნდი"
-        botTitle="გუნდი რომელსაც შეგიძლია ენდო"
+        topTitle={messages.sliderSection.sectionTitle}
+        botTitle={messages.sliderSection.title}
         delay={2}
         textBackgroundElementWidth={"18%"}
         staggerChildren={0.05}

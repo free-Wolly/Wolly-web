@@ -40,7 +40,7 @@ const TextHorizontalAnimation = (props: any, ref: any) => {
       <div className="flex flex-col lg:flex-row justify-between items-center">
         <div className="flex flex-col items-start justify-center">
           <motion.div
-            className="text-[100px] font-bold leading-none"
+            className="md:text-[6rem] text-[3.5rem] font-bold leading-none"
             style={{
               x: animateRight,
             }}
@@ -48,7 +48,7 @@ const TextHorizontalAnimation = (props: any, ref: any) => {
             {props.messages.stickySection.textHorizontalAnimation.top}
           </motion.div>
           <motion.div
-            className="text-[100px] font-bold leading-none"
+            className="md:text-[6rem] text-[3.5rem] font-bold leading-none"
             style={{
               x: animateLeft,
             }}

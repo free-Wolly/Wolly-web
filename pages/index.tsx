@@ -14,6 +14,7 @@ import Carousel from "../components/Landing/InstagramStories/Carousel";
 import LiquidsAndTools from "../components/Landing/ToolsAndLiquids";
 
 import { useLanguage } from "../components/language";
+import PricingPlan from "../components/Landing/PricingPlan";
 
 export default function Home() {
   const { locale, setLocale, messages } = useLanguage();
@@ -31,8 +32,9 @@ export default function Home() {
         <SecondSection messages={messages} />
         <Slider messages={messages} />
         <Blog messages={messages} />
-        {/* <Team /> */}
+        <Team />
         <BeforeAfter messages={messages} />
+        <PricingPlan messages={messages} locale={locale} />
         <Faq messages={messages} />
         <LiquidsAndTools messages={messages} />
         <StickySections messages={messages} />

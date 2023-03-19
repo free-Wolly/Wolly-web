@@ -50,7 +50,7 @@ const Intro = ({ messages }: any) => {
           <div className="overflow-hidden flex items-center mt-24 pl-8 text-white">
             <AnimatedText title={messages.intro.introAnimatedTextTop} side />
           </div>
-          <div className={"overflow-hidden flex text-[#00BCD4]"}>
+          <div className={"overflow-hidden flex text-wollyBlue"}>
             <Marquee title={messages.intro.introAnimatedTextMiddle} />
           </div>
           <div className={"overflow-hidden flex justify-end pr-8 text-white"}>

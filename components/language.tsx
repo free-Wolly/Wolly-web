@@ -26,6 +26,7 @@ export function LanguageProvider({
 
   useEffect(() => {
     router.push(router.pathname, router.asPath, { locale });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [locale]);
 
   return (

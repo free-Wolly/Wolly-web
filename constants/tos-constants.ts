@@ -1,4 +1,4 @@
-const terms: {
+export const terms: {
   title: string;
   text: string;
 }[] = [
@@ -111,5 +111,3 @@ Framer reserves the right, but is not obligated, to reject and/or remove any Use
 `,
   },
 ];
-
-export default terms;

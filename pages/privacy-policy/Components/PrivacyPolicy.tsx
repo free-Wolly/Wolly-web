@@ -1,7 +1,12 @@
 import React, { useMemo } from "react";
-import policies from "./constants";
+import { policies } from "../../../constants/privacy-policy-constants";
 
-const PrivacyPolicy = ({ messages }: any) => {
+const PrivacyPolicy = ({ messages = {
+  privacyPolicy: {
+    title: "Privacy Policy",
+    text: "Please read these Terms and Conditions carefully before using Our Service.",
+  }
+} }: any) => {
   const renderText = useMemo(() => {
     return policies.map(
       (

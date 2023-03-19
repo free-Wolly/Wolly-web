@@ -24,8 +24,8 @@ const SecondSection = ({ messages }: any) => {
       className="container mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4"
     >
       <SectionHeader
-        topTitle="პრემიუმ ხარისხი"
-        botTitle="ხარისხი და კომფორტი კარგია?"
+        topTitle={messages.secondSection.sectionTitle}
+        botTitle={messages.secondSection.title}
         delay={2}
         textBackgroundElementWidth={"22%"}
         staggerChildren={0.05}

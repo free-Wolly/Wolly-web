@@ -56,7 +56,7 @@ const Footer = ({ messages }: any) => {
             <div className="flex flex-col w-full">
               <Image
                 priority
-                className="w-20 h-20 mb-5"
+                className="w-20  mb-5"
                 src={wollyLogo}
                 alt=""
                 width={1000}

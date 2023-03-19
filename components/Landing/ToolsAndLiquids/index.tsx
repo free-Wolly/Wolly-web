@@ -3,7 +3,7 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import toolsImages from "./toolsImages";
 import liquidsImages from "./liquidsImages";
 
-const ToolsAndLiquids = () => {
+const ToolsAndLiquids = ({ messages }: any) => {
   const [option, setOption] = useState("tools");
   const [reduceOpacity, setReduceOpacity] = useState(false);
 
@@ -100,7 +100,9 @@ const ToolsAndLiquids = () => {
         className="absolute top-[25%] text-[35px] font-[BOG] z-20"
         onClick={() => setOption(option === "tools" ? "liquids" : "tools")}
       >
-        {option === "tools" ? "Liquids" : "Tools"}
+        {option === "tools"
+          ? messages.liquidsTools.liquids
+          : messages.liquidsTools.tools}
       </motion.button>
       <motion.div className="w-full flex flex-row flex-wrap-reverse lg:flex-nowrap z-10">
         <AnimatePresence initial={false}>

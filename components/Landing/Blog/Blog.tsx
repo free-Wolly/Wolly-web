@@ -8,8 +8,8 @@ const Blog = ({ messages }: any): JSX.Element => {
   return (
     <div className="container mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4">
       <SectionHeader
-        topTitle="ბლოგი"
-        botTitle="გაეცანი სიახლეებს ჩვენთან"
+        topTitle={messages.blog.sectionTitle}
+        botTitle={messages.blog.title}
         delay={2}
         textBackgroundElementWidth={"32%"}
         staggerChildren={0.07}

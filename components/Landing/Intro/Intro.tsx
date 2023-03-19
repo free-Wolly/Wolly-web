@@ -5,7 +5,7 @@ import AnimatedText from "../../Helpers/TextAnimation/AnimateText";
 import { arrowVariant, banner } from "./variants";
 import Marquee from "./Marquee/Marquee";
 
-const Intro = () => {
+const Intro = ({ messages }: any) => {
   return (
     <div id="main" className={`font-[GEOCAPS] relative w-full h-screen`}>
       <div className="mx-auto">
@@ -48,13 +48,13 @@ const Intro = () => {
           variants={banner}
         >
           <div className="overflow-hidden flex items-center mt-24 pl-8 text-white">
-            <AnimatedText title={"პრემიუმ"} side />
+            <AnimatedText title={messages.intro.introAnimatedTextTop} side />
           </div>
           <div className={"overflow-hidden flex text-[#00BCD4]"}>
-            <Marquee title="კომფორტი" />
+            <Marquee title={messages.intro.introAnimatedTextMiddle} />
           </div>
           <div className={"overflow-hidden flex justify-end pr-8 text-white"}>
-            <AnimatedText title={"ხარისხი"} side />
+            <AnimatedText title={messages.intro.introAnimatedTextBottom} side />
           </div>
         </motion.div>
       </div>

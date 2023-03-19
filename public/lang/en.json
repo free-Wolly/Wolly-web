@@ -25,50 +25,53 @@
     ]
   },
   "intro": {
-    "introAnimatedTextTop": "brand",
-    "introAnimatedTextMiddle": "experience",
-    "introAnimatedTextBottom": "studio"
+    "introAnimatedTextTop": "Premium",
+    "introAnimatedTextMiddle": "Comfort",
+    "introAnimatedTextBottom": "Quality"
   },
   "secondSection": {
+    "sectionTitle": "Premium Quality",
     "title": "Second Section",
     "boxText": [
       {
-        "imgSource": "1.svg",
-        "title": "CMS",
-        "text": "Write, edit and update content across CMS pages."
+        "imgSource": "quality.svg",
+        "title": "Quality",
+        "text": "We provide the best quality"
       },
       {
-        "imgSource": "1.svg",
-        "title": "Fully responsive",
-        "text": "Layouts that adapt to any device."
+        "imgSource": "trust.svg",
+        "title": "Trust",
+        "text": "You can trust our team"
       },
       {
-        "imgSource": "1.svg",
-        "title": "Easy to customize",
-        "text": "Change anything with just a few clicks."
+        "imgSource": "comfort.svg",
+        "title": "Comfort",
+        "text": "If you love comfort, we are here"
       },
       {
-        "imgSource": "1.svg",
-        "title": "Optimized for SEO",
-        "text": "Pages optimized for search engines."
+        "imgSource": "camera.svg",
+        "title": "Monitoring",
+        "text": "You can control process"
       },
       {
-        "imgSource": "1.svg",
-        "title": "Animations And Effects",
-        "text": "A variety of dynamic interactions."
+        "imgSource": "bulb.svg",
+        "title": "Simplicity",
+        "text": "Simplicity is our main one two :D"
       },
       {
-        "imgSource": "1.svg",
-        "title": "Plugins",
-        "text": "Forms, videos, socials and more."
+        "imgSource": "diploma.svg",
+        "title": "Team",
+        "text": "Just try"
       }
     ]
   },
   "sliderSection": {
-    "title": "Slider Section"
+    "sectionTitle": "Wolly Team",
+    "title": "Team You Can Trust To"
   },
   "blog": {
-    "title": "Blog",
+    "sectionTitle": "Blog",
+    "title": "See Our News",
     "blogItems": [
       {
         "title": "10 Casting Decisions That Hurt The Star Wars Prequels \n (And 10 That Saved it)",
@@ -98,15 +101,11 @@
       }
     ]
   },
-  "textHorizontalAnimation": {
-    "leftTop": "Experi",
-    "leftBot": "ence",
-    "right": {
-      "title": "We know what we're doing",
-      "text": "10 Casting Decisions That Hurt The Star Wars Prequels \n (And 10 That Saved it)"
-    }
-  },
   "stickySection": {
+    "textHorizontalAnimation": {
+      "top": "Experi",
+      "bottom": "ence"
+    },
     "title": {
       "first": "Pro.",
       "second": "Beyond.",
@@ -341,9 +340,11 @@
     ]
   },
   "beforeAfter": {
-    "title": "Works we are proud of"
+    "sectionTitle": "Blog",
+    "title": "Before/After"
   },
   "faq": {
+    "sectioTitle": "Blog",
     "title": "FAQ",
     "questions": [
       {
@@ -381,6 +382,10 @@
       "title": "Title",
       "text": " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     }
+  },
+  "liquidsTools": {
+    "liquids": "Liquids",
+    "tools": "Tools"
   },
   "privacyPolicy": {
     "header": {

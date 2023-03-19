@@ -30,7 +30,7 @@ export default function Home() {
         <PageHeader locale={locale} setLocale={setLocale} messages={messages} />
         <Intro messages={messages} />
         <SecondSection messages={messages} />
-        <Slider messages={messages} />
+        {/* <Slider messages={messages} /> */}
         <Blog messages={messages} />
         <BeforeAfter messages={messages} />
         <PricingPlan messages={messages} locale={locale} />

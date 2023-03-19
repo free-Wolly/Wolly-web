@@ -1,22 +1,28 @@
 import React from "react";
 import Image from "next/image";
-import images from "../Slider/images";
+import images from "./images";
+import { SidePostProps } from "./interfaces";
 
-export const SidePost = ({ blogItem, id }: any) => {
+const SidePost = ({ blogItem, id }: SidePostProps): JSX.Element => {
   return (
     <div className="w-3/6 flex flex-col gap-4">
       <Image
         loading="lazy"
         placeholder="blur"
-        className="w-full rounded-3xl h-44"
+        className="w-full rounded-3xl h-64"
         src={images[id]}
         alt=""
         width={1000}
         height={1000}
       />
-      <div>{blogItem.date}</div>
-      <div className="text-xl font-bold">{blogItem.title}</div>
-      <div>{blogItem.text}</div>
+      <div className="text-[26px] font-bold font-[GEOCAPS] text-[#304D63] text-center">
+        {blogItem.title}
+      </div>
+      <div className="text-[22px] text-[#597F9DBF] text-center font-[BOG] tracking-tighter mt-[5px]">
+        {blogItem.text}
+      </div>
     </div>
   );
 };
+
+export default SidePost;

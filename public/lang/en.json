@@ -1,0 +1,497 @@
+{
+  "header": {
+    "menuItems": [
+      {
+        "text": "Main",
+        "id": "main"
+      },
+      {
+        "text": "Services",
+        "id": "services"
+      },
+      {
+        "text": "App",
+        "id": "app"
+      },
+      {
+        "text": "About Us",
+        "id": "about"
+      },
+
+      {
+        "text": "Contact",
+        "id": "contact"
+      }
+    ]
+  },
+  "intro": {
+    "introAnimatedTextTop": "Premium",
+    "introAnimatedTextMiddle": "Comfort",
+    "introAnimatedTextBottom": "Quality"
+  },
+  "secondSection": {
+    "sectionTitle": "Premium Quality",
+    "title": "Second Section",
+    "boxText": [
+      {
+        "imgSource": "quality.svg",
+        "title": "Quality",
+        "text": "We provide the best quality"
+      },
+      {
+        "imgSource": "trust.svg",
+        "title": "Trust",
+        "text": "You can trust our team"
+      },
+      {
+        "imgSource": "comfort.svg",
+        "title": "Comfort",
+        "text": "If you love comfort, we are here"
+      },
+      {
+        "imgSource": "camera.svg",
+        "title": "Monitoring",
+        "text": "You can control process"
+      },
+      {
+        "imgSource": "bulb.svg",
+        "title": "Simplicity",
+        "text": "Simplicity is our main one two :D"
+      },
+      {
+        "imgSource": "diploma.svg",
+        "title": "Team",
+        "text": "Just try"
+      }
+    ]
+  },
+  "sliderSection": {
+    "sectionTitle": "Wolly Team",
+    "title": "Team You Can Trust To"
+  },
+  "blog": {
+    "sectionTitle": "Blog",
+    "title": "See Our News",
+    "blogItems": [
+      {
+        "title": "10 Casting Decisions That Hurt The Star Wars Prequels \n (And 10 That Saved it)",
+        "text": "",
+        "img": "1.jpg"
+      },
+      {
+        "title": "Review Of Healthy Breakfast Meals For Energy Boost",
+        "text": "To help you out, we've looked through some of the best offerings on the market and compiled a list of the best video WordPress themes",
+        "date": "2023, Jan 15",
+        "img": "2.jpg"
+      },
+      {
+        "title": "Review Of Healthy Breakfast Meals For Energy Boost",
+        "text": "To help you out, we've looked through some of the best offerings on the market and compiled a list of the best video WordPress themes",
+        "img": "3.jpg"
+      },
+      {
+        "title": "Review Of Healthy Breakfast Meals For Energy Boost",
+        "text": "To help you out, we've looked through some of the best offerings on the market and compiled a list of the best video WordPress themes",
+        "img": "4.jpg"
+      },
+      {
+        "title": "Review Of Healthy Breakfast Meals For Energy Boost",
+        "text": "To help you out, we've looked through some of the best offerings on the market and compiled a list of the best video WordPress themes",
+        "img": "5.jpg"
+      }
+    ]
+  },
+  "stickySection": {
+    "textHorizontalAnimation": {
+      "top": "Experi",
+      "bottom": "ence"
+    },
+    "title": {
+      "first": "Pro.",
+      "second": "Beyond.",
+      "third": "iPhone 14 Pro and iPhone 14 Pro Max",
+      "fourth": "From $41.62/mo. for 24 mo. or $999 before trade-in**"
+    }
+  },
+  "team": {
+    "mainTitle": "Team",
+    "title": "Title",
+    "text1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "text2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  "getApp": {
+    "text": "Download Our App"
+  },
+  "instagramStories": {
+    "text": "We’re not saying we’re the best, but our customers sure are!"
+  },
+  "whatsIncluded": {
+    "services": [
+      {
+        "service": "After repairs",
+        "state": "repairs"
+      },
+      {
+        "service": "Regular",
+        "state": "regular"
+      },
+      {
+        "service": "General",
+        "state": "general"
+      },
+      {
+        "service": "Housewife",
+        "state": "housewife"
+      }
+    ],
+    "parts": [
+      {
+        "service": [
+          {
+            "room": "Kitchen",
+            "services": [
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla"
+            ]
+          },
+          {
+            "room": "Bathroom",
+            "services": [
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd"
+            ]
+          },
+          {
+            "room": "Reception",
+            "services": [
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd"
+            ]
+          },
+          {
+            "room": "Bedroom",
+            "services": [
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd"
+            ]
+          }
+        ],
+        "state": "repairs"
+      },
+      {
+        "service": [
+          {
+            "room": "Kitchen",
+            "services": [
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla"
+            ]
+          },
+          {
+            "room": "Bathroom",
+            "services": [
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd"
+            ]
+          },
+          {
+            "room": "Reception",
+            "services": [
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd"
+            ]
+          },
+          {
+            "room": "Bedroom",
+            "services": [
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd"
+            ]
+          }
+        ],
+        "state": "regular"
+      },
+      {
+        "service": [
+          {
+            "room": "Kitchen",
+            "services": [
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla"
+            ]
+          },
+          {
+            "room": "Bathroom",
+            "services": [
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd"
+            ]
+          },
+          {
+            "room": "Reception",
+            "services": [
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd"
+            ]
+          },
+          {
+            "room": "Bedroom",
+            "services": [
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd"
+            ]
+          }
+        ],
+        "state": "general"
+      },
+      {
+        "service": [
+          {
+            "room": "Kitchen",
+            "services": [
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla",
+              "ajdsnlaskdmla"
+            ]
+          },
+          {
+            "room": "Bathroom",
+            "services": [
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd"
+            ]
+          },
+          {
+            "room": "Reception",
+            "services": [
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd"
+            ]
+          },
+          {
+            "room": "Bedroom",
+            "services": [
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd",
+              "jasdjjansdjnaosd"
+            ]
+          }
+        ],
+        "state": "housewife"
+      }
+    ]
+  },
+  "beforeAfter": {
+    "sectionTitle": "Blog",
+    "title": "Before/After"
+  },
+  "faq": {
+    "sectioTitle": "Blog",
+    "title": "FAQ",
+    "questions": [
+      {
+        "question": "Which pricing plan is right for me?",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+      },
+      {
+        "question": "Which pricing plan is right for me?",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+      },
+      {
+        "question": "Which pricing plan is right for me?",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+      },
+      {
+        "question": "Which pricing plan is right for me?",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+      }
+    ]
+  },
+  "footer": {
+    "left": {
+      "title": "",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    "middleLeft": {
+      "title": "Our Office",
+      "text": ""
+    },
+    "middleRight": {
+      "title": "Contact",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\n Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    "right": {
+      "title": "Title",
+      "text": " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    }
+  },
+  "liquidsTools": {
+    "liquids": "Liquids",
+    "tools": "Tools"
+  },
+  "privacyPolicy": {
+    "header": {
+      "item": "Contact"
+    },
+    "title": "Privacy Policy",
+    "text": "This Framer Terms of Service (“Agreement”) is entered into by and between Framer B.V. (“Framer”) and the entity or person placing an order for or accessing the Services (“Customer”). This Agreement consists ofthe terms and conditions set forth below and any Order Form. The“Effective Date” of this Agreement is the date which is the earlier of(a) Customer’s initial access to the Services through any onlineprovisioning, registration or order process or (b) the Effective Date ofthe first Order Form. This Agreement will govern Customer’s initialpurchase on the Effective Date as well as any future purchases made byCustomer that reference this Agreement. Framer may modify this Agreementfrom time to time as permitted in Section 13.4 (Amendment). Capitalized terms shall have the meanings set forth in Section 1, or inthe section where they are first used."
+  },
+  "termsAndConditions": {
+    "header": {
+      "item": "Contact"
+    },
+    "title": "Terms and Conditions",
+    "text": "This Framer Terms of Service (“Agreement”) is entered into by and between Framer B.V. (“Framer”) and the entity or person placing an order for or accessing the Services (“Customer”). This Agreement consists ofthe terms and conditions set forth below and any Order Form. The“Effective Date” of this Agreement is the date which is the earlier of(a) Customer’s initial access to the Services through any onlineprovisioning, registration or order process or (b) the Effective Date ofthe first Order Form. This Agreement will govern Customer’s initialpurchase on the Effective Date as well as any future purchases made byCustomer that reference this Agreement. Framer may modify this Agreementfrom time to time as permitted in Section 13.4 (Amendment). Capitalized terms shall have the meanings set forth in Section 1, or inthe section where they are first used."
+  },
+  "pricingPlan": {
+    "sectionTitle": "Blog",
+    "title": "Pricing Plan",
+    "from": "from",
+    "less": "Less...",
+    "more": "More...",
+    "plans": [
+      {
+        "title": "Standard",
+        "recommendation": "Quality is guaranteed",
+        "price": "100",
+        "included": [
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk"
+        ],
+        "notIncluded": [
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk"
+        ]
+      },
+      {
+        "title": "Premium",
+        "recommendation": "Quality is guaranteed",
+        "price": "200",
+        "included": [
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk"
+        ],
+        "notIncluded": ["ksmdmfalsmdfk", "ksmdmfalsmdfk", "ksmdmfalsmdfk"]
+      },
+      {
+        "title": "Elite",
+        "recommendation": "Quality is guaranteed",
+        "price": "300",
+        "included": [
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk",
+          "ksmdmfalsmdfk"
+        ]
+      }
+    ]
+  }
+}

@@ -1,13 +1,14 @@
-export const images = [
+import { Variants } from "framer-motion";
+
+export const images: {
+  image1: string;
+  image2: string;
+  alt1: string;
+  alt2: string;
+}[] = [
   {
     image1: "/assets/images/beforeAfter/1.jpg",
     image2: "/assets/images/beforeAfter/2.jpg",
-    alt1: "First Image",
-    alt2: "Second Image",
-  },
-  {
-    image1: "/assets/images/sliderImages/1.jpg",
-    image2: "/assets/images/sliderImages/2.jpg",
     alt1: "First Image",
     alt2: "Second Image",
   },
@@ -25,8 +26,8 @@ export const images = [
   },
 ];
 
-export const variants = {
-  initial: (direction: any) => {
+export const variants: Variants = {
+  initial: (direction: number) => {
     return {
       x: direction > 0 ? 1000 : -1000,
       opacity: 0,

@@ -1,66 +1,65 @@
 import React from "react";
-import introStyles from "./Intro.module.css";
 import { motion } from "framer-motion";
-import { AnimatedText } from "../../Helpers/TextAnimation/AnimateText";
-import rollingTextStyle from "./IntroRollText.module.css";
 
-export const Intro = () => {
-  const container = {
-    visible: {
-      transition: {
-        staggerChildren: 0.025,
-      },
-    },
-  };
+import AnimatedText from "../../Helpers/TextAnimation/AnimateText";
+import { arrowVariant, banner } from "./variants";
+import Marquee from "./Marquee/Marquee";
 
+const Intro = ({ messages }: any) => {
   return (
-    <div className={introStyles.introMain}>
-      <div className="container mx-auto px-4">
-        <div>
-          <video
-            className={introStyles.introVideo}
+    <div id="main" className={`font-[GEOCAPS] relative w-full h-screen`}>
+      <div className="mx-auto">
+        <div className="absolute inset-0 bg-[#09191C]">
+          <motion.video
             autoPlay
-            muted
             loop
-            src="/assets/videos/clean.mp4"
+            muted
+            style={{ opacity: 0.3 }}
+            transition={{
+              ease: [0.06, 0.01, 0.05, 0.9],
+              duration: 1.6,
+            }}
+            className="object-fill h-full w-full"
+            src={`/assets/videos/intro.mp4`}
+            layoutId="main-image-1"
           />
         </div>
         <motion.img
-          className={introStyles.introArrow}
-          src="/assets/images/down-arrow.svg"
+          animate="visible"
+          exit="exit"
+          initial="hidden"
+          variants={arrowVariant}
+          transition={{
+            duration: 1,
+            delay: 1,
+            ease: "linear",
+            times: [0, 0.2, 0.5, 0.8, 1],
+            repeatType: "loop",
+            repeat: Infinity,
+          }}
+          className="absolute left-0 right-0 bottom-0 mx-auto visible z-[100]"
+          src="/assets/images/arrow-down.svg"
           alt=""
           width={30}
           height={30}
-          whileHover={{ scale: 1.5, rotate: 360 }}
-          transition={{ duration: 0.5 }}
         />
         <motion.div
-          className="text-5xl font-bold text-center pb-40"
-          initial="hidden"
-          animate="visible"
-          variants={container}
+          className="h-screen w-full overflow-hidden relative flex flex-col justify-center content-center "
+          variants={banner}
         >
-          <div className="flex items-center justify-center text-center">
-            <div className="flex items-center flex-col">
-              <AnimatedText text="Framer Motion" />
-              <div className={rollingTextStyle.roller}>
-                <span id={rollingTextStyle.rolltext}>
-                  HTML
-                  <br />
-                  CSS
-                  <br />
-                  Curiosity
-                  <br />
-                  <span id={rollingTextStyle.spare_time}>
-                    too much spare time?
-                  </span>
-                  <br />
-                </span>
-              </div>
-            </div>
+          <div className="overflow-hidden flex items-center mt-24 pl-8 text-white">
+            <AnimatedText title={messages.intro.introAnimatedTextTop} side />
+          </div>
+          <div className={"overflow-hidden flex text-wollyBlue"}>
+            <Marquee title={messages.intro.introAnimatedTextMiddle} />
+          </div>
+          <div className={"overflow-hidden flex justify-end pr-8 text-white"}>
+            <AnimatedText title={messages.intro.introAnimatedTextBottom} side />
           </div>
         </motion.div>
       </div>
     </div>
   );
 };
+
+export default Intro;

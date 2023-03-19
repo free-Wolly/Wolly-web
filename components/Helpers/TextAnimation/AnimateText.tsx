@@ -1,44 +1,43 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { introTextItem } from "./constants";
+import { banner, letterAni, textBackground } from "./constants";
+import { AnimatedTextProps } from "./interfaces";
 
-export const AnimatedText = (props: { text: any }) => {
-  const splitWords = props.text.split(" ");
-
-  const words: string[][] = [];
-
-  for (const [, item] of splitWords.entries()) {
-    words.push(item.split(""));
-  }
-
-  words.map((word) => {
-    return word.push("\u00A0");
-  });
+const AnimatedText = ({
+  title,
+  disabled,
+  side,
+}: AnimatedTextProps): JSX.Element => {
+  const style: string =
+    "text-[4rem] sm:text-[8rem] sm:text-[80px] md:text-[120px] lg:text-[160px] xl:text-[200px] font-medium relative tracking-tighter flex whitespace-nowrap lg:leading-[30vh] z-10";
 
   return (
-    <>
-      <div className="flex flex-row">
-        <span>
-          {words.flat().map((element, index) => {
-            return (
-              <span
-                style={{
-                  overflow: "hidden",
-                  display: "inline-block",
-                }}
-                key={index}
-              >
-                <motion.span
-                  style={{ display: "inline-block" }}
-                  variants={introTextItem}
-                >
-                  {element}
-                </motion.span>
-              </span>
-            );
-          })}
-        </span>
-      </div>
-    </>
+    <motion.span
+      className={`${style} row-title`}
+      style={{ textShadow: "0px 3px 6px #00000029" }}
+      variants={disabled ? undefined : banner}
+      initial="initial"
+      animate="animate"
+    >
+      {[...title].map((letter, id) => (
+        <motion.span
+          key={id}
+          className={style}
+          variants={disabled ? undefined : letterAni}
+        >
+          {letter}
+        </motion.span>
+      ))}
+      {side && (
+        <motion.div
+          variants={textBackground}
+          initial="hidden"
+          animate="show"
+          className="absolute right-0 top-[calc(50%+10px)] md:top-[calc(50%+30px)] rounded-[100px] bg-gradient-to-r from-wollyBlue to-wollyLightBlue mr-[-20px] h-[28px] sm:h-[32px] md:h-[40px] lg:h-[48px] xl:h-[80px] z-[0]"
+        />
+      )}
+    </motion.span>
   );
 };
+
+export default AnimatedText;

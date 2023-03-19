@@ -7,30 +7,38 @@ import {
   useMotionValue,
   useVelocity,
   useAnimationFrame,
+  MotionValue,
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
 import Image from "next/image";
+import { ParalaxProps } from "./interfaces";
 
-export const Parallax = ({ image, baseVelocity, id, qty }: any) => {
-  const baseX = useMotionValue(0);
-  const { scrollY } = useScroll();
-  const scrollVelocity = useVelocity(scrollY);
-  const smoothVelocity = useSpring(scrollVelocity, {
+const Parallax = ({ image, baseVelocity, id, qty }: ParalaxProps) => {
+  const baseX = useMotionValue<number>(0);
+  const { scrollY }: { scrollY: MotionValue<number> } = useScroll();
+  const scrollVelocity: MotionValue<number> = useVelocity(scrollY);
+  const smoothVelocity: MotionValue<any> = useSpring(scrollVelocity, {
     damping: 50,
     stiffness: 400,
   });
-  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
-    clamp: false,
-  });
+  const velocityFactor: MotionValue<number> = useTransform(
+    smoothVelocity,
+    [0, 1000],
+    [0, 5],
+    {
+      clamp: false,
+    }
+  );
 
-  const x = useTransform(
+  const x: MotionValue<string> = useTransform(
     baseX,
     (v) => `${wrap((-1 - id) * 100 + 50, (qty - 1) * 100 - id * 100 + 50, v)}%`
   );
 
   const directionFactor = useRef<number>(1);
-  useAnimationFrame((t, delta) => {
-    let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
+  useAnimationFrame((t: number, delta: number) => {
+    let moveBy: number =
+      directionFactor.current * baseVelocity * (delta / 1000);
 
     if (velocityFactor.get() < 0) {
       directionFactor.current = -1;
@@ -58,3 +66,5 @@ export const Parallax = ({ image, baseVelocity, id, qty }: any) => {
     </motion.div>
   );
 };
+
+export default Parallax;

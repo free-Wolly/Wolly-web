@@ -1,36 +1,43 @@
 import React, { ReactElement, useMemo, useRef } from "react";
-import { boxItems, boxObj } from "./constants";
-import { useInView } from "framer-motion";
-import { Block } from "./Block";
+import { motion, useInView } from "framer-motion";
+import { BoxObj } from "./interfaces";
+import Block from "./Block";
+import SectionHeader from "../../Helpers/SectionHeader";
 
-export const SecondSection = () => {
-  const titleRef = useRef(null);
-  const titleInView: boolean = useInView(titleRef, { once: true });
+const SecondSection = ({ messages }: any) => {
+  const boxSectionRef = useRef<HTMLDivElement>(null);
+  const boxSectionInView: boolean = useInView(boxSectionRef, { once: true });
 
   const renderBoxes = useMemo(() => {
-    return boxItems.map((item: boxObj, id: number): ReactElement => {
-      return <Block key={id} item={item} index={id} />;
-    });
-  }, []);
+    return messages.secondSection.boxText.map(
+      (item: BoxObj, id: number): ReactElement => {
+        return (
+          <Block key={id} item={item} index={id} inView={boxSectionInView} />
+        );
+      }
+    );
+  }, [boxSectionInView, messages.secondSection.boxText]);
 
   return (
-    <div className="container mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4">
-      <div className="py-16">
-        <h1
-          ref={titleRef}
-          style={{
-            transform: titleInView ? "none" : "translateY(50px)",
-            opacity: titleInView ? 1 : 0,
-            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1)",
-          }}
-          className="text-center text-3xl font-bold mb-16"
-        >
-          Second Section
-        </h1>
-        <div className="grid gap-16 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2">
-          {renderBoxes}
-        </div>
-      </div>
+    <div
+      id="second-section"
+      className="container mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4"
+    >
+      <SectionHeader
+        topTitle={messages.secondSection.sectionTitle}
+        botTitle={messages.secondSection.title}
+        delay={2}
+        textBackgroundElementWidth={"22%"}
+        staggerChildren={0.05}
+      />
+      <motion.div
+        ref={boxSectionRef}
+        className="grid gap-16 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2"
+      >
+        {renderBoxes}
+      </motion.div>
     </div>
   );
 };
+
+export default SecondSection;

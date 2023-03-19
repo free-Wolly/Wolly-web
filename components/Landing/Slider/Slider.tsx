@@ -2,13 +2,15 @@ import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 
 import images from "./images";
-import { Parallax } from "./Paralax";
+import Parallax from "./Paralax";
+import SectionHeader from "../../Helpers/SectionHeader";
+import { StaticImageData } from "next/image";
 
-export const Slider = () => {
-  const baseVelocity = -50;
+const Slider = ({ messages }: any) => {
+  const baseVelocity: number = -50;
 
   const renderImages = useMemo(() => {
-    return images.map((image, id: number) => {
+    return images.map((image: StaticImageData, id: number) => {
       return (
         <Parallax
           key={id}
@@ -22,8 +24,14 @@ export const Slider = () => {
   }, [baseVelocity]);
 
   return (
-    <div className="mx-auto w-full border-t-2">
-      <div className="text-center text-3xl font-bold py-16">Slider Section</div>
+    <div id="services" className="mx-auto w-full">
+      <SectionHeader
+        topTitle={messages.sliderSection.sectionTitle}
+        botTitle={messages.sliderSection.title}
+        delay={2}
+        textBackgroundElementWidth={"18%"}
+        staggerChildren={0.05}
+      />
       <motion.div className="whitespace-nowrap flex flex-nowrap ">
         <motion.div
           ref={(ref) =>
@@ -38,5 +46,7 @@ export const Slider = () => {
         </motion.div>
       </motion.div>
     </div>
-  )
-}
+  );
+};
+
+export default Slider;

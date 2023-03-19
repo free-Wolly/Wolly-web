@@ -32,7 +32,6 @@ export default function Home() {
         <SecondSection messages={messages} />
         <Slider messages={messages} />
         <Blog messages={messages} />
-        <Team />
         <BeforeAfter messages={messages} />
         <PricingPlan messages={messages} locale={locale} />
         <Faq messages={messages} />

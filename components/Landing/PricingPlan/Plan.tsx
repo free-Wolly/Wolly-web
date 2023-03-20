@@ -31,11 +31,8 @@ const Plan = ({
           <div className="text-[1.5rem] font-bold font-[BOG] text-white">
             {title}
           </div>
-          <div className="w-full text-[1rem] font-[GEOCAPS] text-gray-200">
-            {recommendation}
-          </div>
         </div>
-        <div className="text-[2rem] text-white">
+        <div className="text-[2rem] font-[BOG] text-white">
           {locale === "ka" ? `${price}₾-დან` : `From ${price}₾`}
         </div>
       </div>
@@ -50,7 +47,9 @@ const Plan = ({
             key={id}
             className="w-full flex justify-between items-center my-[0.25rem]"
           >
-            <div className="text-[1rem] w-[90%]">{text}</div>
+            <div className="text-[1rem] w-[90%] text-white font-bold">
+              {text}
+            </div>
             <div className="w-[1rem] h-[1rem] ml-[0.5rem]">
               <Image src={tick} alt={"yep"} width={50} height={50} />
             </div>
@@ -61,7 +60,9 @@ const Plan = ({
             key={id}
             className="w-full flex justify-between items-center my-[0.25rem]"
           >
-            <div className="text-[1rem] text-black/40 w-[90%]">{text}</div>
+            <div className="text-[1rem] text-white/40 font-bold w-[90%]">
+              {text}
+            </div>
             <div className="w-[1rem] h-[1rem]">
               <Image src={x} alt={"nope"} width={50} height={50} />
             </div>

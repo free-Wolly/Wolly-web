@@ -2,8 +2,8 @@ import React, { useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import wollyLogo from "../../public/assets/images/wolly.png";
-import worldMap from "../../public/assets/images/world.png";
+// import wollyLogo from "../../public/assets/images/wolly.png";
+// import worldMap from "../../public/assets/images/world.png";
 import socialNetworksItems from "./socialNetworks";
 import handleClickScroll from "../../utils/scrollToSection";
 import { MenuItems, SocialNetworks } from "./interfaces";
@@ -52,7 +52,7 @@ const Footer = ({ messages }: any) => {
     <>
       <div className="bg-neutral-200">
         <div className="w-full lg:container lg:mx-auto 2xl:px-32 md:px-16 sm:px-4 px-4">
-          <div className="flex flex-col lg:flex-row gap-16 py-8 w-full">
+          {/* <div className="flex flex-col lg:flex-row gap-16 py-8 w-full">
             <div className="flex flex-col w-full">
               <Image
                 priority
@@ -89,8 +89,8 @@ const Footer = ({ messages }: any) => {
               </div>
               <div>{messages.footer.right.text}</div>
             </div>
-          </div>
-          <div className="flex flex-row justify-between items-center py-8 border-t-2 border-neutral-300">
+          </div> */}
+          <div className="flex flex-row justify-between items-center py-8">
             <div>© 2023 Wolly</div>
             <div className="hidden lg:flex flex-row gap-4">
               {renderMenuItems}

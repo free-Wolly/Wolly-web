@@ -20,8 +20,9 @@ const Block = ({ item, index, inView }: BlockProps) => {
         transition: `all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) ${index / 4}s`,
       }}
     >
-      <div className="w-16 h-[64px] flex justify-center">
+      <div className="flex justify-center">
         <motion.img
+          className="h-[6rem] w-[6rem]"
           src={`/assets/images/boxImages/${item.imgSource}`}
           alt=""
           initial={{ scale: 0 }}

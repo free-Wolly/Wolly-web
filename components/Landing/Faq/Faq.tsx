@@ -21,7 +21,7 @@ const Faq = ({ messages }: any) => {
   return (
     <div
       id="faq"
-      className="container mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4 pb-16 border-t-2"
+      className="container mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4 pb-16"
     >
       <SectionHeader
         topTitle={messages.faq.sectionTitle}

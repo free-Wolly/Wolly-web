@@ -2,9 +2,10 @@ import React, { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import style from "./carousel.module.css";
 import Image from "next/image";
-import Lottie from "lottie-react";
-import Instagram from "../../../public/assets/animations/instagram.json";
+// import Lottie from "lottie-react";
+// import Instagram from "../../../public/assets/animations/instagram.json";
 import { Data } from "./constants";
+import SectionHeader from "../../Helpers/SectionHeader";
 
 const Carousel = ({ messages }: any) => {
   const [FlowDirection, setFlowDirection] = useState<boolean>(true);
@@ -168,21 +169,17 @@ const Carousel = ({ messages }: any) => {
 
   return (
     <>
-      <motion.div className="bg-blue-100">
-        <div className="container mx-auto relative flex justify-start items-center">
-          <Lottie
-            className="w-[100px] h-[100px]"
-            animationData={Instagram}
-            loop={true}
-            autoPlay={true}
-            rendererSettings={{ preserveAspectRatio: "xMidYMid slice" }}
-            height={100}
-            width={100}
-          />
-          <div>{messages.instagramStories.text}</div>
-        </div>
-      </motion.div>
-      <motion.div className="mx-auto relative flex items-center justify-center rounded-2xl  min-h-[500px] lg:min-h-[1000px] max-w-[2000px] overflow-hidden">
+      <SectionHeader
+        topTitle={messages.instagramStories.sectionTitle}
+        botTitle={messages.instagramStories.title}
+        delay={2}
+        textBackgroundElementWidth="30%"
+        staggerChildren={0.05}
+      />
+      <motion.div
+        id="contact"
+        className="mx-auto relative flex items-center justify-center rounded-2xl  min-h-[500px] lg:min-h-[1000px] max-w-[2000px] overflow-hidden"
+      >
         <motion.div className="relative top-[100px] lg:top-[-50px] h-[40rem] ml-[165px] lg:ml-0">
           <AnimatePresence initial={false}>
             <motion.div

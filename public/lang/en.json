@@ -123,7 +123,8 @@
     "text": "Download Our App"
   },
   "instagramStories": {
-    "text": "We’re not saying we’re the best, but our customers sure are!"
+    "sectionTitle": "Blog",
+    "title": "Insta Stories"
   },
   "whatsIncluded": {
     "services": [
@@ -410,7 +411,6 @@
     "plans": [
       {
         "title": "Standard",
-        "recommendation": "Quality is guaranteed",
         "price": "100",
         "included": [
           "ksmdmfalsmdfk",
@@ -440,7 +440,6 @@
       },
       {
         "title": "Premium",
-        "recommendation": "Quality is guaranteed",
         "price": "200",
         "included": [
           "ksmdmfalsmdfk",
@@ -466,7 +465,6 @@
       },
       {
         "title": "Elite",
-        "recommendation": "Quality is guaranteed",
         "price": "300",
         "included": [
           "ksmdmfalsmdfk",

@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image";
-import images from "../Slider/images";
+import images from "../Blog/images";
 
 export const Data: {
   bgImg: string;
@@ -40,6 +40,6 @@ export const Data: {
     bgImg:
       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=685&q=80",
     userName: "F",
-    userImg: images[5],
+    userImg: images[0],
   },
 ];

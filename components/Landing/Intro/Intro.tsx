@@ -19,7 +19,7 @@ const Intro = ({ messages }: any) => {
               ease: [0.06, 0.01, 0.05, 0.9],
               duration: 1.6,
             }}
-            className="object-fill h-full w-full"
+            className="object-cover h-full w-full"
             src={`/assets/videos/intro.mp4`}
             layoutId="main-image-1"
           />

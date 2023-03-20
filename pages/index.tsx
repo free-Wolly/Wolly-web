@@ -11,7 +11,7 @@ import BeforeAfter from "../components/Landing/BeforeAfter";
 import StickySections from "../components/Landing/StickySection";
 import Carousel from "../components/Landing/InstagramStories/Carousel";
 // import WhatsIncluded from "../components/Landing/WhatsIncluded";
-import LiquidsAndTools from "../components/Landing/ToolsAndLiquids";
+// import LiquidsAndTools from "../components/Landing/ToolsAndLiquids";
 
 import { useLanguage } from "../components/language";
 import PricingPlan from "../components/Landing/PricingPlan";
@@ -24,7 +24,7 @@ export default function Home() {
       <Head>
         <title>Wolly</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/assets/images/wolly.png" />
+        <link rel="icon" href="/assets/images/wolly-icon.png" />
       </Head>
       <div id="landing-page">
         <PageHeader locale={locale} setLocale={setLocale} messages={messages} />
@@ -32,11 +32,11 @@ export default function Home() {
         <SecondSection messages={messages} />
         <Slider messages={messages} />
         <Blog messages={messages} />
-        <Team />
+        {/* <Team /> */}
         <BeforeAfter messages={messages} />
         <PricingPlan messages={messages} locale={locale} />
         <Faq messages={messages} />
-        <LiquidsAndTools messages={messages} />
+        {/* <LiquidsAndTools messages={messages} /> */}
         <StickySections messages={messages} />
         <Carousel messages={messages} />
         {/* <WhatsIncluded messages={messages} /> */}

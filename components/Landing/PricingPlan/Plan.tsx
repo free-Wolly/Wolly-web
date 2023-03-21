@@ -26,11 +26,9 @@ const Plan = ({
     <motion.div
       className={`relative lg:w-1/3 lg:min-w-0 min-w-[90%] flex flex-col items-start p-[2rem] rounded-[1rem] bg-gradient-to-r from-wollyBlue to-wollyLightBlue pb-[5rem] overflow-hidden`}
     >
-      <div className="w-full flex flex-row justify-between items-center pb-[2rem] border-b mb-[1rem] ">
-        <div className="flex flex-col">
-          <div className="text-[1.5rem] font-bold font-[BOG] text-white">
-            {title}
-          </div>
+      <div className="w-full flex xl:flex-row lg:flex-col sm:flex-row flex-col sm:justify-between xl:items-center lg:items-start sm:items-center pb-[2rem] border-b mb-[1rem] ">
+        <div className="text-[1.5rem] font-bold font-[BOG] text-white">
+          {title}
         </div>
         <div className="text-[2rem] font-[BOG] text-white">
           {locale === "ka" ? `${price}₾-დან` : `From ${price}₾`}

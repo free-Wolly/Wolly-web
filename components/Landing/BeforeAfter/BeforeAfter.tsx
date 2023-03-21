@@ -74,7 +74,7 @@ const BeforeAfter = ({ messages }: any): JSX.Element => {
       {/* Large Screen */}
       <div className="hidden lg:flex gap-12 p-4">{renderImages}</div>
       {/* Mobile/Tablet Screen */}
-      <div className="flex lg:hidden">
+      <div className="flex lg:hidden px-[1rem]">
         <div className="m-auto w-full aspect-video relative overflow-hidden rounded-2xl">
           {renderImages[index]}
           <motion.img

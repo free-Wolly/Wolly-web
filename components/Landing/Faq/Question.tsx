@@ -23,7 +23,7 @@ const Question = ({ id, question, inView }: QuestionProps) => {
       }
     >
       <motion.div className="flex flex-row items-center justify-between rounded-2xl">
-        <motion.div className="text-xl font-bold">
+        <motion.div className="text-xl font-bold font-[BOG] text-[#304D63]">
           {question.question}
         </motion.div>
         <motion.img
@@ -39,7 +39,7 @@ const Question = ({ id, question, inView }: QuestionProps) => {
         initial="hidden"
         animate={open ? "show" : "hidden"}
         variants={openVariant}
-        className="pointer-events-none"
+        className="pointer-events-none font-[BOG] text-[#304D63]"
       >
         {question.answer}
       </motion.div>

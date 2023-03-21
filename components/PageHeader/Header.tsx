@@ -44,13 +44,13 @@ const Header = ({
         delay: 0.6,
       }}
       className={`fixed bg-transparent w-full top-0 z-50 ${
-        scrollDirection === "down" ? "lg:-top-24" : "lg:top-0"
+        scrollDirection === "down" ? "-top-24" : "top-0"
       } transition-all duration-500`}
     >
       <div className="w-full lg:container lg:mx-auto 2xl:px-32 xl:px-16 lg:pl-0 md:pl-8 sm:pl-4 pl-4">
         <div className="w-full flex justify-center items-center lg:mt-2">
           <div className="xl:w-[75%] lg:w-6/12 mt-1 w-full flex">
-            <Link href="/">
+            <Link className="flex items-center" href="/">
               <Image
                 className="w-[4rem]"
                 priority
@@ -59,6 +59,9 @@ const Header = ({
                 width={100}
                 height={100}
               />
+              <div className="text-white text-[1.5rem] font-[BOG] ml-[0.5rem]">
+                {messages.header.wolly}
+              </div>
             </Link>
           </div>
           <div className="hidden lg:flex lg:justify-between lg:w-full text-[1rem] font-[BOG] text-white">

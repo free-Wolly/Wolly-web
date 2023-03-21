@@ -32,7 +32,7 @@ const StickySections = ({ messages }: any): JSX.Element => {
           loading="lazy"
           placeholder="blur"
           key={id}
-          className={`lg:sticky lg:top-[6.25rem] lg:block lg:w-[19%] 2xl:h-[37rem] xl:h-[30rem] lg:h-[22rem] lg:max-w-none lg:mb-[6.25rem] max-h-[37.5rem] ml-0 flex flex-col justify-center items-center sm:w-[18.75rem] w-[12.5rem]  ${
+          className={`lg:sticky lg:top-[6.25rem] lg:block lg:w-[19%] 2xl:h-[37rem] xl:h-[30rem] lg:h-[22rem] lg:max-w-none lg:mb-[6.25rem] max-h-[37.5rem] ml-0 flex flex-col justify-center items-center sm:w-[18.75rem] w-[80%]  ${
             id === 0
               ? "lg:ml-[0%]"
               : id === 1
@@ -79,13 +79,10 @@ const StickySections = ({ messages }: any): JSX.Element => {
           </div>
         </div>
       </div>
-      <div className="bg-[#041919]">
+      <div className="bg-[#041919]" id="app">
         <div className="max-w-[125rem] mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4 py-8 lg:py-32 lg:block flex flex-col items-center gap-[3.125rem]">
           {renderImages}
-          <div
-            id="app"
-            className="flex justify-center items-center lg:gap-[1.875rem] gap-[3.125rem] lg:mx-0"
-          >
+          <div className="flex justify-center items-center lg:gap-[1.875rem] gap-[3.125rem] lg:mx-0">
             {renderStores}
           </div>
         </div>

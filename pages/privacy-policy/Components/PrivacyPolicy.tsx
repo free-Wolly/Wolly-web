@@ -1,36 +1,10 @@
-import React, { useMemo } from 'react'
-import policies from './constants'
+import React from 'react'
 
 const PrivacyPolicy = ({ messages }: any) => {
-  const renderText = useMemo(() => {
-    return policies.map(
-      (
-        policy: {
-          title: string
-          text: string
-        },
-        id: number
-      ) => {
-        return (
-          <div key={id}>
-            <h1 className="text-[32px] font-bold mt-16">{policy.title}</h1>
-            <p className="text-[20px] whitespace-pre-wrap text-start">{policy.text}</p>
-          </div>
-        )
-      }
-    )
-  }, [])
-
   return (
     <div className="container max-w-[1000px] lg:py-[150px] py-[75px] lg:px-[100px] mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4">
-      <h1 className="text-[64px] font-bold mb-16">{messages.privacyPolicy.title}</h1>
-      <p className="text-[20px]">{`
-      Terms and conditions of the platform use
-
-      Preamble 
-      
-      This "Terms and conditions of the platform use" is a legally binding agreement for the "Company", "Professional" and "User" to the extent stipulated in the same agreement. You as a "Professional" or "User" are obliged to read this text carefully before using the "WOLLY platform". As soon as you start using the "WOLLY platform", you automatically become a party to this agreement and, accordingly, you will be fully bound by the terms of the agreement. 
-      
+      <h1 className="text-[64px] font-bold mb-16">Terms and Conditions</h1>
+      <p className="text-[20px]">{` This "Terms and conditions of the platform use" is a legally binding agreement for the "Company", "Professional" and "User" to the extent stipulated in the same agreement. You as a "Professional" or "User" are obliged to read this text carefully before using the "WOLLY platform". As soon as you start using the "WOLLY platform", you automatically become a party to this agreement and, accordingly, you will be fully bound by the terms of the agreement. 
       1. Definition of terms
       
       The terms and definitions used in these "Terms and conditions of the platform use" shall have the meanings set forth below, unless the context of the document clearly indicates otherwise:
@@ -327,7 +301,6 @@ const PrivacyPolicy = ({ messages }: any) => {
       23.
       
       All disputes and disagreements related to the "Terms and conditions of the platform use" will be resolved through negotiation between the parties, otherwise the parties will apply to the court. At the same time, the possibility of resolving the dispute by settlement between the parties does not deprive any of the parties of the right to apply to the court for the protection of their rights before holding the relevant negotiations. `}</p>
-      {renderText}
     </div>
   )
 }

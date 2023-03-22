@@ -7,21 +7,20 @@
         "id": "main"
       },
       {
-        "text": "Services",
-        "id": "services"
+        "text": "Pricing",
+        "id": "pricing"
+      },
+      {
+        "text": "Blog",
+        "id": "blog"
       },
       {
         "text": "App",
         "id": "app"
       },
       {
-        "text": "About Us",
-        "id": "about"
-      },
-
-      {
-        "text": "Contact",
-        "id": "contact"
+        "text": "Team",
+        "id": "team"
       }
     ]
   },

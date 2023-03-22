@@ -8,7 +8,7 @@ const PricingPlan = ({ messages, locale }: any): JSX.Element => {
   const [seeMore, setSeeMore] = useState(false);
 
   return (
-    <div className="container mx-auto">
+    <div id="pricing" className="container mx-auto">
       <SectionHeader
         topTitle={messages.pricingPlan.sectionTitle}
         botTitle={messages.pricingPlan.title}

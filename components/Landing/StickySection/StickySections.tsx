@@ -63,7 +63,7 @@ const StickySections = ({ messages }: any): JSX.Element => {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
-        className="h-[5000px]"
+        className="lg:h-[5000px] md:h-[3000px] h-[2000px]"
       >
         <div className="sticky top-[20%] flex justify-center content-center items-center text-[#041919]">
           <div className="text-center lg:text-left">

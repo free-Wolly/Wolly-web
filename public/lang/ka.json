@@ -7,21 +7,20 @@
         "id": "main"
       },
       {
-        "text": "სერვისები",
-        "id": "services"
+        "text": "შეფასებები",
+        "id": "pricing"
+      },
+      {
+        "text": "ბლოგი",
+        "id": "blog"
       },
       {
         "text": "აპლიკაცია",
         "id": "app"
       },
       {
-        "text": "ჩვენს შესახებ",
-        "id": "about"
-      },
-
-      {
-        "text": "კონტაქტი",
-        "id": "contact"
+        "text": "გუნდი",
+        "id": "team"
       }
     ]
   },

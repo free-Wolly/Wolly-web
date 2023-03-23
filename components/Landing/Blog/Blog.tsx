@@ -6,7 +6,7 @@ import SectionHeader from '../../Helpers/SectionHeader'
 
 const Blog = ({ messages }: any): JSX.Element => {
   return (
-    <div id="about" className="container mx-auto 2xl:px-20 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4">
+    <div id="blog" className="container mx-auto 2xl:px-20 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4">
       <SectionHeader
         topTitle={messages.blog.sectionTitle}
         botTitle={messages.blog.title}

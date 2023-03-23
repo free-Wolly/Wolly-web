@@ -27,7 +27,7 @@ const Team = (): JSX.Element => {
   }, [imagesInView])
 
   return (
-    <div id="about" className="container mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4">
+    <div className="container mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4">
       <SectionHeader
         topTitle="ბლოგი"
         botTitle="გაეცანი სიახლეებს ჩვენთან111"

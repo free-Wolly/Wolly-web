@@ -16,7 +16,7 @@ const Slider = ({ messages }: any) => {
   }, [baseVelocity])
 
   return (
-    <div id="services" className="mx-auto w-full">
+    <div id="team" className="mx-auto w-full">
       <SectionHeader
         topTitle={messages.sliderSection.sectionTitle}
         botTitle={messages.sliderSection.title}

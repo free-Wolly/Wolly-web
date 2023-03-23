@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import images from "./images";
-import { SidePostProps } from "./interfaces";
+import React from 'react'
+import Image from 'next/image'
+import images from './images'
+import { SidePostProps } from './interfaces'
 
 const SidePost = ({ blogItem, id }: SidePostProps): JSX.Element => {
   return (
@@ -15,14 +15,10 @@ const SidePost = ({ blogItem, id }: SidePostProps): JSX.Element => {
         width={1000}
         height={1000}
       />
-      <div className="text-[1.25rem] font-bold font-[GEOCAPS] text-[#304D63] text-center">
-        {blogItem.title}
-      </div>
-      <div className="text-[1rem] text-[#597F9DBF] text-center font-[BOG] tracking-tighter">
-        {blogItem.text}
-      </div>
+      <div className="text-[1rem] font-bold font-[BOG] text-[#304D63] text-center">{blogItem.title}</div>
+      {/* <div className="text-[1rem] text-[#597F9DBF] text-center font-[BOG] tracking-tighter">{blogItem.text}</div> */}
     </div>
-  );
-};
+  )
+}
 
-export default SidePost;
+export default SidePost

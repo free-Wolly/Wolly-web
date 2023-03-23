@@ -1,9 +1,9 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react'
+import { motion } from 'framer-motion'
 
-import AnimatedText from "../../Helpers/TextAnimation/AnimateText";
-import { arrowVariant, banner } from "./variants";
-import Marquee from "./Marquee/Marquee";
+import AnimatedText from '../../Helpers/TextAnimation/AnimateText'
+import { arrowVariant, banner } from './variants'
+import Marquee from './Marquee/Marquee'
 
 const Intro = ({ messages }: any) => {
   return (
@@ -32,9 +32,9 @@ const Intro = ({ messages }: any) => {
           transition={{
             duration: 1,
             delay: 1,
-            ease: "linear",
+            ease: 'linear',
             times: [0, 0.2, 0.5, 0.8, 1],
-            repeatType: "loop",
+            repeatType: 'loop',
             repeat: Infinity,
           }}
           className="absolute left-0 right-0 bottom-0 mx-auto visible z-[100]"
@@ -43,23 +43,20 @@ const Intro = ({ messages }: any) => {
           width={30}
           height={30}
         />
-        <motion.div
-          className="h-screen w-full overflow-hidden relative flex flex-col justify-center content-center "
-          variants={banner}
-        >
+        <motion.div className="h-screen w-full overflow-hidden relative flex flex-col justify-center content-center " variants={banner}>
           <div className="overflow-hidden flex items-center mt-24 pl-8 text-white">
-            <AnimatedText title={messages.intro.introAnimatedTextTop} side />
+            <AnimatedText title={'შემოაბიჯე'} side />
           </div>
-          <div className={"overflow-hidden flex text-wollyBlue"}>
+          <div className={'overflow-hidden flex text-wollyBlue'}>
             <Marquee title={messages.intro.introAnimatedTextMiddle} />
           </div>
-          <div className={"overflow-hidden flex justify-end pr-8 text-white"}>
-            <AnimatedText title={messages.intro.introAnimatedTextBottom} side />
+          <div className={'overflow-hidden flex justify-end pr-8 text-white'}>
+            <AnimatedText title={'განზომილებაში'} side />
           </div>
         </motion.div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Intro;
+export default Intro

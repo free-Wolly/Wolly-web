@@ -24,7 +24,7 @@ const TextHorizontalAnimation = (props: any, ref: any) => {
 
   const animateRight = useTransform(scrollYProgress, [fromTop - screen, section + fromTop], [0, 50])
 
-  const animateMiddle = useTransform(scrollYProgress, [fromTop - screen, section + fromTop], [50, 0])
+  // const animateMiddle = useTransform(scrollYProgress, [fromTop - screen, section + fromTop], [50, 0])
 
   const animateLeft = useTransform(scrollYProgress, [fromTop - screen, section + fromTop], [50, 0])
 
@@ -43,7 +43,7 @@ const TextHorizontalAnimation = (props: any, ref: any) => {
           <motion.div
             className="md:text-[6rem] text-[3.5rem] leading-none font-[GEOCAPS]"
             style={{
-              x: animateMiddle,
+              x: animateLeft,
               marginTop: 10,
             }}
           >
@@ -52,8 +52,8 @@ const TextHorizontalAnimation = (props: any, ref: any) => {
           <motion.div
             className="md:text-[6rem] text-[3.5rem] leading-none font-[GEOCAPS]"
             style={{
-              x: animateLeft,
-              textAlign: 'center',
+              x: animateRight,
+              marginLeft: -120,
               marginTop: 10,
             }}
           >

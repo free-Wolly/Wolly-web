@@ -1,7 +1,12 @@
 import React, { useMemo } from "react";
-import terms from "./constants";
+import { terms } from "../../../constants/tos-constants";
 
-const Terms = ({ messages }: any) => {
+const Terms = ({ messages = {
+  termsAndConditions: {
+    title: "Terms and Conditions",
+    text: "Please read these Terms and Conditions carefully before using Our Service.",
+  }
+} }: any) => {
   const renderText = useMemo(() => {
     return terms.map(
       (

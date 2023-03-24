@@ -3,7 +3,13 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "../../../public/assets/images/wolly.png";
 
-const Header = ({ messages, locale, setLocale }: any) => {
+const Header = ({ messages = {
+  privacyPolicy: {
+    header: {
+      item: "Privacy Policy"
+    }
+  }
+}, locale, setLocale }: any) => {
   return (
     <div className="bg-transparent fixed w-full top-0 z-50 min-h-[50px]">
       <div className="relative w-full lg:container lg:mx-auto 2xl:px-32 xl:px-16 lg:px-0 md:px-8 sm:px-4 px-4">

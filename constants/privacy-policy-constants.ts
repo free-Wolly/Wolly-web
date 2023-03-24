@@ -1,4 +1,4 @@
-const policies: {
+export const policies: {
   title: string;
   text: string;
 }[] = [
@@ -111,5 +111,3 @@ const policies: {
   `,
   },
 ];
-
-export default policies;

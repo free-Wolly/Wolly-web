@@ -234,6 +234,23 @@ const Carousel = ({ messages }: any) => {
                     animate={{
                       width: `100%`,
                     }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.8 }}
+                    className={style.prevBtn}
+                    onClick={prevBtn}
+                  >
+                    <motion.img
+                      src="/assets/images/arrow-down2.svg"
+                      alt=""
+                      width={30}
+                      height={30}
+                      whileHover={{ scale: 1.2 }}
+                      transition={{ duration: 0.5 }}
+                    />
+                  </motion.button>
+                  <motion.button
+                    initial={{ opacity: 0, scale: 0, rotate: '-90deg' }}
+                    animate={{ opacity: 1, scale: 1, rotate: '-90deg' }}
                     transition={{
                       duration: 4.1,
                       ease: 'linear',

@@ -32,7 +32,7 @@ const SecondSection = ({ messages }: any) => {
       />
       <motion.div
         ref={boxSectionRef}
-        className="grid gap-16 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2"
+        className="grid lg:gap-16 gap-4 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2"
       >
         {renderBoxes}
       </motion.div>

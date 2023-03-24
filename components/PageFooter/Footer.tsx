@@ -1,58 +1,41 @@
-import React, { useMemo } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import React, { useMemo } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
 
-import wollyLogo from "../../public/assets/images/wolly.png";
-import worldMap from "../../public/assets/images/world.png";
-import socialNetworksItems from "./socialNetworks";
-import handleClickScroll from "../../utils/scrollToSection";
-import { MenuItems, SocialNetworks } from "./interfaces";
+// import wollyLogo from "../../public/assets/images/wolly.png";
+// import worldMap from "../../public/assets/images/world.png";
+import socialNetworksItems from './socialNetworks'
+import handleClickScroll from '../../utils/scrollToSection'
+import { MenuItems, SocialNetworks } from './interfaces'
 
 const Footer = ({ messages }: any) => {
   const renderMenuItems = useMemo(() => {
-    return messages.header.menuItems.map(
-      ({ text, id }: MenuItems, index: number) => {
-        return (
-          <div
-            className="cursor-pointer"
-            key={index}
-            onClick={() => handleClickScroll(id)}
-          >
-            {text}
-          </div>
-        );
-      }
-    );
-  }, [messages.header.menuItems]);
+    return messages.header.menuItems.map(({ text, id }: MenuItems, index: number) => {
+      return (
+        <div className="cursor-pointer" key={index} onClick={() => handleClickScroll(id)}>
+          {text}
+        </div>
+      )
+    })
+  }, [messages.header.menuItems])
 
   const renderSocialNetworks = useMemo(() => {
     return socialNetworksItems.map((item: SocialNetworks, id: number) => {
       return (
-        <Link
-          key={id}
-          href={item.link}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Link key={id} href={item.link} target="_blank" rel="noopener noreferrer">
           <div className="flex items-center rounded-full bg-white w-10 h-10">
-            <Image
-              className="h-5"
-              src={item.img}
-              alt=""
-              width={100}
-              height={100}
-            />
+            <Image className="h-5" src={item.img} alt="" width={100} height={100} />
           </div>
         </Link>
-      );
-    });
-  }, []);
+      )
+    })
+  }, [])
 
   return (
     <>
-      <div className="bg-neutral-200">
+      <div className="">
         <div className="w-full lg:container lg:mx-auto 2xl:px-32 md:px-16 sm:px-4 px-4">
-          <div className="flex flex-col lg:flex-row gap-16 py-8 w-full">
+          {/* <div className="flex flex-col lg:flex-row gap-16 py-8 w-full">
             <div className="flex flex-col w-full">
               <Image
                 priority
@@ -89,18 +72,16 @@ const Footer = ({ messages }: any) => {
               </div>
               <div>{messages.footer.right.text}</div>
             </div>
-          </div>
-          <div className="flex flex-row justify-between items-center py-8 border-t-2 border-neutral-300">
+          </div> */}
+          <div className="flex flex-row justify-between items-center py-8">
             <div>© 2023 Wolly</div>
-            <div className="hidden lg:flex flex-row gap-4">
-              {renderMenuItems}
-            </div>
+            <div className="hidden lg:flex flex-row gap-4">{renderMenuItems}</div>
             <div className="flex flex-row gap-2">{renderSocialNetworks}</div>
           </div>
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

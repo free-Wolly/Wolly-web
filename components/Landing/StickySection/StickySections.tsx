@@ -30,7 +30,7 @@ const StickySections = ({ messages }: any): JSX.Element => {
           loading="lazy"
           placeholder="blur"
           key={id}
-          className={`lg:sticky lg:top-[6.25rem] lg:block lg:w-[19%] xl:h-[31.25rem] lg:h-[20rem] lg:max-w-none lg:mb-[6.25rem] max-h-[37.5rem] ml-0 flex flex-col justify-center items-center sm:w-[18.75rem] w-[12.5rem]  ${
+          className={`lg:sticky lg:top-[6.25rem] lg:block lg:w-[19%] 2xl:h-[37rem] xl:h-[30rem] lg:h-[22rem] lg:max-w-none lg:mb-[6.25rem] max-h-[37.5rem] ml-0 flex flex-col justify-center items-center sm:w-[18.75rem] w-[80%]  ${
             id === 0
               ? 'lg:ml-[0%]'
               : id === 1
@@ -42,7 +42,7 @@ const StickySections = ({ messages }: any): JSX.Element => {
               : id === 4
               ? 'lg:ml-[80%]'
               : ''
-          } lg:mt-[43.75rem] rounded-2xl`}
+          } lg:mt-[25rem] rounded-2xl`}
           src={image}
           alt=""
           width={1000}
@@ -60,25 +60,28 @@ const StickySections = ({ messages }: any): JSX.Element => {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
+          marginTop: 100,
         }}
-        className="h-[3000px]"
+        className="lg:h-[3000px] md:h-[3000px] h-[2000px]"
       >
         <div className="sticky top-[20%] flex justify-center content-center items-center text-[#041919]">
           <div className="text-center lg:text-left">
             <div className="text-[100px] lg:text-[200px] font-bold leading-none">
               <TextHorizontalAnimation ref={sectionRef} messages={messages} />
             </div>
-            <div className="md:text-[4rem] text-[2rem]">{messages.stickySection.title.third}</div>
-            <div className="md:text-[3rem] text-[2rem]">{messages.stickySection.title.fourth}</div>
+            {/* <div className="md:text-[4rem] text-[2rem]">
+              {messages.stickySection.title.third}
+            </div>
+            <div className="md:text-[3rem] text-[2rem]">
+              {messages.stickySection.title.fourth}
+            </div> */}
           </div>
         </div>
       </div>
-      <div className="bg-[#041919]">
-        <div className="container mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4 py-8 lg:py-32 lg:block flex flex-col items-center gap-[1.125rem]">
+      <div className="bg-[#041919]" id="app">
+        <div className="max-w-[125rem] mx-auto 2xl:px-32 xl:px-16 lg:px-16 md:px-8 sm:px-4 px-4 py-8 lg:py-32 lg:block flex flex-col items-center gap-[3.125rem]">
           {renderImages}
-          <div className="flex justify-center items-center lg:gap-[1.875rem] gap-[3.125rem] lg:h-[125rem] lg:mx-0 h-[5.75rem]">
-            {renderStores}
-          </div>
+          <div className="flex justify-center items-center lg:gap-[1.875rem] gap-[3.125rem] lg:mx-0">{renderStores}</div>
         </div>
       </div>
     </>

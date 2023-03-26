@@ -12,7 +12,7 @@ const Footer = ({ messages }: any) => {
   const renderMenuItems = useMemo(() => {
     return messages.header.menuItems.map(({ text, id }: MenuItems, index: number) => {
       return (
-        <div className="cursor-pointer" key={index} onClick={() => handleClickScroll(id)}>
+        <div className="cursor-pointer font-[BOG]" key={index} onClick={() => handleClickScroll(id)}>
           {text}
         </div>
       )
@@ -74,7 +74,7 @@ const Footer = ({ messages }: any) => {
             </div>
           </div> */}
           <div className="flex flex-row justify-between items-center py-8">
-            <div>© 2023 Wolly</div>
+            <div className="font-[BOG]">© 2023 Wolly</div>
             <div className="hidden lg:flex flex-row gap-4">{renderMenuItems}</div>
             <div className="flex flex-row gap-2">{renderSocialNetworks}</div>
           </div>

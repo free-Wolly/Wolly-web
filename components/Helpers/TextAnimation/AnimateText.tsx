@@ -5,7 +5,7 @@ import { AnimatedTextProps } from './interfaces'
 
 const AnimatedText = ({ title, disabled, side }: AnimatedTextProps): JSX.Element => {
   const style: string =
-    'text-[4rem] sm:text-[8rem] sm:text-[80px] md:text-[120px] lg:text-[160px] xl:text-[150px] font-medium relative tracking-tighter flex whitespace-nowrap lg:leading-[30vh] z-10'
+    'text-[4rem] sm:text-[8rem] sm:text-[80px] md:text-[120px] lg:text-[160px] xl:text-[200px] font-medium relative tracking-tighter flex whitespace-nowrap lg:leading-[30vh] z-10'
 
   return (
     <motion.span

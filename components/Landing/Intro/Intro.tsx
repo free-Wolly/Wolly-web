@@ -52,7 +52,7 @@ const Intro = ({ messages }: any) => {
             <Marquee title={messages.intro.introAnimatedTextMiddle} />
           </div>
           <div className={'overflow-hidden flex justify-end pr-8 text-white'}>
-            <AnimatedText title={'განზომილებაში'} side />
+            <AnimatedText title={'სივრცეში'} side />
           </div>
         </motion.div>
       </div>

@@ -1,39 +1,46 @@
-import React, { useMemo, useRef, useState } from 'react'
-import { motion, useInView } from 'framer-motion'
-import BeforeAfterSlider from 'react-before-after-slider-component'
-import 'react-before-after-slider-component/dist/build.css'
-import { images, variants } from './constants'
-import SectionHeader from '../../Helpers/SectionHeader'
+import React, { useMemo, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import BeforeAfterSlider from "react-before-after-slider-component";
+import "react-before-after-slider-component/dist/build.css";
+import { images, variants } from "./constants";
+import SectionHeader from "../../Helpers/SectionHeader";
 
 const BeforeAfter = ({ messages }: any): JSX.Element => {
-  const [direction, setDirection] = useState<number>(0)
-  const [index, setIndex] = useState<number>(0)
+  const [direction, setDirection] = useState<number>(0);
+  const [index, setIndex] = useState<number>(0);
 
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const sectionInView: boolean = useInView(sectionRef, {})
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const sectionInView: boolean = useInView(sectionRef, {});
 
   function nextStep() {
-    setDirection(1)
+    setDirection(1);
     if (index === images.length - 1) {
-      setIndex(0)
-      return
+      setIndex(0);
+      return;
     }
-    setIndex(index + 1)
+    setIndex(index + 1);
   }
 
   function prevStep() {
-    setDirection(-1)
+    setDirection(-1);
     if (index === 0) {
-      setIndex(images.length - 1)
-      return
+      setIndex(images.length - 1);
+      return;
     }
-    setIndex(index - 1)
+    setIndex(index - 1);
   }
 
   const renderImages = useMemo(() => {
     return images.map((image, id) => {
       return (
-        <motion.div key={id} variants={variants} initial="initial" animate="animate" className="w-full" custom={direction}>
+        <motion.div
+          key={id}
+          variants={variants}
+          initial="initial"
+          animate="animate"
+          className="w-full"
+          custom={direction}
+        >
           <BeforeAfterSlider
             className="overflow-hidden rounded-[35px]"
             firstImage={{
@@ -47,17 +54,17 @@ const BeforeAfter = ({ messages }: any): JSX.Element => {
             delimiterIconStyles={{
               width: 30,
               height: 30,
-              backgroundSize: 'cover',
-              borderRadius: 'none',
-              background: 'transparent linear-gradient(180deg, #ADDFE5 0%, #00BCD4 100%) 0% 0% no-repeat padding-box',
+              backgroundSize: "cover",
+              borderRadius: "none",
+              background:
+                "transparent linear-gradient(180deg, #ADDFE5 0%, #00BCD4 100%) 0% 0% no-repeat padding-box",
             }}
           />
         </motion.div>
-      )
-    })
-  }, [direction])
+      );
+    });
+  }, [direction]);
 
-  console.log({ sectionInView })
   return (
     <div className="mx-auto overflow-hidden" ref={sectionRef}>
       <SectionHeader
@@ -71,16 +78,16 @@ const BeforeAfter = ({ messages }: any): JSX.Element => {
       <div className="hidden lg:flex gap-12 p-4">{renderImages}</div>
       {/* Mobile/Tablet Screen */}
       <div className="flex lg:hidden px-[1rem]">
-        <div className="m-auto w-full aspect-video relative overflow-hidden rounded-2xl">
+        <div className="m-auto w-full aspect-video relative rounded-2xl">
           {sectionInView && renderImages[index]}
           <motion.img
-            src={'/assets/images/arrow-right.svg'}
+            src={"/assets/images/arrow-right.svg"}
             alt=""
             className="absolute top-2/4 right-2 translate-y-[-50%] w-10 h-10 cursor-pointer"
             onClick={nextStep}
           />
           <motion.img
-            src={'/assets/images/arrow-left.svg'}
+            src={"/assets/images/arrow-left.svg"}
             alt=""
             className="absolute top-2/4 left-2 translate-y-[-50%] w-10 h-10 cursor-pointer"
             onClick={prevStep}
@@ -88,7 +95,7 @@ const BeforeAfter = ({ messages }: any): JSX.Element => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BeforeAfter
+export default BeforeAfter;

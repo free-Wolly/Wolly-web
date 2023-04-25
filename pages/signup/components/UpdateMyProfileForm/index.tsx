@@ -3,7 +3,7 @@ import { useReducer, useState } from "react";
 import { useMutation } from "react-query";
 import { endpoint } from "../../constants";
 import updateMyProfileMutation from "../../../../graphql/mutation/updateMyProfile";
-import Input from "./helpers/Input";
+import InputWithValidation from "../../../../components/Helpers/InputWithValidation";
 import reducer from "./helpers/reducer";
 
 const UpdateMyProfileForm = ({
@@ -125,7 +125,7 @@ const UpdateMyProfileForm = ({
   return (
     <>
       <form>
-        <Input
+        <InputWithValidation
           inputType="text"
           label="სახელი"
           formData={formData}
@@ -136,7 +136,7 @@ const UpdateMyProfileForm = ({
           validationMessage={validationMessage}
           inputName="firstName"
         />
-        <Input
+        <InputWithValidation
           inputType="text"
           label="გვარი"
           formData={formData}
@@ -147,7 +147,7 @@ const UpdateMyProfileForm = ({
           validationMessage={validationMessage}
           inputName="lastName"
         />
-        <Input
+        <InputWithValidation
           inputType="password"
           label="პაროლი"
           formData={formData}
@@ -158,7 +158,7 @@ const UpdateMyProfileForm = ({
           validationMessage={validationMessage}
           inputName="password"
         />
-        <Input
+        <InputWithValidation
           inputType="password"
           label="გაიმეორე პაროლი"
           formData={formData}

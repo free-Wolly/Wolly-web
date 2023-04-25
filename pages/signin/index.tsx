@@ -1,19 +1,27 @@
-import React, { useState } from "react";
+import React, { useReducer, useState } from "react";
 import { useMutation } from "react-query";
 import { endpoint, language } from "../signup/constants";
 import signinMutation from "../../graphql/mutation/signin";
 import request from "graphql-request";
 import signoutMutation from "../../graphql/mutation/signout";
+import reducer from "./helpers/reducer";
+import InputWithValidation from "../../components/Helpers/InputWithValidation";
+import ErrorMessage from "../../components/Helpers/ErrorMessage";
 
 export default function SignIn() {
-  const [mobileNumb, setMobileNumb] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    mobile: "",
+    password: "",
+  });
+  const [validationMessage, setValidationMessage] = useReducer(reducer, {
+    mobile: "",
+    password: "",
+    empty: "",
+  });
   const [token, setToken] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const validMobile = mobileNumb.replace(/\+995|[ ]/g, "");
+  const validMobile = formData.mobile.replace(/\+995|[ ]/g, "");
 
   const signinVariables: {
     language: string;
@@ -25,7 +33,7 @@ export default function SignIn() {
   } = {
     language,
     data: {
-      password,
+      password: formData.password,
       mobile: validMobile,
       authType: "client",
     },
@@ -35,8 +43,6 @@ export default function SignIn() {
     () => request(endpoint, signinMutation, signinVariables),
     {
       onSuccess(data: any) {
-        setFirstName(data.signin.user.firstName);
-        setLastName(data.signin.user.lastName);
         setToken(data.signin.token);
       },
       onError(error: any) {
@@ -58,51 +64,69 @@ export default function SignIn() {
     const pattern = /^(\+995)?(5\d{8})$/;
 
     if (!pattern.test(mobile)) {
-      setErrorMessage("მობილური უნდა შედგებოდეს 9 ციფრისგან");
+      setValidationMessage({ type: "invalidMobile" });
     } else {
-      setErrorMessage("");
+      setValidationMessage({ type: "goodMobile" });
     }
   };
 
   const validatePassword = (password: string) => {
     if (password.length < 6) {
-      setErrorMessage("პაროლი უნდა შეიცავდეს მინიმუმ 6 სიმბოლოს");
+      setValidationMessage({ type: "invalidPassword" });
     } else {
-      setErrorMessage("");
+      setValidationMessage({ type: "goodPassword" });
     }
   };
 
   const handleClick = (e: React.ChangeEvent<any>) => {
     e.preventDefault();
+    setValidationMessage({ type: "notEmptyInput" });
+    setErrorMessage("");
     validateMobile(validMobile);
-    validatePassword(password);
-    if (!password || !mobileNumb) {
-      setErrorMessage("გთხოვთ შეავსოთ ყველა ველი");
-    } else if (errorMessage === "") signin.mutate();
+    validatePassword(formData.password);
+    if (!!!formData.password || !!!formData.password) {
+      setValidationMessage({ type: "emptyInput" });
+    } else if (
+      Object.values(validationMessage).every((value) => value === "")
+    ) {
+      setValidationMessage({ type: "notEmptyInput" });
+      setErrorMessage("");
+      signin.mutate();
+    }
   };
 
   return (
     <>
       <div>Sign In</div>
       <form>
-        <label>მობილური</label>
-        <input
-          type="text"
-          onChange={(e) => setMobileNumb(e.target.value)}
-          onBlur={() => validateMobile(validMobile)}
+        <InputWithValidation
+          inputType="text"
+          label="მობილური"
+          formData={formData}
+          setFormData={setFormData}
+          validateInput={() => {
+            validateMobile(validMobile);
+          }}
+          validationMessage={validationMessage}
+          inputName="mobile"
         />
-        <label>პაროლი</label>
-        <input
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-          onBlur={() => validatePassword(password)}
+        <InputWithValidation
+          inputType="password"
+          label="პაროლი"
+          formData={formData}
+          setFormData={setFormData}
+          validateInput={() => {
+            validatePassword(formData.password);
+          }}
+          validationMessage={validationMessage}
+          inputName="password"
         />
         <button type="submit" onClick={handleClick}>
           Sign In
         </button>
       </form>
-      <div className="font-bold text-red-900">{errorMessage}</div>
-      <div>{`Hello ${firstName} ${lastName}`}</div>
+      <ErrorMessage message={errorMessage} />
+      <ErrorMessage message={validationMessage.empty} />
       <div>Token - {token}</div>
 
       <button onClick={() => signout.mutate()}>Sign Out</button>

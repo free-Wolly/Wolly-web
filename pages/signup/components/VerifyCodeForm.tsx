@@ -3,6 +3,7 @@ import { useMutation } from "react-query";
 import request from "graphql-request";
 import { endpoint, language } from "../constants";
 import verifyCodeMutation from "../../../graphql/mutation/verifyCode";
+import ErrorMessage from "../../../components/Helpers/ErrorMessage";
 
 const VerifyCodeForm = ({
   mobile,
@@ -56,7 +57,7 @@ const VerifyCodeForm = ({
           type="text"
           maxLength={4}
         />
-        <div className="h-[2rem] text-red-800">{errorMessage}</div>
+        <ErrorMessage message={errorMessage} />
         <button type="submit">Submit</button>
       </form>
     </>

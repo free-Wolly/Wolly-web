@@ -3,6 +3,7 @@ import { endpoint, language } from "../constants";
 import request from "graphql-request";
 import clientSignUpMutation from "../../../graphql/mutation/clientSignUp";
 import { useState } from "react";
+import ErrorMessage from "../../../components/Helpers/ErrorMessage";
 
 const ClientSignUpForm = ({
   setMobile,
@@ -67,7 +68,7 @@ const ClientSignUpForm = ({
           setMobileNumb(e.target.value);
         }}
       />
-      <div className="h-[2rem] text-red-800">{errorMessage}</div>
+      <ErrorMessage message={errorMessage} />
       <button type="submit">Send</button>
     </form>
   );

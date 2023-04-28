@@ -4,6 +4,7 @@ const getAllAdressesQuery = gql`
   query GetAllAddresses {
     getAllAddresses {
       id
+      street
     }
   }
 `;

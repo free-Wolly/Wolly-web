@@ -1,11 +1,12 @@
 import request from "graphql-request";
-import { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useMutation } from "react-query";
 import { endpoint } from "../signup/constants";
 import createAddressMutation from "../../graphql/mutation/createAddress";
-
-const token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjbGdncmpqM2syMDI0MHVqdXAwY3Q3cDc5IiwiYXV0aFR5cGUiOiJjbGllbnQiLCJpYXQiOjE2ODE5MTA1MzR9.iY4mJYEvEYM06FtNqPawjmsmIZy7I1TK_Ner5YPc6yM";
+import Map from "./Map";
+import Cookies from "js-cookie";
+import { useRouter } from "next/router";
+import ErrorMessage from "../../components/Helpers/ErrorMessage";
 
 export default function CreateAddress() {
   const [formData, setFormData] = useState({
@@ -15,15 +16,33 @@ export default function CreateAddress() {
     entrance: "",
     apartment: "",
     details: "",
-    longitude: null,
-    latitude: null,
+    longitude: 0.0,
+    latitude: 0.0,
   });
+  const [errorMessage, setErrorMessage] = useState("");
+  const header: any = { Authorization: Cookies.get("token") };
+  const router = useRouter();
+
+  const streetRef: any = useRef(null);
+  const mapRef: any = useRef(null);
+
+  useEffect(() => {
+    !header.Authorization && router.push("/");
+  }, [header.Authorization, router]);
+
+  useEffect(() => {
+    if (formData.street) {
+      streetRef.current.style.display = "block";
+      mapRef.current.style.display = "none";
+    } else {
+      streetRef.current.style.display = "none";
+      mapRef.current.style.display = "block";
+    }
+  }, [formData.street]);
 
   const createAddressVariables = {
     data: formData,
   };
-
-  const header = { Authorization: token };
 
   const handleChange = (e: React.ChangeEvent<any>, field: string) => {
     setFormData({ ...formData, [field]: e.target.value });
@@ -42,22 +61,43 @@ export default function CreateAddress() {
     }
   );
 
+  const handleClick = (e: React.ChangeEvent<any>) => {
+    e.preventDefault();
+    if (!!!formData.street) {
+      setErrorMessage("გთხოვთ მიუთითოთ მისამართი");
+    } else {
+      try {
+        createAddress.mutate();
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
+
   return (
     <div className="container mx-auto">
       <div className="font-bold text-[2rem]">Create Address</div>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          createAddress.mutate();
-        }}
-      >
+      <div className="hidden" ref={streetRef}>
+        <div>{formData.street}</div>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            setFormData({ ...formData, street: "" });
+          }}
+        >
+          შეცვლა
+        </button>
+      </div>
+      <div ref={mapRef}>
+        <Map
+          setFormData={setFormData}
+          formData={formData}
+          setErrorMessage={setErrorMessage}
+        />
+      </div>
+
+      <form>
         <div className="flex flex-col gap-[1.25rem]">
-          <input
-            className="border-[2px] w-[30%] pl-[1rem]"
-            type="text"
-            placeholder="ქუჩა"
-            onChange={(e) => handleChange(e, "street")}
-          />
           <input
             className="border-[2px] w-[30%] pl-[1rem]"
             type="text"
@@ -82,11 +122,12 @@ export default function CreateAddress() {
             placeholder="დამატებითი კომენტარი"
             onChange={(e) => handleChange(e, "details")}
           />
-          <button type="submit" onClick={() => console.log(formData)}>
-            Submit
-          </button>
         </div>
+        <button type="submit" onClick={handleClick}>
+          დამატება
+        </button>
       </form>
+      <ErrorMessage message={errorMessage} />
     </div>
   );
 }

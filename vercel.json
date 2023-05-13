@@ -1,6 +1,6 @@
 {
   "rewrites": [
     { "source": "/blog", "destination": "https://wolly-blog.vercel.app/" },
-    { "source": "/:blog*", "destination": "https://wolly-blog.vercel.app/:match*" }
+    { "source": "/blog/:match*", "destination": "https://wolly-blog.vercel.app/:match*" }
   ]
 }

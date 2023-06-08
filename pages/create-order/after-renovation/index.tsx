@@ -1,18 +1,9 @@
-import request from "graphql-request";
 import { useReducer, useState } from "react";
-import { useMutation, useQuery } from "react-query";
-import { endpoint } from "../../signup/constants";
-import getAllAdressesQuery from "../../../graphql/query/getAllAdresses";
 import IncDecInput from "./components/IncDecInput";
 import CheckboxInput from "./components/CheckboxInput";
-import createSimpleOrderMutation from "../../../graphql/mutation/createSimpleOrder";
 import reducer from "./helpers/reducer";
 import ErrorMessage from "../../../components/Helpers/ErrorMessage";
-
-const token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjbGdncmpqM2syMDI0MHVqdXAwY3Q3cDc5IiwiYXV0aFR5cGUiOiJjbGllbnQiLCJpYXQiOjE2ODIwMDE1MzF9.oukpFPeABZ9BuNb1s27jLLz0oBuhG-WGA1c8RJrrGZM";
-
-const header = { Authorization: token };
+import { useRouter } from "next/router";
 
 export default function AfterRenovation() {
   const [formData, setFormData] = useState({
@@ -25,6 +16,9 @@ export default function AfterRenovation() {
     livingRoom: 0,
     studio: 0,
     premiumLiquids: false,
+    serviceType: "AFTER_RENOVATION",
+    cleanersQuantity: 5,
+    duration: 8,
   });
 
   const [validationMessage, setValidationMessage] = useReducer(reducer, {
@@ -33,65 +27,11 @@ export default function AfterRenovation() {
   });
   const [errorMessage, setErrorMessage] = useState("");
 
+  const router = useRouter();
+
   const handleChange = (e: React.ChangeEvent<any>, field: string) => {
     setFormData({ ...formData, [field]: e.target.value });
   };
-
-  const checkIfExists = (variable: string | number | boolean) => {
-    if (typeof variable === "string") {
-      return !!variable ? parseInt(variable) : null;
-    } else if (typeof variable === "number") {
-      return variable !== 0 ? variable : null;
-    } else if (typeof variable === "boolean") {
-      return variable === true ? variable : null;
-    }
-  };
-
-  const addressId: any = useQuery("getAllAddresses", () =>
-    request(endpoint, getAllAdressesQuery, {}, header)
-  );
-
-  const createSimpleOrderVariables = {
-    data: {
-      serviceType: "AFTER_RENOVATION",
-      serviceSubType: "STANDART",
-      price: 100,
-      startTime: "2023-08-08T12:00:00.000Z",
-      endTime: "2023-08-08T18:00:00.000Z",
-      duration: 8,
-      paymentMethod: "CASH",
-      addressId: addressId.data?.getAllAddresses[0]?.id,
-      apartmentCleaning: {
-        area: parseInt(formData.area),
-        balconyArea: checkIfExists(formData.balconyArea),
-        bathroom: checkIfExists(formData.bathroom),
-        bedroom: checkIfExists(formData.bedroom),
-        cabinet: checkIfExists(formData.cabinet),
-        kitchen: checkIfExists(formData.kitchen),
-        livingRoom: checkIfExists(formData.livingRoom),
-        studio: checkIfExists(formData.studio),
-        premiumLiquids: formData.premiumLiquids,
-      },
-    },
-  };
-
-  const createSimpleOrder = useMutation(
-    () =>
-      request(
-        endpoint,
-        createSimpleOrderMutation,
-        createSimpleOrderVariables,
-        header
-      ),
-    {
-      onSuccess(data: any) {
-        console.log(data);
-      },
-      onError(error: any) {
-        setErrorMessage(error.response.errors[0].message);
-      },
-    }
-  );
 
   const validateArea = () => {
     let valid = true;
@@ -128,7 +68,10 @@ export default function AfterRenovation() {
     validateArea();
     validateRooms();
     if (validateArea() && validateRooms()) {
-      createSimpleOrder.mutate();
+      router.push({
+        pathname: "after-renovation/select-pack",
+        query: formData,
+      });
     }
   };
 
@@ -237,7 +180,7 @@ export default function AfterRenovation() {
         </div>
         <ErrorMessage message={errorMessage} />
         <button type="submit" onClick={handleClick}>
-          Submit
+          შემდეგი
         </button>
       </form>
     </div>

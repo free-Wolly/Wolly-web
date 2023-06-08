@@ -7,6 +7,7 @@ import signoutMutation from "../../graphql/mutation/signout";
 import reducer from "./helpers/reducer";
 import InputWithValidation from "../../components/Helpers/InputWithValidation";
 import ErrorMessage from "../../components/Helpers/ErrorMessage";
+import { removeTokenCookie, setTokenCookie } from "../../utils/cookies";
 
 export default function SignIn() {
   const [formData, setFormData] = useState({
@@ -44,6 +45,7 @@ export default function SignIn() {
     {
       onSuccess(data: any) {
         setToken(data.signin.token);
+        setTokenCookie(data.signin.token);
       },
       onError(error: any) {
         setErrorMessage(error.response.errors[0].message);
@@ -54,6 +56,7 @@ export default function SignIn() {
   const signout = useMutation(() => request(endpoint, signoutMutation, {}), {
     onSuccess(data: any) {
       console.log(data.signout.message);
+      removeTokenCookie();
     },
     onError(error: any) {
       console.log(error.response.errors[0].message);

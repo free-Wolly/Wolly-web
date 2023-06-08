@@ -1,0 +1,245 @@
+import request from "graphql-request";
+import { useReducer, useState } from "react";
+import { useMutation, useQuery } from "react-query";
+import { endpoint } from "../../signup/constants";
+import getAllAdressesQuery from "../../../graphql/query/getAllAdresses";
+import IncDecInput from "./components/IncDecInput";
+import CheckboxInput from "./components/CheckboxInput";
+import createSimpleOrderMutation from "../../../graphql/mutation/createSimpleOrder";
+import reducer from "./helpers/reducer";
+import ErrorMessage from "../../../components/Helpers/ErrorMessage";
+
+const token =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjbGdncmpqM2syMDI0MHVqdXAwY3Q3cDc5IiwiYXV0aFR5cGUiOiJjbGllbnQiLCJpYXQiOjE2ODIwMDE1MzF9.oukpFPeABZ9BuNb1s27jLLz0oBuhG-WGA1c8RJrrGZM";
+
+const header = { Authorization: token };
+
+export default function AfterRenovation() {
+  const [formData, setFormData] = useState({
+    area: "",
+    balconyArea: "",
+    bathroom: 0,
+    bedroom: 0,
+    cabinet: 0,
+    kitchen: 0,
+    livingRoom: 0,
+    studio: 0,
+    premiumLiquids: false,
+  });
+
+  const [validationMessage, setValidationMessage] = useReducer(reducer, {
+    area: "",
+    rooms: "",
+  });
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<any>, field: string) => {
+    setFormData({ ...formData, [field]: e.target.value });
+  };
+
+  const checkIfExists = (variable: string | number | boolean) => {
+    if (typeof variable === "string") {
+      return !!variable ? parseInt(variable) : null;
+    } else if (typeof variable === "number") {
+      return variable !== 0 ? variable : null;
+    } else if (typeof variable === "boolean") {
+      return variable === true ? variable : null;
+    }
+  };
+
+  const addressId: any = useQuery("getAllAddresses", () =>
+    request(endpoint, getAllAdressesQuery, {}, header)
+  );
+
+  const createSimpleOrderVariables = {
+    data: {
+      serviceType: "AFTER_RENOVATION",
+      serviceSubType: "STANDART",
+      price: 100,
+      startTime: "2023-08-08T12:00:00.000Z",
+      endTime: "2023-08-08T18:00:00.000Z",
+      duration: 8,
+      paymentMethod: "CASH",
+      addressId: addressId.data?.getAllAddresses[0]?.id,
+      apartmentCleaning: {
+        area: parseInt(formData.area),
+        balconyArea: checkIfExists(formData.balconyArea),
+        bathroom: checkIfExists(formData.bathroom),
+        bedroom: checkIfExists(formData.bedroom),
+        cabinet: checkIfExists(formData.cabinet),
+        kitchen: checkIfExists(formData.kitchen),
+        livingRoom: checkIfExists(formData.livingRoom),
+        studio: checkIfExists(formData.studio),
+        premiumLiquids: formData.premiumLiquids,
+      },
+    },
+  };
+
+  const createSimpleOrder = useMutation(
+    () =>
+      request(
+        endpoint,
+        createSimpleOrderMutation,
+        createSimpleOrderVariables,
+        header
+      ),
+    {
+      onSuccess(data: any) {
+        console.log(data);
+      },
+      onError(error: any) {
+        setErrorMessage(error.response.errors[0].message);
+      },
+    }
+  );
+
+  const validateArea = () => {
+    let valid = true;
+    if (!!!formData.area) {
+      setValidationMessage({ type: "emptyArea" });
+      valid = false;
+    } else {
+      setValidationMessage({ type: "notEmptyArea" });
+    }
+    return valid;
+  };
+
+  const validateRooms = () => {
+    let valid = true;
+    if (
+      formData.bathroom === 0 &&
+      formData.bedroom === 0 &&
+      formData.studio === 0 &&
+      formData.livingRoom === 0 &&
+      formData.kitchen === 0 &&
+      formData.cabinet === 0
+    ) {
+      setValidationMessage({ type: "emptyRooms" });
+      valid = false;
+    } else {
+      setValidationMessage({ type: "notEmptyRooms" });
+    }
+    return valid;
+  };
+
+  const handleClick = (e: React.ChangeEvent<any>) => {
+    e.preventDefault();
+    setErrorMessage("");
+    validateArea();
+    validateRooms();
+    if (validateArea() && validateRooms()) {
+      createSimpleOrder.mutate();
+    }
+  };
+
+  return (
+    <div>
+      <div>After Renovation</div>
+      <form>
+        <div className="flex flex-col gap-[1rem]">
+          <ErrorMessage message={validationMessage.area} />
+          <input
+            className="border-[2px] w-[30%] pl-[1rem]"
+            type="number"
+            placeholder="საცხოვრებელი - მ2"
+            onChange={(e) => {
+              handleChange(e, "area");
+              e.target.value.length > 0 &&
+                setValidationMessage({ type: "notEmptyArea" });
+            }}
+          />
+          <input
+            className="border-[2px] w-[30%] pl-[1rem]"
+            type="number"
+            placeholder="ვერანდა - მ2"
+            onChange={(e) => handleChange(e, "balconyArea")}
+          />
+          <div>აირჩიეთ ოთახები</div>
+          <ErrorMessage message={validationMessage.rooms} />
+          <IncDecInput
+            text="სააბაზანო"
+            value={formData.bathroom}
+            onDec={() =>
+              setFormData({ ...formData, bathroom: formData.bathroom - 1 })
+            }
+            onInc={() =>
+              setFormData({ ...formData, bathroom: formData.bathroom + 1 })
+            }
+            setValidationMessage={setValidationMessage}
+          />
+          <IncDecInput
+            text="საძინებელი"
+            value={formData.bedroom}
+            onDec={() =>
+              setFormData({ ...formData, bedroom: formData.bedroom - 1 })
+            }
+            onInc={() =>
+              setFormData({ ...formData, bedroom: formData.bedroom + 1 })
+            }
+            setValidationMessage={setValidationMessage}
+          />
+          <IncDecInput
+            text="სტუდიო"
+            value={formData.studio}
+            onDec={() =>
+              setFormData({ ...formData, studio: formData.studio - 1 })
+            }
+            onInc={() =>
+              setFormData({ ...formData, studio: formData.studio + 1 })
+            }
+            setValidationMessage={setValidationMessage}
+          />
+          <IncDecInput
+            text="მისაღები"
+            value={formData.livingRoom}
+            onDec={() =>
+              setFormData({ ...formData, livingRoom: formData.livingRoom - 1 })
+            }
+            onInc={() =>
+              setFormData({ ...formData, livingRoom: formData.livingRoom + 1 })
+            }
+            setValidationMessage={setValidationMessage}
+          />
+          <IncDecInput
+            text="სამზარეულო"
+            value={formData.kitchen}
+            onDec={() =>
+              setFormData({ ...formData, kitchen: formData.kitchen - 1 })
+            }
+            onInc={() =>
+              setFormData({ ...formData, kitchen: formData.kitchen + 1 })
+            }
+            setValidationMessage={setValidationMessage}
+          />
+          <IncDecInput
+            text="კაბინეტი"
+            value={formData.cabinet}
+            onDec={() =>
+              setFormData({ ...formData, cabinet: formData.cabinet - 1 })
+            }
+            onInc={() =>
+              setFormData({ ...formData, cabinet: formData.cabinet + 1 })
+            }
+            setValidationMessage={setValidationMessage}
+          />
+
+          <div>პროდუქტები</div>
+
+          <CheckboxInput
+            text="ეკო ხსნარები"
+            onChange={() => {
+              setFormData({
+                ...formData,
+                premiumLiquids: !formData.premiumLiquids,
+              });
+            }}
+          />
+        </div>
+        <ErrorMessage message={errorMessage} />
+        <button type="submit" onClick={handleClick}>
+          Submit
+        </button>
+      </form>
+    </div>
+  );
+}

@@ -6,17 +6,23 @@ import localFont from "@next/font/local";
 
 import { LanguageProvider } from "../components/language";
 
+import { QueryClient, QueryClientProvider } from "react-query";
+
 const myFont = localFont({
   src: "../public/assets/fonts/bpg_nino_mtavruli_normal.otf",
 });
 
+const queryClient = new QueryClient();
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <main className={myFont.className}>
-      <LanguageProvider>
-        <Component {...pageProps} />
-      </LanguageProvider>
-    </main>
+    <QueryClientProvider client={queryClient}>
+      <main className={myFont.className}>
+        <LanguageProvider>
+          <Component {...pageProps} />
+        </LanguageProvider>
+      </main>
+    </QueryClientProvider>
   );
 }
 

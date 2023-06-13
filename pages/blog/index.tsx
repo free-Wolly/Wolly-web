@@ -39,13 +39,10 @@ export default function Blog({ currentPage }: { currentPage: string }) {
     {
       enabled: !blogPosts[page],
       onSuccess: (data: BlogsDataInterface) => {
-        setBlogPosts((prevBlogPosts: BlogPostsContextInterface) => {
-          console.log(prevBlogPosts);
-          return {
-            ...(prevBlogPosts || {}),
-            [page]: data?.blogs.data,
-          };
-        });
+        setBlogPosts((prevBlogPosts: BlogPostsContextInterface) => ({
+          ...(prevBlogPosts || {}),
+          [page]: data?.blogs.data,
+        }));
       },
     }
   );

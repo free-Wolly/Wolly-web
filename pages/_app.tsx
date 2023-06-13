@@ -3,7 +3,6 @@ import "../styles/Marquee/marquee.css";
 
 import type { AppProps } from "next/app";
 import localFont from "@next/font/local";
-import { ReactQueryDevtools } from "react-query/devtools";
 
 import { LanguageProvider } from "../contexts/languageContext";
 import { BlogPostsProvider } from "../contexts/blogContext";
@@ -26,7 +25,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           </BlogPostsProvider>
         </LanguageProvider>
       </main>
-      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }

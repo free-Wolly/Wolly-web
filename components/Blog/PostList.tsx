@@ -16,11 +16,11 @@ export default function PostList({
 
   return (
     <>
-      <div className={classNames("group cursor-pointer")}>
+      <div className={"group cursor-pointer"}>
         <div
-          className={classNames(
-            " overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105   dark:bg-gray-800"
-          )}
+          className={
+            "overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105"
+          }
         >
           <Link
             className={classNames(
@@ -54,25 +54,15 @@ export default function PostList({
               }
             />
             <h2
-              className={classNames(
-                "text-lg",
-                "font-semibold leading-snug tracking-tight",
-                "mt-2    dark:text-white"
-              )}
+              className={
+                "text-lg font-semibold leading-snug tracking-tight mt-2"
+              }
             >
-              <span
-                className="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom
-          bg-no-repeat
-          transition-[background-size]
-          duration-500
-          hover:bg-[length:100%_3px]
-          group-hover:bg-[length:100%_10px]
-          dark:from-purple-800 dark:to-purple-900"
-              >
+              <span className="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px]">
                 {post.attributes.title}
               </span>
             </h2>
-            <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
+            <div className="mt-3 flex items-center space-x-3 text-gray-500">
               <div className="flex items-center gap-3">
                 <div className="relative h-5 w-5 flex-shrink-0">
                   <Image
@@ -93,9 +83,7 @@ export default function PostList({
                     : "Unknown Author"}
                 </span>
               </div>
-              <span className="text-xs text-gray-300 dark:text-gray-600">
-                &bull;
-              </span>
+              <span className="text-xs text-gray-300">&bull;</span>
               <time
                 className="truncate text-sm"
                 dateTime={

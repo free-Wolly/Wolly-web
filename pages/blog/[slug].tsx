@@ -18,6 +18,7 @@ import {
   BlogsDataInterface,
   SingleBlogDataInterface,
 } from "../../types/blog/interfaces";
+import { readingTime } from "../../utils/readTime";
 
 export default function Post({ slug }: { slug: string }) {
   const { locale, setLocale, messages } = useLanguage();
@@ -63,10 +64,15 @@ export default function Post({ slug }: { slug: string }) {
 
   if (!currentPost) return <Loading />;
   return (
-    <>
-      <Header locale={locale} setLocale={setLocale} messages={messages} />
+    <div className="min-h-screen">
+      <Header
+        locale={locale}
+        setLocale={setLocale}
+        messages={messages}
+        blackText
+      />
 
-      <Container className="!pt-0">
+      <Container className="mt-[4rem]">
         <div className="mx-auto max-w-screen-md ">
           <div className="flex justify-center">
             <CategoryLabel
@@ -78,7 +84,7 @@ export default function Post({ slug }: { slug: string }) {
             />
           </div>
 
-          <h1 className="text-brand-primary mb-3 mt-2 text-center text-3xl font-semibold tracking-tight dark:text-white lg:text-4xl lg:leading-snug">
+          <h1 className="text-brand-primary mb-3 mt-2 text-center text-3xl font-semibold tracking-tight lg:text-4xl lg:leading-snug">
             {currentPost?.attributes.title}
           </h1>
 
@@ -98,14 +104,14 @@ export default function Post({ slug }: { slug: string }) {
                 />
               </div>
               <div>
-                <p className="text-gray-800 dark:text-gray-400">
+                <p className="text-gray-800 font-bold">
                   {currentPost?.attributes.author.data
                     ? currentPost?.attributes.author.data.attributes.fullName
                     : "Unknown Author"}
                 </p>
                 <div className="flex items-center space-x-2 text-sm">
                   <time
-                    className="text-gray-500 dark:text-gray-400"
+                    className="text-gray-500"
                     dateTime={
                       currentPost?.attributes.publishedAt ||
                       currentPost?.attributes.createdAt
@@ -119,6 +125,10 @@ export default function Post({ slug }: { slug: string }) {
                       "MMMM dd, yyyy"
                     )}
                   </time>
+                  <div>
+                    · {readingTime(currentPost?.attributes?.content) + " "} min
+                    read
+                  </div>
                 </div>
               </div>
             </div>
@@ -141,7 +151,7 @@ export default function Post({ slug }: { slug: string }) {
 
       <Container>
         <article className="mx-auto max-w-screen-md ">
-          <div className="prose mx-auto my-3 dark:prose-invert prose-a:text-blue-600">
+          <div className="prose mx-auto my-3 prose-a:text-blue-600">
             {currentPost ? (
               <ReactMarkdown>{currentPost?.attributes?.content}</ReactMarkdown>
             ) : (
@@ -151,15 +161,15 @@ export default function Post({ slug }: { slug: string }) {
           <div className="mb-7 mt-7 flex justify-center">
             <div
               onClick={() => router.back()}
-              className="bg-brand-secondary/20 rounded-full px-5 py-2 text-sm text-blue-600 dark:text-blue-500 cursor-pointer hover:bg-brand-secondary/10 transition duration-200 ease-in-out"
+              className="bg-brand-secondary/20 rounded-full px-5 py-2 text-sm text-blue-600 cursor-pointer hover:bg-brand-secondary/10 transition duration-200 ease-in-out"
             >
-              ← View all posts
+              ← ნახე ყველა პოსტი
             </div>
           </div>
         </article>
       </Container>
       <Footer messages={messages} />
-    </>
+    </div>
   );
 }
 

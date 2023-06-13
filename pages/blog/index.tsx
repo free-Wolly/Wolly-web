@@ -15,7 +15,7 @@ import {
   BlogsDataInterface,
 } from "../../types/blog/interfaces";
 
-const PAGE_SIZE = 1;
+const PAGE_SIZE = 11;
 
 export default function Blog({ currentPage }: { currentPage: string }) {
   const { blogPosts, setBlogPosts } = useContext(BlogPostsContext);
@@ -49,12 +49,20 @@ export default function Blog({ currentPage }: { currentPage: string }) {
 
   return (
     <>
-      <Header locale={locale} setLocale={setLocale} messages={messages} />
-      <HomePage
-        posts={Object.keys(blogPosts).length !== 0 ? blogPosts[page] : []}
-        loading={isLoading}
+      <Header
+        locale={locale}
+        setLocale={setLocale}
+        messages={messages}
+        blackText
       />
-      <Pagination data={data} page={page} setPage={setPage} />
+      <div className="min-h-screen">
+        <HomePage
+          posts={Object.keys(blogPosts).length !== 0 ? blogPosts[page] : []}
+          loading={isLoading}
+        />
+        <Pagination data={data} page={page} setPage={setPage} />
+      </div>
+
       <Footer messages={messages} />
     </>
   );

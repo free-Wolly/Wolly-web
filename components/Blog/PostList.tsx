@@ -4,6 +4,7 @@ import { classNames } from "../../utils/classNames";
 import CategoryLabel from "./helper/CategoryLabel";
 import { format, parseISO } from "date-fns";
 import { SingleBlogDataInterface } from "../../types/blog/interfaces";
+import { readingTime } from "../../utils/readTime";
 
 export default function PostList({
   post,
@@ -45,14 +46,11 @@ export default function PostList({
 
         <div>
           <div>
-            <CategoryLabel
-              categories={
-                post?.attributes.categories.data === undefined ||
-                post?.attributes.categories.data.length === 0
-                  ? null
-                  : post?.attributes.categories.data
-              }
-            />
+            {post?.attributes.categories.data === undefined ||
+            post?.attributes.categories.data.length === 0 ? null : (
+              <CategoryLabel categories={post?.attributes.categories.data} />
+            )}
+
             <h2
               className={
                 "text-lg font-semibold leading-snug tracking-tight mt-2"
@@ -63,27 +61,10 @@ export default function PostList({
               </span>
             </h2>
             <div className="mt-3 flex items-center space-x-3 text-gray-500">
-              <div className="flex items-center gap-3">
-                <div className="relative h-5 w-5 flex-shrink-0">
-                  <Image
-                    src={
-                      post?.attributes.author.data
-                        ? `https://king-prawn-app-uouyq.ondigitalocean.app${post?.attributes.author.data.attributes.image.data.attributes.url}`
-                        : "/assets/images/wolly.png"
-                    }
-                    alt={"Author"}
-                    className="rounded-full object-cover"
-                    fill
-                    sizes="20px"
-                  />
-                </div>
-                <span className="truncate text-sm">
-                  {post?.attributes.author.data
-                    ? post?.attributes.author.data.attributes.fullName
-                    : "Unknown Author"}
-                </span>
+              <div className="flex items-center gap-3 text-sm">
+                წაკითხვის დრო {readingTime(post?.attributes?.content)} წუთი
               </div>
-              <span className="text-xs text-gray-300">&bull;</span>
+              <span className="text-xs text-gray-300 ">&bull;</span>
               <time
                 className="truncate text-sm"
                 dateTime={

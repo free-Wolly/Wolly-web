@@ -52,7 +52,7 @@ export default function Pagination({ page, setPage, data }: PaginationProps) {
 
   if (totalPages)
     return (
-      <div className="items-between flex flex-col justify-center border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
+      <div className="items-between flex flex-col justify-center bg-white px-4 py-3 sm:px-6">
         <div className="flex flex-1 justify-between sm:hidden">
           <div
             onClick={prevPage}

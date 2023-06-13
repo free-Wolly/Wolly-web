@@ -153,7 +153,9 @@ export default function Post({ slug }: { slug: string }) {
         <article className="mx-auto max-w-screen-md ">
           <div className="prose mx-auto my-3 prose-a:text-blue-600">
             {currentPost ? (
-              <ReactMarkdown>{currentPost?.attributes?.content}</ReactMarkdown>
+              <ReactMarkdown className="whitespace-pre-wrap">
+                {currentPost?.attributes?.content}
+              </ReactMarkdown>
             ) : (
               "Post Body"
             )}

@@ -6,14 +6,18 @@ import { motion } from 'framer-motion'
 import BurgerMenu from './BurgerMenu'
 import handleClickScroll from '../../utils/scrollToSection'
 import useScrollDirection from './useScrollDirection'
+import { useRouter } from 'next/router'
 
 const Header = ({ locale, setLocale, messages }: { locale: string; setLocale: any; messages: any }): JSX.Element => {
   const scrollDirection = useScrollDirection()
+  const router = useRouter()
 
   const renderMenuItems = useMemo(() => {
     return messages.header.menuItems.map(({ text, id }: { text: string; id: string }, index: number) => {
       return (
-        <div className="cursor-pointer " key={index} onClick={() => handleClickScroll(id)}>
+        <div className="cursor-pointer " key={index} onClick={() => {
+          router.push("/").then(() => handleClickScroll(id))
+          }}>
           {text}
         </div>
       )

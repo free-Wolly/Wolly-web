@@ -1,48 +1,74 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import HomePage from "../../components/Blog/HomePage";
 import { BlogPostsContext } from "../../contexts/blogContext";
+import { useQuery } from "react-query";
+import request from "graphql-request";
+import blogsQuery from "../../graphql/query/blog/blogs";
+import { endpoint, header } from "./constants";
+import Header from "../../components/PageHeader";
+import Footer from "../../components/PageFooter";
+import { useLanguage } from "../../components/language";
+import Pagination from "../../components/Blog/Pagination";
+import { safeParseInt } from "../../utils/safeParseInt";
+import {
+  BlogPostsContextInterface,
+  BlogsDataInterface,
+} from "../../types/blog/interfaces";
 
-export async function fetchAPI() {
-  const mergedOptions = {
-    headers: {
-      "Content-Type": "application/json",
-      Authorization:
-        "Bearer " +
-        "e2e5f567163ec1f8bfad365a1ccfef6d3a19a3148a87f5213823d796be1961ec96be8eb006e29d73050f938712e48ceeef41bce23e8cc5fc67ddb16a842d4f2e3fabfa4b4fab63d5e77aa023f4b055713bdedc42e95bd6789370ea18ad092daf5898328960289ffbdd3145308f00d0efed763535da6af20dcbbe6da59faf3c50",
-    },
-  };
+const PAGE_SIZE = 1;
 
-  // Build request URL
-  //   const queryString = qs.stringify(urlParamsObject);
-  const requestUrl =
-    "https://king-prawn-app-uouyq.ondigitalocean.app/api/blogs";
+export default function Blog({ currentPage }: { currentPage: string }) {
+  const { blogPosts, setBlogPosts } = useContext(BlogPostsContext);
+  const [page, setPage] = useState(safeParseInt(currentPage) as number);
+  const { locale, setLocale, messages } = useLanguage();
 
-  // Trigger API call
-  const response = await fetch(requestUrl, mergedOptions);
+  const { data, isLoading } = useQuery(
+    "Blogs",
+    () =>
+      request(
+        endpoint,
+        blogsQuery,
+        {
+          pagination: {
+            page,
+            pageSize: PAGE_SIZE,
+          },
+        },
+        header
+      ),
+    {
+      enabled: !blogPosts[page],
+      onSuccess: (data: BlogsDataInterface) => {
+        setBlogPosts((prevBlogPosts: BlogPostsContextInterface) => {
+          console.log(prevBlogPosts);
+          return {
+            ...(prevBlogPosts || {}),
+            [page]: data?.blogs.data,
+          };
+        });
+      },
+    }
+  );
 
-  // Handle response
-  if (!response.ok) {
-    console.error(response.statusText);
-    throw new Error(`An error occured please try again`);
-  }
-  const data = await response.json();
-  return data;
+  return (
+    <>
+      <Header locale={locale} setLocale={setLocale} messages={messages} />
+      <HomePage
+        posts={Object.keys(blogPosts).length !== 0 ? blogPosts[page] : []}
+        loading={isLoading}
+      />
+      <Pagination data={data} page={page} setPage={setPage} />
+      <Footer messages={messages} />
+    </>
+  );
 }
 
-export default function Blog() {
-  const [loading, setLoading] = useState(true);
-  const { blogPosts, setBlogPosts } = useContext(BlogPostsContext);
-  useEffect(() => {
-    const fetchData = async () => {
-      if (blogPosts.length === 0) {
-        const data = await fetchAPI();
-        const dataArr: any = Array(11).fill(data.data[0]);
-        setBlogPosts(dataArr);
-      }
-      setLoading(false);
-    };
-    fetchData();
-  }, [blogPosts.length, setBlogPosts]);
+export async function getServerSideProps(context: any) {
+  const currentPage = context.query.page || "1";
 
-  return <HomePage posts={blogPosts} loading={loading} />;
+  return {
+    props: {
+      currentPage,
+    },
+  };
 }

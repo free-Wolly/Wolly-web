@@ -4,19 +4,28 @@ import "../styles/Marquee/marquee.css";
 import type { AppProps } from "next/app";
 import localFont from "@next/font/local";
 
-import { LanguageProvider } from "../components/language";
+import { LanguageProvider } from "../contexts/languageContext";
+import { BlogPostsProvider } from "../contexts/blogContext";
+
+import { QueryClient, QueryClientProvider } from "react-query";
 
 const myFont = localFont({
   src: "../public/assets/fonts/bpg_nino_mtavruli_normal.otf",
 });
 
+const queryClient = new QueryClient();
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <main className={myFont.className}>
-      <LanguageProvider>
-        <Component {...pageProps} />
-      </LanguageProvider>
-    </main>
+    <QueryClientProvider client={queryClient}>
+      <main className={myFont.className}>
+        <LanguageProvider>
+          <BlogPostsProvider>
+            <Component {...pageProps} />
+          </BlogPostsProvider>
+        </LanguageProvider>
+      </main>
+    </QueryClientProvider>
   );
 }
 

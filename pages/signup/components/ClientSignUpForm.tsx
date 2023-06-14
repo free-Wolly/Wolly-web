@@ -1,5 +1,5 @@
 import { useMutation } from "react-query";
-import { endpoint, language } from "../constants";
+import { endpoint, language } from "../../../constants/signUp/constants";
 import request from "graphql-request";
 import clientSignUpMutation from "../../../graphql/mutation/clientSignUp";
 import { useState } from "react";

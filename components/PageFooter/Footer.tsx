@@ -7,12 +7,20 @@ import Link from 'next/link'
 import socialNetworksItems from './socialNetworks'
 import handleClickScroll from '../../utils/scrollToSection'
 import { MenuItems, SocialNetworks } from './interfaces'
+import { useRouter } from 'next/router'
 
 const Footer = ({ messages }: any) => {
+  const router = useRouter()
   const renderMenuItems = useMemo(() => {
     return messages.header.menuItems.map(({ text, id }: MenuItems, index: number) => {
       return (
-        <div className="cursor-pointer font-[BOG]" key={index} onClick={() => handleClickScroll(id)}>
+        <div 
+            className="cursor-pointer font-[BOG]" 
+            key={index} 
+            onClick={() => {
+            router.push("/").then(() => handleClickScroll(id))
+            }
+          }>
           {text}
         </div>
       )

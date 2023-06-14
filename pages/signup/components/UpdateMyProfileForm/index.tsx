@@ -1,7 +1,7 @@
 import request from "graphql-request";
 import { useReducer, useState } from "react";
 import { useMutation } from "react-query";
-import { endpoint } from "../../constants";
+import { endpoint } from "../../../../constants/signUp/constants";
 import updateMyProfileMutation from "../../../../graphql/mutation/updateMyProfile";
 import InputWithValidation from "../../../../components/Helpers/InputWithValidation";
 import reducer from "./helpers/reducer";

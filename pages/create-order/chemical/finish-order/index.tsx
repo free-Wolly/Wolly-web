@@ -1,6 +1,6 @@
 import request from "graphql-request";
 import { useMutation, useQuery } from "react-query";
-import { endpoint } from "../../../signup/constants";
+import { endpoint } from "../../../../constants/signUp/constants";
 import getAllAdressesQuery from "../../../../graphql/query/getAllAdresses";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
@@ -8,7 +8,10 @@ import createSimpleOrderMutation from "../../../../graphql/mutation/createSimple
 import ErrorMessage from "../../../../components/Helpers/ErrorMessage";
 import Cookies from "js-cookie";
 import Link from "next/link";
-import { checkIfExists, ifNoDataRedirect } from "../../helpers/functions";
+import {
+  checkIfExists,
+  ifNoDataRedirect,
+} from "../../../../utils/create-order/functions";
 
 export default function FinishOrder() {
   const [addressId, setAddressId] = useState("");

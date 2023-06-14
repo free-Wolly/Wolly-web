@@ -4,7 +4,8 @@ import "../styles/Marquee/marquee.css";
 import type { AppProps } from "next/app";
 import localFont from "@next/font/local";
 
-import { LanguageProvider } from "../components/language";
+import { LanguageProvider } from "../contexts/languageContext";
+import { BlogPostsProvider } from "../contexts/blogContext";
 
 import { QueryClient, QueryClientProvider } from "react-query";
 
@@ -19,7 +20,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     <QueryClientProvider client={queryClient}>
       <main className={myFont.className}>
         <LanguageProvider>
-          <Component {...pageProps} />
+          <BlogPostsProvider>
+            <Component {...pageProps} />
+          </BlogPostsProvider>
         </LanguageProvider>
       </main>
     </QueryClientProvider>

@@ -76,11 +76,7 @@ export default function Post({ slug }: { slug: string }) {
           <div className="mx-auto max-w-screen-md ">
             <div className="flex justify-center">
               <CategoryLabel
-                categories={
-                  currentPost?.attributes.categories.data?.length !== 0
-                    ? currentPost?.attributes.categories.data
-                    : null
-                }
+                categories={currentPost?.attributes.categories.data}
               />
             </div>
 
@@ -126,11 +122,11 @@ export default function Post({ slug }: { slug: string }) {
                       )}
                     </time>
                     <div>
-                      &bull; წაკითხვის დრო
+                      &bull; {messages.blogPage.readingTime}
                       {" " +
                         readingTime(currentPost?.attributes?.content) +
                         " "}
-                      წუთი
+                      {messages.blogPage.minutes}
                     </div>
                   </div>
                 </div>

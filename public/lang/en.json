@@ -491,5 +491,9 @@
         ]
       }
     ]
+  },
+  "blogPage": {
+    "readingTime": "Reading time",
+    "minutes": "mins"
   }
 }

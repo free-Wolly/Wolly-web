@@ -23,32 +23,24 @@ export default function Pagination({ page, setPage, data }: PaginationProps) {
     router.push(`/blog?page=${page - 1}`);
   };
 
-  const generatePageDivs = () => {
-    const divs = [];
-
-    if (totalPages)
-      // eslint-disable-next-line no-plusplus
-      for (let i = 1; i <= totalPages; i++) {
-        divs.push(
-          <div
-            key={i}
-            className={`relative inline-flex items-center ${
-              i === page
-                ? "border bg-indigo-50 text-indigo-600"
-                : "border border-gray-300 bg-white text-gray-500 hover:bg-gray-50"
-            } cursor-pointer px-4 py-2 text-sm font-medium`}
-            onClick={() => {
-              setPage(i);
-              router.push(`/blog?page=${i}`);
-            }}
-          >
-            {i}
-          </div>
-        );
-      }
-
-    return divs;
-  };
+  const generatePageDivs = totalPages
+    ? Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
+        <div
+          key={pageNumber}
+          className={`relative inline-flex items-center ${
+            pageNumber === page
+              ? "border bg-indigo-50 text-indigo-600"
+              : "border border-gray-300 bg-white text-gray-500 hover:bg-gray-50"
+          } cursor-pointer px-4 py-2 text-sm font-medium`}
+          onClick={() => {
+            setPage(pageNumber);
+            router.push(`/blog?page=${pageNumber}`);
+          }}
+        >
+          {pageNumber}
+        </div>
+      ))
+    : [];
 
   if (totalPages)
     return (
@@ -80,7 +72,7 @@ export default function Pagination({ page, setPage, data }: PaginationProps) {
                 <span className="sr-only">Previous</span>
                 <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
               </div>
-              {generatePageDivs()}
+              {generatePageDivs}
               <div
                 onClick={nextPage}
                 className="relative inline-flex cursor-pointer items-center rounded-r-md border border-gray-300 bg-white p-2 text-sm font-medium text-gray-500 hover:bg-gray-50"

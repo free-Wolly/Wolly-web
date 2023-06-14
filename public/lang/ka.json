@@ -522,5 +522,9 @@
         ]
       }
     ]
+  },
+  "blogPage": {
+    "readingTime": "წაკითხვის დრო",
+    "minutes": "წუთი"
   }
 }

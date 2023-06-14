@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { createContext, useEffect, useState } from "react";
 import en from "../public/lang/en.json";
 import ka from "../public/lang/ka.json";
+import { DEFAULT_LOCALE } from "../constants/language";
 
 interface LanguageContextProps {
   locale: string;
@@ -10,7 +11,7 @@ interface LanguageContextProps {
 }
 
 export const LanguageContext = createContext<LanguageContextProps>({
-  locale: "ka",
+  locale: DEFAULT_LOCALE,
   setLocale: () => {},
   messages: ka,
 });
@@ -21,8 +22,8 @@ export function LanguageProvider({
   children: React.ReactNode;
 }): JSX.Element {
   const router = useRouter();
-  const [locale, setLocale] = useState(router.locale || "ka");
-  const messages = locale === "ka" ? ka : en;
+  const [locale, setLocale] = useState(router.locale || DEFAULT_LOCALE);
+  const messages = locale === DEFAULT_LOCALE ? ka : en;
 
   useEffect(() => {
     router.push(router.pathname, router.asPath, { locale });

@@ -56,9 +56,12 @@ export default function Blog({ currentPage }: { currentPage: string }) {
         messages={messages}
         blackText
       />
-      <div className="min-h-[calc(100vh-104px)]">
+      <div className="min-h-[calc(100vh-104px)] flex flex-col justify-between">
         <HomePage
-          posts={Object.keys(blogPosts).length !== 0 ? blogPosts[page] : []}
+          messages={messages}
+          posts={
+            Object.keys(blogPosts).length !== 0 ? blogPosts[page] || [] : []
+          }
           loading={isLoading}
         />
         <Pagination data={data} page={page} setPage={setPage} />

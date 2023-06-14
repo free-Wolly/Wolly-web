@@ -82,7 +82,7 @@ const Footer = ({ messages }: any) => {
             </div>
           </div> */}
           <div className="flex flex-row justify-between items-center py-8">
-            <div className="font-[BOG]">© 2023 Wolly</div>
+            <div className="font-[BOG]">© 2023 ვოლი</div>
             <div className="hidden lg:flex flex-row gap-4">{renderMenuItems}</div>
             <div className="flex flex-row gap-2">{renderSocialNetworks}</div>
           </div>

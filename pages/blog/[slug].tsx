@@ -19,6 +19,7 @@ import {
   SingleBlogDataInterface,
 } from "../../types/blog/interfaces";
 import { readingTime } from "../../utils/readTime";
+import Head from "next/head";
 
 export default function Post({ slug }: { slug: string }) {
   const { locale, setLocale, messages } = useLanguage();
@@ -65,6 +66,11 @@ export default function Post({ slug }: { slug: string }) {
   if (!currentPost) return <Loading />;
   return (
     <>
+      <Head>
+        <title>ვოლი &bull; ბლოგი</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/assets/images/wolly-icon.png" />
+      </Head>
       <Header
         locale={locale}
         setLocale={setLocale}
@@ -103,7 +109,7 @@ export default function Post({ slug }: { slug: string }) {
                   <p className="text-gray-800 font-bold">
                     {currentPost?.attributes.author.data
                       ? currentPost?.attributes.author.data.attributes.fullName
-                      : "Wolly"}
+                      : "ვოლი"}
                   </p>
                   <div className="flex items-center space-x-2 text-sm">
                     <time
@@ -164,7 +170,7 @@ export default function Post({ slug }: { slug: string }) {
                 onClick={() => router.back()}
                 className="bg-brand-secondary/20 rounded-full px-5 py-2 text-sm text-blue-600 cursor-pointer hover:bg-brand-secondary/10 transition duration-200 ease-in-out"
               >
-                ← ნახე ყველა პოსტი
+                ← {messages.blogPage.viewAllPosts}
               </div>
             </div>
           </article>

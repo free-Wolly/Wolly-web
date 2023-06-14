@@ -58,7 +58,7 @@ export default function PostList({
                 "text-lg font-semibold leading-snug tracking-tight mt-2"
               }
             >
-              <span className="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px]">
+              <span className="bg-gradient-to-r from-wollyLightBlue to-wollyBlue bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px]">
                 {post.attributes.title}
               </span>
             </h2>

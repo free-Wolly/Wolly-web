@@ -1,8 +1,17 @@
 import { gql } from "graphql-request";
 
 const blogsQuery = gql`
-  query Blogs($filters: BlogFiltersInput, $pagination: PaginationArg) {
-    blogs(pagination: $pagination, filters: $filters, locale: "ka") {
+  query Blogs(
+    $filters: BlogFiltersInput
+    $pagination: PaginationArg
+    $sort: [String]
+  ) {
+    blogs(
+      pagination: $pagination
+      filters: $filters
+      locale: "ka"
+      sort: $sort
+    ) {
       data {
         id
         attributes {

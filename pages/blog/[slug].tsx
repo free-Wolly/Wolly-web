@@ -153,7 +153,7 @@ export default function Post({ slug }: { slug: string }) {
         </div>
 
         <Container>
-          <article className="mx-auto max-w-screen-md ">
+          <article className="mx-auto max-w-screen-md font-[BOG]">
             <div className="prose mx-auto my-3 prose-a:text-blue-600">
               {currentPost ? (
                 <ReactMarkdown className="whitespace-pre-wrap">

@@ -33,6 +33,7 @@ export default function Blog({ currentPage }: { currentPage: string }) {
             page,
             pageSize: PAGE_SIZE,
           },
+          sort: ["createdAt:desc"],
         },
         header
       ),

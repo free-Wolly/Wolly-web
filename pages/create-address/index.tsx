@@ -1,7 +1,7 @@
 import request from "graphql-request";
 import React, { useEffect, useRef, useState } from "react";
 import { useMutation } from "react-query";
-import { endpoint } from "../signup/constants";
+import { endpoint } from "../../constants/signUp/constants";
 import createAddressMutation from "../../graphql/mutation/createAddress";
 import Map from "./Map";
 import Cookies from "js-cookie";

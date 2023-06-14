@@ -8,7 +8,7 @@ import blogsQuery from "../../graphql/query/blog/blogs";
 import { useContext, useEffect, useState } from "react";
 import Loading from "../../components/Helpers/Loading";
 import ReactMarkdown from "react-markdown";
-import { endpoint, header } from "./constants";
+import { endpoint, header } from "../../constants/blog/constants";
 import { BlogPostsContext } from "../../contexts/blogContext";
 import { useRouter } from "next/router";
 import Footer from "../../components/PageFooter";

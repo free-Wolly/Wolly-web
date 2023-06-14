@@ -4,7 +4,7 @@ import { BlogPostsContext } from "../../contexts/blogContext";
 import { useQuery } from "react-query";
 import request from "graphql-request";
 import blogsQuery from "../../graphql/query/blog/blogs";
-import { endpoint, header } from "./constants";
+import { endpoint, header } from "../../constants/blog/constants";
 import Header from "../../components/PageHeader";
 import Footer from "../../components/PageFooter";
 import { useLanguage } from "../../components/language";

@@ -12,7 +12,7 @@ import {
   containerStyle,
   libraries,
   mapOptions,
-} from "./constants";
+} from "../../constants/create-address/constants";
 
 const Map = ({ setFormData, formData, setErrorMessage }: any) => {
   const [coords, setCoords] = useState(center);

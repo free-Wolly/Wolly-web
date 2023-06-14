@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { parseISO } from "date-fns";
 import { useEffect } from "react";
-import { ifNoDataRedirect } from "../../helpers/functions";
+import { ifNoDataRedirect } from "../../../../utils/create-order/functions";
 import Section from "../../helpers/components/SumUpSection";
 import Rooms from "../../helpers/components/SumUpRooms";
 

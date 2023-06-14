@@ -1,6 +1,6 @@
 import React, { useReducer, useState } from "react";
 import { useMutation } from "react-query";
-import { endpoint, language } from "../signup/constants";
+import { endpoint, language } from "../../constants/signUp/constants";
 import signinMutation from "../../graphql/mutation/signin";
 import request from "graphql-request";
 import signoutMutation from "../../graphql/mutation/signout";

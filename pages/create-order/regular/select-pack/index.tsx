@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import ErrorMessage from "../../../../components/Helpers/ErrorMessage";
-import { ifNoDataRedirect } from "../../helpers/functions";
+import { ifNoDataRedirect } from "../../../../utils/create-order/functions";
 
 export default function SelectPack() {
   const [pack, setPack] = useState("");

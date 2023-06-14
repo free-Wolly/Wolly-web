@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useMutation } from "react-query";
 import request from "graphql-request";
-import { endpoint, language } from "../constants";
+import { endpoint, language } from "../../../constants/signUp/constants";
 import verifyCodeMutation from "../../../graphql/mutation/verifyCode";
 import ErrorMessage from "../../../components/Helpers/ErrorMessage";
 

@@ -12,7 +12,6 @@ const HomePage = ({
   loading: boolean;
   messages: any;
 }) => {
-  console.log(posts);
   if (loading) return <Loading />;
   return (
     <>

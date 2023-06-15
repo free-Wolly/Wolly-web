@@ -494,6 +494,7 @@
   },
   "blogPage": {
     "readingTime": "Reading time",
-    "minutes": "mins"
+    "minutes": "mins",
+    "viewAllPosts": "View all posts"
   }
 }

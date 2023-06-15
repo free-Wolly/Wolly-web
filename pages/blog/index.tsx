@@ -14,6 +14,7 @@ import {
   BlogPostsContextInterface,
   BlogsDataInterface,
 } from "../../types/blog/interfaces";
+import Head from "next/head";
 
 const PAGE_SIZE = 11;
 
@@ -50,6 +51,11 @@ export default function Blog({ currentPage }: { currentPage: string }) {
 
   return (
     <>
+      <Head>
+        <title>ვოლი &bull; ბლოგი</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/assets/images/wolly-icon.png" />
+      </Head>
       <Header
         locale={locale}
         setLocale={setLocale}

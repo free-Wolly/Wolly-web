@@ -525,6 +525,7 @@
   },
   "blogPage": {
     "readingTime": "წაკითხვის დრო",
-    "minutes": "წუთი"
+    "minutes": "წუთი",
+    "viewAllPosts": "ნახე ყველა პოსტი"
   }
 }
